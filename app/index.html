@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
     <link rel="stylesheet" href="bower_components/csshake/dist/csshake.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="app.css">
@@ -25,24 +25,33 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-    <div class="container-fluid">
+    <div class="container">
         <div class="board">
-            <div class="row">
-                <img class="quadrant quadrant1" src="{{part1}}" ng-hide="hide">
-                <img class="quadrant quadrant2" src="{{part2}}" ng-hide="hide">
+            <div class="row top-row">
+                <img class="quadrant quadrant1" src="{{part1}}" ng-hide="part1Hide">
+                <img class="quadrant quadrant2" src="{{part2}}" ng-hide="part2Hide">
             </div>
             <div class="row">
-                <img class="quadrant quadrant3" src="{{part3}}" ng-hide="hide">
-                <img class="quadrant quadrant4" src="{{part4}}" ng-hide="hide">
+                <img class="quadrant quadrant3" src="{{part3}}" ng-hide="part3Hide">
+                <img class="quadrant quadrant4" src="{{part4}}" ng-hide="part4Hide">
             </div>
         </div>
 
-        <h1 class="question">
+        <h5 class="question">
 		Can you guess all of the brand logos?
-	</h1>
-        <button class="btn btn-default" ng-click="startGame()">
-		Start
-	</button>
+	</h5>
+        <div class="game-buttons">
+            <button class="start-button btn-large red waves-effect waves-light" ng-click="startGame()"
+                ng-hide="hide">Start</button>
+            <div class="play-buttons" ng-hide="playButtonsHide">
+                <input class="thick-border answer" placeholder="Guess here!">
+                <button ng-click="showHint()" class="btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
+                <button ng-click="guess()" class="btn-large blue waves-effect waves-light">Guess!</button>
+	    <div id="progressBar"></div>
+	    <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>
+            </div>
+        </div>
+
     </div>
 
 
@@ -69,7 +78,12 @@
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="bower_components/progressbar.js/dist/progressbar.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/min/locales.min.js"></script>
+    <script src="bower_components/humanize-duration/humanize-duration.js"></script>
     <script src="app.js"></script>
     <script src="maincontroller.js"></script>
     <script src="view1/view1.js"></script>

@@ -1,12 +1,45 @@
 /* app css stylesheet */
 
+.transparent {
+	opacity: 0;
+}
+
+#progressBar {
+    margin: auto;
+    margin-top: 10px !important;
+    width: 100%;
+    height: 70%;
+}
+
+.thick-border {
+    padding: 10px;
+    border: solid 5px #c9c9c9 !important;
+    transition: border 0.3s;
+    background-color: white !important;
+    margin: 0;
+    text-align: center;
+    font-size: 250% !important;
+}
+
+.thick-border:focus {
+    border: solid 5px #F44336 !important;
+}
+
+.top-row {
+    margin-bottom: 0;
+}
+
+.game-buttons {
+    text-align: center;
+}
+
 body {
-    background-color: #03A9F4;
+    background-color: #FAFAFA;
 }
 
 .quadrant {
-    height: 40%;
-    width: 40%;
+    height: 15vh;
+    width: 40vw;
     padding: 5px;
     -webkit-transition: all .5s ease .15s;
     -moz-transition: all .5s ease .15s;
