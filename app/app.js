@@ -24,7 +24,7 @@ function beginShake(quadrant) {
 	$("."+quadrant).addClass("shake-slow shake-constant");
 }
 
-setTimeout(function(){ beginShake("quadrant1") }, 300);
-setTimeout(function(){ beginShake("quadrant3") }, 600);
-setTimeout(function(){ beginShake("quadrant4") }, 900);
-setTimeout(function(){ beginShake("quadrant2") }, 1200);
+//setTimeout(function(){ beginShake("quadrant1") }, 300);
+//setTimeout(function(){ beginShake("quadrant3") }, 600);
+//setTimeout(function(){ beginShake("quadrant4") }, 900);
+//setTimeout(function(){ beginShake("quadrant2") }, 1200);

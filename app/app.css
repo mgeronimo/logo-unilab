@@ -1,12 +1,16 @@
 /* app css stylesheet */
 
+.successToast {
+    background-color: green;
+}
+
 .transparent {
-	opacity: 0;
+    opacity: 0;
 }
 
 #progressBar {
     margin: auto;
-    margin-top: 10px !important;
+    margin-top: 50px !important;
     width: 100%;
     height: 70%;
 }
@@ -48,13 +52,36 @@ body {
     transition: all .5s ease .15s;
 }
 
-.row {
-    font-size: 0;
-}
-
 .board {
     margin-top: 15%;
     text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+    .quadrant {
+        height: 100px;
+        width: 150px;
+    }
+    .board {
+        margin-top: 2%;
+    }
+    #progressBar {
+        width: 100%;
+        height: 100px;
+        margin-top: 20px !important;
+    }
+    .decision-button {
+        height: 100%;
+        line-height: 36px;
+    }
+    .answer {
+        margin-bottom: 5px !important;
+        height: 30px;
+    }
+}
+
+.row {
+    font-size: 0;
 }
 
 .question {

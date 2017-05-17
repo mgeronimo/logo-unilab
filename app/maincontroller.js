@@ -84,21 +84,42 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     });
 
     $scope.guess = function() {
-        var userAnswer = $('.answer')[0].value;
-	var rightAnswer = $scope.imageSrc[array[arrayCount]].$id;
-	//Remove spaces and make all the characters lowercase
-	userAnswer = userAnswer.replace(/\s+/g, '');
-	userAnswer = userAnswer.toLowerCase();
+        var userAnswer = $('.answer').val();
+        var rightAnswer = $scope.imageSrc[array[arrayCount]].$id;
+        //Remove spaces and make all the characters lowercase
+        userAnswer = userAnswer.replace(/\s+/g, '');
+        userAnswer = userAnswer.toLowerCase();
 
-	rightAnswer = rightAnswer.replace(/\s+/g, '');
-	rightAnswer = rightAnswer.toLowerCase();
+        rightAnswer = rightAnswer.replace(/\s+/g, '');
+        rightAnswer = rightAnswer.toLowerCase();
 
-	if (userAnswer === rightAnswer) {
-	}
-	else {
-            Materialize.toast('Incorrect guess. Try again!', 3000)
-	}
-	
+        if (userAnswer === rightAnswer) {
+            //Clear the input box
+            console.log($('.answer').val());
+            $('.answer').val('');
+	    $('.answer').removeClass('shake-little shake-constant shake-hard');
+            //Toast
+            Materialize.toast('Correct!', 3000, 'successToast');
+            //Hide all and show a random tile.
+	    revealCount = 0;
+            revealArray = shuffle(revealArray);
+            $('.quadrant').css('opacity', 0);
+	    $scope.showHint();
+            
+            //Change photos
+            arrayCount = (arrayCount == 4) ? 0 : arrayCount + 1;
+            $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
+            $scope.part2 = $scope.imageSrc[array[arrayCount]].part2.src;
+            $scope.part3 = $scope.imageSrc[array[arrayCount]].part3.src;
+            $scope.part4 = $scope.imageSrc[array[arrayCount]].part4.src;
+            //Reset time
+            $scope.$broadcast('timer-reset');
+            $scope.$broadcast('timer-start');
+
+        } else {
+            Materialize.toast('Incorrect guess. Try again!', 3000);
+        }
+
     }
 });
 var array = [0, 1, 2, 3, 4];
@@ -124,7 +145,7 @@ function shuffle(array) {
     return array;
 }
 
-var bar = new ProgressBar.SemiCircle(progressBar, {
+var bar = new ProgressBar.Line(progressBar, {
     strokeWidth: 6,
     color: '#FFEA82',
     trailColor: '#eee',
@@ -134,7 +155,18 @@ var bar = new ProgressBar.SemiCircle(progressBar, {
     svgStyle: null,
     text: {
         value: '',
-        alignToBottom: false
+        alignToBottom: false,
+        style: {
+            // Text color.
+            // Default: same as stroke color (options.color)
+            color: '#999',
+            position: 'absolute',
+            right: '0',
+            top: '30px',
+            padding: 0,
+            margin: 0,
+            transform: null
+        },
     },
     from: {
         color: '#F44336'

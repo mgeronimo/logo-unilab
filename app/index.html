@@ -44,9 +44,9 @@
             <button class="start-button btn-large red waves-effect waves-light" ng-click="startGame()"
                 ng-hide="hide">Start</button>
             <div class="play-buttons" ng-hide="playButtonsHide">
-                <input class="thick-border answer" placeholder="Guess here!">
-                <button ng-click="showHint()" class="btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
-                <button ng-click="guess()" class="btn-large blue waves-effect waves-light">Guess!</button>
+                <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer" placeholder="Guess here!">
+                <button ng-click="showHint()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
+                <button ng-click="guess()" class="decision-button btn-large blue waves-effect waves-light">Guess!</button>
 	    <div id="progressBar"></div>
 	    <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>
             </div>
