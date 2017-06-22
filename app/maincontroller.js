@@ -79,7 +79,6 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     $scope.$on('timer-tick', function(event, args) {
         bar.animate(args.seconds / 30);
         if (args.seconds < 15 && args.seconds > 5) $('.answer').addClass('shake-little shake-constant');
-        if (args.seconds < 5 && args.seconds < 15) $('.answer').addClass('shake-hard shake-constant');
         if (args.seconds == 0) $('.answer').removeClass('shake-little shake-hard shake-constant');
     });
 

@@ -43,8 +43,7 @@ body {
 
 .quadrant {
     height: 15vh;
-    width: 40vw;
-    padding: 5px;
+    width: 20vw;
     -webkit-transition: all .5s ease .15s;
     -moz-transition: all .5s ease .15s;
     -o-transition: all .5s ease .15s;
