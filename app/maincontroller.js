@@ -77,10 +77,34 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         });
     }
     $scope.$on('timer-tick', function(event, args) {
+        $scope.currentTime = 30 - args.seconds;
         bar.animate(args.seconds / 30);
         if (args.seconds < 15 && args.seconds > 5) $('.answer').addClass('shake-little shake-constant');
         if (args.seconds == 0) $('.answer').removeClass('shake-little shake-hard shake-constant');
     });
+
+    $scope.next = function() {
+        //Clear the input box
+        console.log($('.answer').val());
+        $('.answer').val('');
+        $('.answer').removeClass('shake-little shake-constant shake-hard');
+
+        //Hide all and show a random tile.
+        revealCount = 0;
+        revealArray = shuffle(revealArray);
+        $('.quadrant').css('opacity', 0);
+        $scope.showHint();
+
+        //Change photos
+        arrayCount = (arrayCount == 10) ? 0 : arrayCount + 1;
+        $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
+        $scope.part2 = $scope.imageSrc[array[arrayCount]].part2.src;
+        $scope.part3 = $scope.imageSrc[array[arrayCount]].part3.src;
+        $scope.part4 = $scope.imageSrc[array[arrayCount]].part4.src;
+        //Reset time
+        $scope.$broadcast('timer-reset');
+        $scope.$broadcast('timer-start');
+    }
 
     $scope.guess = function() {
         var userAnswer = $('.answer').val();
@@ -93,35 +117,57 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         rightAnswer = rightAnswer.toLowerCase();
 
         if (userAnswer === rightAnswer) {
-            //Clear the input box
-            console.log($('.answer').val());
-            $('.answer').val('');
-	    $('.answer').removeClass('shake-little shake-constant shake-hard');
+            var hintScore;
+            var timeScore;
+            var currentTime = $scope.currentTime;
+            var totalScore;
+            //Calculate score
+            console.log(revealCount);
+            console.log($scope.currentTime);
+            switch (revealCount) {
+                case 1:
+                    hintScore = 50;
+                    break;
+                case 2:
+                    hintScore = 40;
+                    break;
+                case 3:
+                    hintScore = 30;
+                    break;
+                case 4:
+                    hintScore = 20;
+                    break;
+                default:
+                    hintScore = 0;
+            }
+
+            if (currentTime < 8) timeScore = 50; 
+            else if (currentTime < 16) timeScore = 40;
+            else if (currentTime < 23) timeScore = 30;
+            else if (currentTime < 30) timeScore = 20;
+
+            totalScore = hintScore + timeScore;
+            console.log("Your total score is: " + totalScore);
+           
+                
+
+
+
             //Toast
             Materialize.toast('Correct!', 3000, 'successToast');
-            //Hide all and show a random tile.
-	    revealCount = 0;
-            revealArray = shuffle(revealArray);
-            $('.quadrant').css('opacity', 0);
-	    $scope.showHint();
-            
-            //Change photos
-            arrayCount = (arrayCount == 4) ? 0 : arrayCount + 1;
-            $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
-            $scope.part2 = $scope.imageSrc[array[arrayCount]].part2.src;
-            $scope.part3 = $scope.imageSrc[array[arrayCount]].part3.src;
-            $scope.part4 = $scope.imageSrc[array[arrayCount]].part4.src;
-            //Reset time
-            $scope.$broadcast('timer-reset');
-            $scope.$broadcast('timer-start');
+            $scope.next();
 
         } else {
             Materialize.toast('Incorrect guess. Try again!', 3000);
         }
 
     }
+
+    $scope.skip = function() {
+        $scope.next();
+    }
 });
-var array = [0, 1, 2, 3, 4];
+var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var revealArray = [1, 2, 3, 4];
 var revealCount = 0;
 var arrayCount = 0;

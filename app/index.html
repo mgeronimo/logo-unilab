@@ -47,6 +47,7 @@
                 <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer" placeholder="Guess here!">
                 <button ng-click="showHint()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
                 <button ng-click="guess()" class="decision-button btn-large blue waves-effect waves-light">Guess!</button>
+                <button ng-click="skip()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Skip</button>
 	    <div id="progressBar"></div>
 	    <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>
             </div>
