@@ -8,6 +8,8 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.part2 = $scope.imageSrc[0].part2.src;
         $scope.part3 = $scope.imageSrc[0].part3.src;
         $scope.part4 = $scope.imageSrc[0].part4.src;
+        console.log($scope.imageSrc.length);
+        $scope.itemCount = $scope.imageSrc.length;
     });
 
     $scope.hide = false;
@@ -20,7 +22,6 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     $scope.part3Hide = false;
     $scope.part4Hide = false;
     $scope.finalScore = 0;
-    $scope.itemCount = itemCount;
     $scope.itemLeft = 1;
 
     //Initialize array of scores
@@ -193,7 +194,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
             $scope.next();
 
         } else {
-            Materialize.toast('Incorrect guess. Try again!', 3000);
+            Materialize.toast('Try again!', 3000);
         }
 
     }
@@ -210,7 +211,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     }
 });
 var array = [];
-var itemCount = 26;
+var itemCount = 27;
 //Initialize array
 for (var i = 0; i < itemCount; i++) {
     array.push(i);
