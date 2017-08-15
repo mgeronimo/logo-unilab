@@ -19,6 +19,12 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     $scope.part2Hide = false;
     $scope.part3Hide = false;
     $scope.part4Hide = false;
+    $scope.finalScore = 0;
+    $scope.itemCount = itemCount;
+    $scope.itemLeft = 1;
+
+    //Initialize array of scores
+    $scope.scoreArray = new Map();
 
     $scope.showHint = function() {
         if (revealCount == 4) {
@@ -80,10 +86,36 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.currentTime = 30 - args.seconds;
         bar.animate(args.seconds / 30);
         if (args.seconds < 15 && args.seconds > 5) $('.answer').addClass('shake-little shake-constant');
-        if (args.seconds == 0) $('.answer').removeClass('shake-little shake-hard shake-constant');
+        if (args.seconds == 0) {
+            $('.answer').removeClass('shake-little shake-hard shake-constant');
+            $scope.skip();
+        }
     });
 
+    $scope.end = function() {
+        $scope.playButtonsHide = true;
+        Materialize.toast('Congratulations!', 3000, 'successToast');
+        $scope.$broadcast('timer-stop');
+    }
+
+    $scope.calcScore = function() {
+        var avg = 0;
+        var sum = 0;
+        for (var [brand, score] of $scope.scoreArray) {
+            console.log(brand + ' = ' + score);
+            sum += score;
+        }
+        avg = sum / $scope.scoreArray.size;
+        return avg;
+    }
+
     $scope.next = function() {
+        //Show score
+        $scope.finalScore = $scope.calcScore();
+
+        //Increment pic count
+        $scope.itemLeft++;
+
         //Clear the input box
         console.log($('.answer').val());
         $('.answer').val('');
@@ -96,7 +128,9 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.showHint();
 
         //Change photos
-        arrayCount = (arrayCount == 10) ? 0 : arrayCount + 1;
+        if (arrayCount == itemCount - 1) $scope.end();
+        else arrayCount++;
+
         $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
         $scope.part2 = $scope.imageSrc[array[arrayCount]].part2.src;
         $scope.part3 = $scope.imageSrc[array[arrayCount]].part3.src;
@@ -141,16 +175,17 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
                     hintScore = 0;
             }
 
-            if (currentTime < 8) timeScore = 50; 
+            if (currentTime < 8) timeScore = 50;
             else if (currentTime < 16) timeScore = 40;
             else if (currentTime < 23) timeScore = 30;
             else if (currentTime < 30) timeScore = 20;
 
             totalScore = hintScore + timeScore;
             console.log("Your total score is: " + totalScore);
-           
-                
 
+            //Log score for current guess
+            $scope.scoreArray.set(rightAnswer, totalScore);
+            console.log($scope.scoreArray);
 
 
             //Toast
@@ -164,10 +199,23 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     }
 
     $scope.skip = function() {
+        //Log score for current guess
+        var rightAnswer = $scope.imageSrc[array[arrayCount]].$id;
+        rightAnswer = rightAnswer.replace(/\s+/g, '');
+        rightAnswer = rightAnswer.toLowerCase();
+        $scope.scoreArray.set(rightAnswer, 0);
+        console.log($scope.scoreArray);
+
         $scope.next();
     }
 });
-var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var array = [];
+var itemCount = 26;
+//Initialize array
+for (var i = 0; i < itemCount; i++) {
+    array.push(i);
+}
+
 var revealArray = [1, 2, 3, 4];
 var revealCount = 0;
 var arrayCount = 0;
