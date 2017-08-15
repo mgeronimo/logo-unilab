@@ -40,16 +40,24 @@
         <h5 class="question">
 		Can you guess all of the brand logos?
 	</h5>
+        <h5 class="question">
+            Current score: {{finalScore}}
+    </h5>
         <div class="game-buttons">
             <button class="start-button btn-large red waves-effect waves-light" ng-click="startGame()"
                 ng-hide="hide">Start</button>
             <div class="play-buttons" ng-hide="playButtonsHide">
-                <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer" placeholder="Guess here!">
+                <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer"
+                    placeholder="Guess here!">
                 <button ng-click="showHint()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
                 <button ng-click="guess()" class="decision-button btn-large blue waves-effect waves-light">Guess!</button>
                 <button ng-click="skip()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Skip</button>
-	    <div id="progressBar"></div>
-	    <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>
+                <div id="progressBar"></div>
+                <br><br>
+                <h5 class="question">
+                    {{itemLeft}}/{{itemCount}}
+                </h5>
+                <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>
             </div>
         </div>
 
