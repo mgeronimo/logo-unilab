@@ -44,8 +44,8 @@
             Current score: {{finalScore}}
     </h5>
         <div class="game-buttons">
-            <button class="start-button btn-large red waves-effect waves-light" ng-click="startGame()"
-                ng-hide="hide">Start</button>
+            <img class="start-button" src="images/start-button.png" ng-click="startGame()"
+                ng-hide="hide"></img>
             <div class="play-buttons" ng-hide="playButtonsHide">
                 <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer"
                     placeholder="Guess here!">

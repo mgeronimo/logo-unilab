@@ -39,6 +39,13 @@
 
 body {
     background-color: #FAFAFA;
+    background-image: url(images/bg-portrait.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.start-button {
+    width: 200px;
 }
 
 .quadrant {

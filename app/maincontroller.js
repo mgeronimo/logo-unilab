@@ -1,13 +1,13 @@
 angular.module('myApp').controller("MainController", function($scope, $firebaseObject, $firebaseArray) {
     var ref = firebase.database().ref().child("images");
-
+    $scope.part1 = "images/speed-logo-1.png";
+    $scope.part2 = "images/speed-logo-2.png";
+    $scope.part3 = "images/speed-logo-3.png";
+    $scope.part4 = "images/speed-logo-4.png";
     $scope.imageSrc = $firebaseArray(ref);
     $scope.imageSrc.$loaded().then(function() {
         console.log($scope.imageSrc[0].part1.src);
-        $scope.part1 = $scope.imageSrc[0].part1.src;
-        $scope.part2 = $scope.imageSrc[0].part2.src;
-        $scope.part3 = $scope.imageSrc[0].part3.src;
-        $scope.part4 = $scope.imageSrc[0].part4.src;
+
         console.log($scope.imageSrc.length);
         $scope.itemCount = $scope.imageSrc.length;
     });
