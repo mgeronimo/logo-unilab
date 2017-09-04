@@ -107,7 +107,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
             sum += score;
         }
         avg = sum / $scope.scoreArray.size;
-        return avg;
+        return Math.round(avg);
     }
 
     $scope.next = function() {
