@@ -66,8 +66,8 @@ body {
 
 @media only screen and (min-width: 500px) {
     .quadrant {
-        height: 100px;
-        width: 150px;
+        height: 200px;
+        width: 300px;
     }
     .board {
         margin-top: 2%;
