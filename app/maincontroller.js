@@ -27,6 +27,9 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     //Initialize array of scores
     $scope.scoreArray = new Map();
 
+    //Initialize Facebook provider object;
+    var provider = new firebase.auth.FacebookAuthProvider();
+
     $scope.showHint = function() {
         if (revealCount == 4) {
             Materialize.toast('You already have the whole picture!', 3000)
@@ -38,8 +41,53 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
     }
 
+    $scope.fbLogin = function() {
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            console.log(user);
+            $scope.user = user;
+            console.log(result.additionalUserInfo.profile);
+            $scope.profile = result.additionalUserInfo.profile;
+            //Add user profile to database
+            var ref = firebase.database().ref('/users/' + $scope.user.uid);
+            ref.once("value").then(function(snapshot) {
+                ref.child('name').set($scope.profile.name);
+                ref.child('age').set($scope.profile.age_range.min);
+                ref.child('sex').set($scope.profile.gender);
+            });
+
+
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorMessage);
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+        });
+    }
+
+    $scope.fbLogout = function() {
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            console.log("Sign out successful");
+        }).catch(function(error) {
+            // An error happened.
+            console.log(error);
+        });
+    }
+
     $scope.startGame = function() {
         console.log("started game");
+
+        //Record attempt
+        recordAttempt();
+
         $('.start-button').addClass('animated zoomOut');
 
         $('.quadrant').removeClass('shake-slow shake-constant');
@@ -110,7 +158,53 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         return Math.round(avg);
     }
 
-    $scope.next = function() {
+    $scope.next = function(guess) {
+        //Record if failed to guess
+        if (!guess) {
+            var user = firebase.auth().currentUser;
+            var currentTime = $scope.currentTime;
+            var rightAnswer = $scope.imageSrc[array[arrayCount]].$id;
+            rightAnswer = rightAnswer.replace(/\s+/g, '');
+            rightAnswer = rightAnswer.toLowerCase();
+            var brandRef = firebase.database().ref('/users/' + user.uid + '/' + rightAnswer);
+            brandRef.once('value').then(function(snapshot) {
+                if (!snapshot.exists()) {
+                    brandRef.child('firstScore').set(0);
+                    brandRef.child('firstHints').set(revealCount);
+                    brandRef.child('firstSeconds').set(currentTime);
+                    brandRef.child('firstGuess').set(false);
+                    brandRef.child('avgScore').set(0);
+                    brandRef.child('avgHints').set(revealCount);
+                    brandRef.child('avgSeconds').set(currentTime);
+                    brandRef.child('avgGuess').set(0);
+                    brandRef.child('sumScore').set(0);
+                    brandRef.child('sumHints').set(revealCount);
+                    brandRef.child('sumSeconds').set(currentTime);
+                    brandRef.child('sumGuess').set(0);
+                    brandRef.child('guessRightCount').set(0);
+                    brandRef.child('attempt').set(1);
+                    brandRef.child('guessRightOnAttempt').set(0);
+                } else {
+                    var sumScore = snapshot.val().sumScore + 0;
+                    var sumHints = snapshot.val().sumHints + revealCount;
+                    var sumSeconds = snapshot.val().sumSeconds + currentTime;
+                    var sumGuess = snapshot.val().sumGuess + 0;
+                    var attempt = snapshot.val().attempt + 1;
+                    brandRef.child('avgScore').set((sumScore) / attempt);
+                    brandRef.child('avgHints').set((sumHints) / attempt);
+                    brandRef.child('avgSeconds').set((sumSeconds) / attempt);
+                    brandRef.child('avgGuess').set(Math.round((sumGuess) / attempt));
+                    brandRef.child('sumScore').set(sumScore);
+                    brandRef.child('sumHints').set(sumHints);
+                    brandRef.child('sumSeconds').set(sumSeconds);
+                    brandRef.child('sumGuess').set(sumGuess);
+                    brandRef.child('guessRightCount').set(snapshot.val().guessRightCount + 0);
+                    brandRef.child('attempt').set(snapshot.val().attempt + 1);
+                }
+
+            });
+        }
+
         //Show score
         $scope.finalScore = $scope.calcScore();
 
@@ -158,6 +252,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
             var totalScore;
             //Calculate score
             console.log(revealCount);
+            $scope.revealCount = revealCount;
             console.log($scope.currentTime);
             switch (revealCount) {
                 case 1:
@@ -191,7 +286,51 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
             //Toast
             Materialize.toast('Correct!', 3000, 'successToast');
-            $scope.next();
+
+            //Record
+            var user = firebase.auth().currentUser;
+
+            var brandRef = firebase.database().ref('/users/' + user.uid + '/' + rightAnswer);
+            brandRef.once('value').then(function(snapshot) {
+                if (!snapshot.exists()) {
+                    brandRef.child('firstScore').set(totalScore);
+                    brandRef.child('firstHints').set($scope.revealCount);
+                    brandRef.child('firstSeconds').set(currentTime);
+                    brandRef.child('firstGuess').set(true);
+                    brandRef.child('avgScore').set(totalScore);
+                    brandRef.child('avgHints').set($scope.revealCount);
+                    brandRef.child('avgSeconds').set(currentTime);
+                    brandRef.child('avgGuess').set(100);
+                    brandRef.child('sumScore').set(totalScore);
+                    brandRef.child('sumHints').set($scope.revealCount);
+                    brandRef.child('sumSeconds').set(currentTime);
+                    brandRef.child('sumGuess').set(100);
+                    brandRef.child('guessRightCount').set(1);
+                    brandRef.child('attempt').set(1);
+                    brandRef.child('guessRightOnAttempt').set(1);
+                } else {
+                    var sumScore = snapshot.val().sumScore + totalScore;
+                    var sumHints = snapshot.val().sumHints + $scope.revealCount;
+                    var sumSeconds = snapshot.val().sumSeconds + currentTime;
+                    var sumGuess = snapshot.val().sumGuess + 100;
+                    var attempt = snapshot.val().attempt + 1;
+                    brandRef.child('avgScore').set((sumScore) / attempt);
+                    brandRef.child('avgHints').set((sumHints) / attempt);
+                    brandRef.child('avgSeconds').set((sumSeconds) / attempt);
+                    brandRef.child('avgGuess').set(Math.round((sumGuess) / attempt));
+                    brandRef.child('sumScore').set(sumScore);
+                    brandRef.child('sumHints').set(sumHints);
+                    brandRef.child('sumSeconds').set(sumSeconds);
+                    brandRef.child('sumGuess').set(sumGuess);
+                    brandRef.child('guessRightCount').set(snapshot.val().guessRightCount + 1);
+                    brandRef.child('attempt').set(snapshot.val().attempt + 1);
+                    if (snapshot.val().guessRightOnAttempt == 0) {
+                        brandRef.child('guessRightOnAttempt').set(attempt);
+                    }
+                }
+
+            });
+            $scope.next(true);
 
         } else {
             Materialize.toast('Try again!', 3000);
@@ -207,11 +346,11 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.scoreArray.set(rightAnswer, 0);
         console.log($scope.scoreArray);
 
-        $scope.next();
+        $scope.next(false);
     }
 });
 var array = [];
-var itemCount = 27;
+var itemCount = 31;
 //Initialize array
 for (var i = 0; i < itemCount; i++) {
     array.push(i);
