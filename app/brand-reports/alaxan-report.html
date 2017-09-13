@@ -4,6 +4,7 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <!--     Fonts and icons     -->
     <link href="../bower_components/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
@@ -34,8 +35,10 @@
         firebase.initializeApp(config);
     </script>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
     <script src="alaxan-report.js"></script>
     <script src="bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
     <div class="wrapper">
         <br/><br/>
@@ -57,9 +60,11 @@
                                 <br/>
                                 <div id="dvData" class="table-responsive">
                                     <h5>Alaxan</h5>
-                                    <table class="table centered highlight bordered">
+                                    <table id="mainTable" class="table centered highlight bordered">
                                         <thead class="text-primary">
                                             <th>Name</th>
+                                            <th>Sex</th>
+                                            <th>Age</th>
                                             <th>Total Attempts</th>
                                             <th>Guessed on the first try</th>
                                             <th># of hints on the first try</th>
@@ -88,10 +93,11 @@
         </div>
     </div>
 
-    <script type='text/javascript' src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
     <script type="text/javascript">
         $(document).ready(function() {
             // This must be a hyperlink
+
+
             function exportTableToCSV($table, filename) {
                 var $headers = $table.find('tr:has(th)'),
                     $rows = $table.find('tr:has(td)')

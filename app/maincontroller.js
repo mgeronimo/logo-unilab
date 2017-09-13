@@ -201,6 +201,8 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
                     brandRef.child('guessRightCount').set(snapshot.val().guessRightCount + 0);
                     brandRef.child('attempt').set(snapshot.val().attempt + 1);
                 }
+                
+                reportTally(rightAnswer);
 
             });
         }
@@ -328,8 +330,16 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
                         brandRef.child('guessRightOnAttempt').set(attempt);
                     }
                 }
+                //Tally everything
+                reportTally(rightAnswer);
+
+                
 
             });
+
+
+
+
             $scope.next(true);
 
         } else {

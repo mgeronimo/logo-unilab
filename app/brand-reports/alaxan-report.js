@@ -1,12 +1,13 @@
 window.onload = function() {
     var ref = firebase.database().ref().child("users");
-
     ref.once("value").then(function(snapshot) {
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().sex) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().age) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.attempt) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstGuess) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firsthints) + "</td>";
@@ -25,9 +26,10 @@ window.onload = function() {
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('alaxan').innerHTML = reportsTable;
+        $('#mainTable').DataTable();
     });
 
-    
+
 
 
 }
