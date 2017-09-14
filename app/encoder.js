@@ -146,8 +146,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
         console.log("User " + user.displayName + " is logged in");
+        $('#startBtn').show();
+        $('#logoutBtn').show();
+        $('#loginBtn').hide();
     } else {
         // No user is signed in.
         console.log("No one is logged in");
+        $('#startBtn').hide();
+        $('#logoutBtn').hide();
+        $('#loginBtn').show();
     }
 });

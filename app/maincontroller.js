@@ -10,6 +10,8 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
         console.log($scope.imageSrc.length);
         $scope.itemCount = $scope.imageSrc.length;
+        $('#wholeGame').show();
+        $('.sk-cube-grid').hide();
     });
 
     $scope.hide = false;

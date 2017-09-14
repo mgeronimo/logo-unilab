@@ -25,7 +25,18 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-    <div class="container">
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
+    <div id="wholeGame" class="container" hidden>
         <div class="board">
             <div class="row top-row">
                 <img class="quadrant quadrant1" src="{{part1}}" ng-hide="part1Hide">
@@ -40,15 +51,18 @@
         <h5 class="question">
 		Can you guess each of the brand logos within 30 seconds?
 	</h5>
-        <h5 class="question">
+        <h5 id="scoreText" class="question">
             Current score: {{finalScore}}
     </h5>
+        <br>
         <div class="game-buttons">
-            <img class="start-button" src="images/start-button.png" ng-click="startGame()"
-                ng-hide="hide"></img>
+            <img id="loginBtn" class="img-button" src="images/fbSignIn.png" ng-click="fbLogin()"
+                ng-hide=""></img>
+            <img id="startBtn" class="img-button" src="images/start-button.png" ng-click="startGame()"
+                ng-hide="hide" hidden></img>
             <br>
-            <button ng-click="fbLogin()" class="btn-large blue waves-effect waves-light">FB Login</button>
-            <button ng-click="fbLogout()" class="btn-large blue waves-effect waves-light">FB Logout</button>
+            <button id="logoutBtn" ng-click="fbLogout()" class="btn-large blue waves-effect waves-light"
+                style="display:none">FB Logout</button>
             <div class="play-buttons" ng-hide="playButtonsHide">
                 <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer"
                     placeholder="Guess here!">
