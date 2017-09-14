@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <!--     Fonts and icons     -->
+    <link href="../bower_components/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+        rel="stylesheet"> -->
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+    />
+    <style type="text/css">
+        td {
+            padding: 0 20px;
+        }
+        .sk-cube-grid {
+          width: 40px;
+          height: 40px;
+          margin: 100px auto;
+        }
+
+        .sk-cube-grid .sk-cube {
+          width: 33%;
+          height: 33%;
+          background-color: #333;
+          float: left;
+          -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+                  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+        }
+        .sk-cube-grid .sk-cube1 {
+          -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s; }
+        .sk-cube-grid .sk-cube2 {
+          -webkit-animation-delay: 0.3s;
+                  animation-delay: 0.3s; }
+        .sk-cube-grid .sk-cube3 {
+          -webkit-animation-delay: 0.4s;
+                  animation-delay: 0.4s; }
+        .sk-cube-grid .sk-cube4 {
+          -webkit-animation-delay: 0.1s;
+                  animation-delay: 0.1s; }
+        .sk-cube-grid .sk-cube5 {
+          -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s; }
+        .sk-cube-grid .sk-cube6 {
+          -webkit-animation-delay: 0.3s;
+                  animation-delay: 0.3s; }
+        .sk-cube-grid .sk-cube7 {
+          -webkit-animation-delay: 0s;
+                  animation-delay: 0s; }
+        .sk-cube-grid .sk-cube8 {
+          -webkit-animation-delay: 0.1s;
+                  animation-delay: 0.1s; }
+        .sk-cube-grid .sk-cube9 {
+          -webkit-animation-delay: 0.2s;
+                  animation-delay: 0.2s; }
+
+        @-webkit-keyframes sk-cubeGridScaleDelay {
+          0%, 70%, 100% {
+            -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+          } 35% {
+            -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1); 
+          }
+        }
+
+        @keyframes sk-cubeGridScaleDelay {
+          0%, 70%, 100% {
+            -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+          } 35% {
+            -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1);
+          } 
+        }
+    </style>
+</head>
+
+<body>
+    <!--   Core JS Files   -->
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBTEYtihMPJeI-tAp7kW0e8HPjRd71iA4I",
+            authDomain: "logology-a4022.firebaseapp.com",
+            databaseURL: "https://logology-a4022.firebaseio.com",
+            projectId: "logology-a4022",
+            storageBucket: "logology-a4022.appspot.com",
+            messagingSenderId: "178609585789"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+        crossorigin="anonymous"></script>
+    <script src="total.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <div class="wrapper">
+        <br/><br/>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            
+                            <div class="card-content">
+                                <h4 class="card-title">Reports</h4>
+                                
+                                <br/>
+                                <div id="dvData" class="table-responsive">
+                                    <h5 style="text-align:center">Total tally results</h5>
+                                    <div class="sk-cube-grid">
+                                      <div class="sk-cube sk-cube1"></div>
+                                      <div class="sk-cube sk-cube2"></div>
+                                      <div class="sk-cube sk-cube3"></div>
+                                      <div class="sk-cube sk-cube4"></div>
+                                      <div class="sk-cube sk-cube5"></div>
+                                      <div class="sk-cube sk-cube6"></div>
+                                      <div class="sk-cube sk-cube7"></div>
+                                      <div class="sk-cube sk-cube8"></div>
+                                      <div class="sk-cube sk-cube9"></div>
+                                    </div>
+                                    <table id="mainTable" class="table centered highlight bordered" hidden>
+                                        <thead class="text-primary">
+                                            <th>Brand</th>
+                                            <th>Average Score</th>
+                                            <th>Average Hints</th>
+                                            <th>Average Seconds</th>
+                                        </thead>
+                                        <tbody id="alaxan">
+                                            <tr>
+                                                <td>Advil</td>
+                                                <td id="advilScore"></td>
+                                                <td id="advilHints"></td>
+                                                <td id="advilSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alaxan</td>
+                                                <td id="alaxanScore"></td>
+                                                <td id="alaxanHints"></td>
+                                                <td id="alaxanSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Allerta</td>
+                                                <td id="allertaScore"></td>
+                                                <td id="allertaHints"></td>
+                                                <td id="allertaSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ascof</td>
+                                                <td id="ascofScore"></td>
+                                                <td id="ascofHints"></td>
+                                                <td id="ascofSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bioflu</td>
+                                                <td id="biofluScore"></td>
+                                                <td id="biofluHints"></td>
+                                                <td id="biofluSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Biogesic</td>
+                                                <td id="biogesicScore"></td>
+                                                <td id="biogesicHints"></td>
+                                                <td id="biogesicSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Celeteque</td>
+                                                <td id="celetequeScore"></td>
+                                                <td id="celetequeHints"></td>
+                                                <td id="celetequeSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Centrum</td>
+                                                <td id="centrumScore"></td>
+                                                <td id="centrumHints"></td>
+                                                <td id="centrumSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cetaphil</td>
+                                                <td id="cetaphilScore"></td>
+                                                <td id="cetaphilHints"></td>
+                                                <td id="cetaphilSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Conzace</td>
+                                                <td id="conzaceScore"></td>
+                                                <td id="conzaceHints"></td>
+                                                <td id="conzaceSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Decolgen</td>
+                                                <td id="decolgenScore"></td>
+                                                <td id="decolgenHints"></td>
+                                                <td id="decolgenSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Diatabs</td>
+                                                <td id="diatabsScore"></td>
+                                                <td id="diatabsHints"></td>
+                                                <td id="diatabsSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Efficascent</td>
+                                                <td id="efficascentScore"></td>
+                                                <td id="efficascentHints"></td>
+                                                <td id="efficascentSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Enervon</td>
+                                                <td id="enervonScore"></td>
+                                                <td id="enervonHints"></td>
+                                                <td id="enervonSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gatorade</td>
+                                                <td id="gatoradeScore"></td>
+                                                <td id="gatoradeHints"></td>
+                                                <td id="gatoradeSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gynepro</td>
+                                                <td id="gyneproScore"></td>
+                                                <td id="gyneproHints"></td>
+                                                <td id="gyneproSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kremils</td>
+                                                <td id="kremilsScore"></td>
+                                                <td id="kremilsHints"></td>
+                                                <td id="kremilsSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lactacyd</td>
+                                                <td id="lactacydScore"></td>
+                                                <td id="lactacydHints"></td>
+                                                <td id="lactacydSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mcdo</td>
+                                                <td id="mcdoScore"></td>
+                                                <td id="mcdoHints"></td>
+                                                <td id="mcdoSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Myra</td>
+                                                <td id="myraScore"></td>
+                                                <td id="myraHints"></td>
+                                                <td id="myraSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Neozep</td>
+                                                <td id="neozepScore"></td>
+                                                <td id="neozepHints"></td>
+                                                <td id="neozepSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phcare</td>
+                                                <td id="phcareScore"></td>
+                                                <td id="phcareHints"></td>
+                                                <td id="phcareSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rexidol</td>
+                                                <td id="rexidolScore"></td>
+                                                <td id="rexidolHints"></td>
+                                                <td id="rexidolSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ritemed</td>
+                                                <td id="ritemedScore"></td>
+                                                <td id="ritemedHints"></td>
+                                                <td id="ritemedSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Robitussin</td>
+                                                <td id="robitussinScore"></td>
+                                                <td id="robitussinHints"></td>
+                                                <td id="robitussinSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Skelan</td>
+                                                <td id="skelanScore"></td>
+                                                <td id="skelanHints"></td>
+                                                <td id="skelanSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Solmux</td>
+                                                <td id="solmuxScore"></td>
+                                                <td id="solmuxHints"></td>
+                                                <td id="solmuxSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>The Generics Pharmacy</td>
+                                                <td id="tgpScore"></td>
+                                                <td id="tgpHints"></td>
+                                                <td id="tgpSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>United Home</td>
+                                                <td id="uhpScore"></td>
+                                                <td id="uhpHints"></td>
+                                                <td id="uhpSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Unilab</td>
+                                                <td id="unilabScore"></td>
+                                                <td id="unilabHints"></td>
+                                                <td id="unilabSeconds"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Vicks</td>
+                                                <td id="vicksScore"></td>
+                                                <td id="vicksHints"></td>
+                                                <td id="vicksSeconds"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="exportButton" class='button' style="text-align: center;" hidden>
+                                        <a href="#" id="export" class="btn btn-info">Click Here To Export The Table Data into a CSV File
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // This must be a hyperlink
+
+
+            function exportTableToCSV($table, filename) {
+                var $headers = $table.find('tr:has(th)'),
+                    $rows = $table.find('tr:has(td)')
+                    // Temporary delimiter characters unlikely to be typed by keyboard
+                    // This is to avoid accidentally splitting the actual contents
+                    ,
+                    tmpColDelim = String.fromCharCode(11) // vertical tab character
+                    ,
+                    tmpRowDelim = String.fromCharCode(0) // null character
+                    // actual delimiter characters for CSV format
+                    ,
+                    colDelim = '","',
+                    rowDelim = '"\r\n"';
+                // Grab text from table into CSV formatted string
+                var csv = '"';
+                csv += formatRows($headers.map(grabRow));
+                csv += rowDelim;
+                csv += formatRows($rows.map(grabRow)) + '"';
+                // Data URI
+                var csvData = 'data:application/csv;charset=utf-8,' +
+                    encodeURIComponent(csv);
+                $(this)
+                    .attr({
+                        'download': filename,
+                        'href': csvData
+                            //,'target' : '_blank' //if you want it to open in a new window
+                    });
+                //------------------------------------------------------------
+                // Helper Functions 
+                //------------------------------------------------------------
+                // Format the output so it has the appropriate delimiters
+                function formatRows(rows) {
+                    return rows.get().join(tmpRowDelim)
+                        .split(tmpRowDelim).join(rowDelim)
+                        .split(tmpColDelim).join(colDelim);
+                }
+                // Grab and format a row from the table
+                function grabRow(i, row) {
+
+                    var $row = $(row);
+                    //for some reason $cols = $row.find('td') || $row.find('th') won't work...
+                    var $cols = $row.find('td');
+                    if (!$cols.length) $cols = $row.find('th');
+                    return $cols.map(grabCol)
+                        .get().join(tmpColDelim);
+                }
+                // Grab and format a column from the table 
+                function grabCol(j, col) {
+                    var $col = $(col),
+                        $text = $col.text();
+                    return $text.replace('"', '""'); // escape double quotes
+                }
+            }
+            $("#export").click(function(event) {
+                // var outputFile = 'export'
+                var outputFile = window.prompt(
+                    "What do you want to name your output file (Note: This won't have any effect on Safari)"
+                ) || 'export';
+                outputFile = outputFile.replace('.csv', '') +
+                    '.csv'
+
+                // CSV
+                exportTableToCSV.apply(this, [$(
+                    '#dvData>table'), outputFile]);
+
+                // IF CSV, don't do event.preventDefault() or return false
+                // We actually need this to be a typical hyperlink
+            });
+        });
+    </script>
+</body>
+
+</html>
