@@ -161,6 +161,10 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     }
 
     $scope.next = function(guess) {
+        //Use spinner while loading photos
+        $('.sk-cube-grid').show();
+        $('#wholeGame').hide();
+
         //Record if failed to guess
         if (!guess) {
             var user = firebase.auth().currentUser;
@@ -203,7 +207,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
                     brandRef.child('guessRightCount').set(snapshot.val().guessRightCount + 0);
                     brandRef.child('attempt').set(snapshot.val().attempt + 1);
                 }
-                
+
                 reportTally(rightAnswer);
 
             });
@@ -335,7 +339,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
                 //Tally everything
                 reportTally(rightAnswer);
 
-                
+
 
             });
 

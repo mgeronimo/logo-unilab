@@ -39,7 +39,7 @@
     <div id="wholeGame" class="container" hidden>
         <div class="board">
             <div class="row top-row">
-                <img class="quadrant quadrant1" src="{{part1}}" ng-hide="part1Hide">
+                <img onload="loaded()" class="quadrant quadrant1" src="{{part1}}" ng-hide="part1Hide">
                 <img class="quadrant quadrant2" src="{{part2}}" ng-hide="part2Hide">
             </div>
             <div class="row">

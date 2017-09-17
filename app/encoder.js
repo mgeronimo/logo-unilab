@@ -1,3 +1,9 @@
+function loaded() {
+    console.log("loaded");
+    $('.sk-cube-grid').hide();
+    $('#wholeGame').show();
+}
+
 function reportTally(brand) {
     var tallyRef = firebase.database().ref('/users/');
 
