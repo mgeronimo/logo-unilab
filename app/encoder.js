@@ -5,6 +5,7 @@ function loaded() {
 }
 
 function reportTally(brand) {
+    console.log("Tallying " + brand);
     var tallyRef = firebase.database().ref('/users/');
 
     //Total Tally
@@ -101,36 +102,54 @@ function reportTally(brand) {
         //Push lt18
         var lt18Ref = firebase.database().ref('/tally/' + brand + '/lt18/');
         lt18Ref.on("value", function(snapshot) {
-            lt18Ref.child('avgScore').set(_.mean(lt18ScoreArray));
-            lt18Ref.child('avgHints').set(_.mean(lt18HintsArray));
-            lt18Ref.child('avgSeconds').set(_.mean(lt18SecondsArray));
+            try {
+                lt18Ref.child('avgScore').set(_.mean(lt18ScoreArray));
+                lt18Ref.child('avgHints').set(_.mean(lt18HintsArray));
+                lt18Ref.child('avgSeconds').set(_.mean(lt18SecondsArray));
+            } catch (error) {
+                //console.log("User is not of this age bracket" + brand);
+            }
         });
 
         //Push lt26
         var lt26Ref = firebase.database().ref('/tally/' + brand + '/lt26/');
         lt26Ref.on("value", function(snapshot) {
-            lt26Ref.child('avgScore').set(_.mean(lt26ScoreArray));
-            lt26Ref.child('avgHints').set(_.mean(lt26HintsArray));
-            lt26Ref.child('avgSeconds').set(_.mean(lt26SecondsArray));
+            try {
+                lt26Ref.child('avgScore').set(_.mean(lt26ScoreArray));
+                lt26Ref.child('avgHints').set(_.mean(lt26HintsArray));
+                lt26Ref.child('avgSeconds').set(_.mean(lt26SecondsArray));
+            } catch (error) {
+                //console.log("User is not of this age bracket" + brand);
+            }
+
         });
 
         //Push lt36
         var lt36Ref = firebase.database().ref('/tally/' + brand + '/lt36/');
         lt36Ref.on("value", function(snapshot) {
-            lt36Ref.child('avgScore').set(_.mean(lt36ScoreArray));
-            lt36Ref.child('avgHints').set(_.mean(lt36HintsArray));
-            lt36Ref.child('avgSeconds').set(_.mean(lt36SecondsArray));
+            try {
+                lt36Ref.child('avgScore').set(_.mean(lt36ScoreArray));
+                lt36Ref.child('avgHints').set(_.mean(lt36HintsArray));
+                lt36Ref.child('avgSeconds').set(_.mean(lt36SecondsArray));
+            } catch (error) {
+                //console.log("User is not of this age bracket" + brand);
+            }
+
         });
 
         //Push gt36
         var gt36Ref = firebase.database().ref('/tally/' + brand + '/gt36/');
         gt36Ref.on("value", function(snapshot) {
-            gt36Ref.child('avgScore').set(_.mean(gt36ScoreArray));
-            gt36Ref.child('avgHints').set(_.mean(gt36HintsArray));
-            gt36Ref.child('avgSeconds').set(_.mean(gt36SecondsArray));
+            try {
+                gt36Ref.child('avgScore').set(_.mean(gt36ScoreArray));
+                gt36Ref.child('avgHints').set(_.mean(gt36HintsArray));
+                gt36Ref.child('avgSeconds').set(_.mean(gt36SecondsArray));
+            } catch (error) {
+                //console.log("User is not of this age bracket" + brand);
+            }
+
         });
 
-        console.log("updated tally");
     });
 }
 

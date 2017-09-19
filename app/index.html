@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" cview1ontent="IE=edge">
-    <title>Logology</title>
+    <title>Speed Logo Game</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -48,21 +48,22 @@
             </div>
         </div>
 
-        <h5 class="question">
+        <h5 id="questionText" class="question">
 		Can you guess each of the brand logos within 30 seconds?
 	</h5>
-        <h5 id="scoreText" class="question">
+        <h5 id="scoreText" class="question" hidden>
             Current score: {{finalScore}}
     </h5>
         <br>
         <div class="game-buttons">
             <img id="loginBtn" class="img-button" src="images/fbSignIn.png" ng-click="fbLogin()"
                 ng-hide=""></img>
-            <img id="startBtn" class="img-button start-button" src="images/start-button.png" ng-click="startGame()"
+            <img id="startBtn" class="img-button start-button" src="images/start-button.gif" ng-click="startGame()"
                 ng-hide="hide" hidden></img>
             <br>
+            <!--
             <button id="logoutBtn" ng-click="fbLogout()" class="btn-large blue waves-effect waves-light"
-                style="display:none">FB Logout</button>
+                style="display:none">FB Logout</button> -->
             <div class="play-buttons" ng-hide="playButtonsHide">
                 <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer"
                     placeholder="Guess here!">
@@ -70,7 +71,6 @@
                 <button ng-click="guess()" class="decision-button btn-large blue waves-effect waves-light">Guess!</button>
                 <button ng-click="skip()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Skip</button>
                 <div id="progressBar"></div>
-                <br>
                 <h5 class="question">
                     {{itemLeft}}/{{itemCount}}
                 </h5>

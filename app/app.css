@@ -129,7 +129,7 @@
 
 body {
     background-color: #FAFAFA;
-    background-image: url(images/bg-portrait.png);
+    background-image: url(images/bg-portrait.gif);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -140,7 +140,6 @@ body {
 .quadrant {
     height: 15vh;
     width: 40vw;
-    padding: 5px;
     /*-webkit-transition: all .5s ease .15s;
     -moz-transition: all .5s ease .15s;
     -o-transition: all .5s ease .15s;
@@ -155,8 +154,8 @@ body {
 
 @media only screen and (min-width: 500px) {
     .quadrant {
-        height: 200px;
-        width: 300px;
+        height: 150px;
+        width: 250px;
     }
     .board {
         margin-top: 2%;

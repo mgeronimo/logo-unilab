@@ -1,9 +1,9 @@
 angular.module('myApp').controller("MainController", function($scope, $firebaseObject, $firebaseArray) {
     var ref = firebase.database().ref().child("images");
-    $scope.part1 = "images/speed-logo-1.png";
-    $scope.part2 = "images/speed-logo-2.png";
-    $scope.part3 = "images/speed-logo-3.png";
-    $scope.part4 = "images/speed-logo-4.png";
+    $scope.part1 = "images/speedlogo-1.gif";
+    $scope.part2 = "images/speedlogo-2.gif";
+    $scope.part3 = "images/speedlogo-3.gif";
+    $scope.part4 = "images/speedlogo-4.gif";
     $scope.imageSrc = $firebaseArray(ref);
     $scope.imageSrc.$loaded().then(function() {
         console.log($scope.imageSrc[0].part1.src);
@@ -86,6 +86,8 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
     $scope.startGame = function() {
         console.log("started game");
+        $('#scoreText').show();
+        $('#questionText').html('What brand has this image/logo?');
 
         //Record attempt
         recordAttempt();
@@ -145,7 +147,30 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
     $scope.end = function() {
         $scope.playButtonsHide = true;
+        $('.sk-cube-grid').hide();
+        $('#wholeGame').show();
         Materialize.toast('Congratulations!', 3000, 'successToast');
+        var scoreText = "";
+        if ($scope.finalScore < 20) {
+            scoreText = "zeroscore";
+        } else if ($scope.finalScore < 40) {
+            scoreText = "20score";
+        } else if ($scope.finalScore < 80) {
+            scoreText = "40score";
+        } else if ($scope.finalScore < 100) {
+            scoreText = "80score";
+        } else {
+            scoreText = "100score";
+        }
+        $scope.part1 = "images/" + scoreText + "-1.png";
+        $scope.part2 = "images/" + scoreText + "-2.png";
+        $scope.part3 = "images/" + scoreText + "-3.png";
+        $scope.part4 = "images/" + scoreText + "-4.png";
+
+        $('.quadrant1').css('opacity', 1);
+        $('.quadrant2').css('opacity', 1);
+        $('.quadrant3').css('opacity', 1);
+        $('.quadrant4').css('opacity', 1);
         $scope.$broadcast('timer-stop');
     }
 
@@ -164,6 +189,8 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         //Use spinner while loading photos
         $('.sk-cube-grid').show();
         $('#wholeGame').hide();
+        //$scope.end();
+        //return;
 
         //Record if failed to guess
         if (!guess) {
@@ -231,7 +258,10 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.showHint();
 
         //Change photos
-        if (arrayCount == itemCount - 1) $scope.end();
+        if (arrayCount == itemCount - 1) {
+            $scope.end();
+            return;
+        }
         else arrayCount++;
 
         $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
@@ -395,7 +425,7 @@ function shuffle(array) {
 }
 
 var bar = new ProgressBar.Line(progressBar, {
-    strokeWidth: 6,
+    strokeWidth: 3,
     color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
