@@ -10,14 +10,14 @@ window.onload = function() {
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().age) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.attempt) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firsthints) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstHints) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstSeconds) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstScore) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.guessRightOnAttempt) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgGuess) + "%</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgScore) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgSeconds).toFixed(2) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgScore).toFixed(2) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.guessRightCount) + "</td>";
 
 

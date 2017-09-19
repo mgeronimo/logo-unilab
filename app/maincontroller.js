@@ -85,6 +85,12 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     }
 
     $scope.startGame = function() {
+        $.notify({
+            title: '<strong>Heads up!</strong>',
+            message: 'You can use any of bootstraps other alert styles as well by default.'
+        }, {
+            type: 'success'
+        });
         console.log("started game");
         $('#scoreText').show();
         $('#questionText').html('What brand has this image/logo?');
@@ -261,8 +267,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         if (arrayCount == itemCount - 1) {
             $scope.end();
             return;
-        }
-        else arrayCount++;
+        } else arrayCount++;
 
         $scope.part1 = $scope.imageSrc[array[arrayCount]].part1.src;
         $scope.part2 = $scope.imageSrc[array[arrayCount]].part2.src;
