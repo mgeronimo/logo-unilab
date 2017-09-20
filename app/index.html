@@ -48,10 +48,13 @@
             </div>
         </div>
 
-        <h5 id="questionText" class="question">
+        <h5 id="questionText" class="question special-font">
 		Can you guess each of the brand logos within 30 seconds?
 	</h5>
-        <h5 id="scoreText" class="question" hidden>
+        <h5 id="fastestBrandText" id="questionText" class="question special-font" hidden>
+            The brand you guessed the fastest is {{fastestBrand}} at {{fastestTime}} second(s).
+	</h5>
+        <h5 id="scoreText" class="question special-font" hidden>
             Current score: {{finalScore}}
     </h5>
         <br>
@@ -65,13 +68,13 @@
             <button id="logoutBtn" ng-click="fbLogout()" class="btn-large blue waves-effect waves-light"
                 style="display:none">FB Logout</button> -->
             <div class="play-buttons" ng-hide="playButtonsHide">
-                <input ng-keydown="$event.keyCode === 13 && guess()" class="thick-border answer"
+                <input ng-keydown="$event.keyCode === 13 && guess()" class="special-font thick-border answer"
                     placeholder="Guess here!">
-                <button ng-click="showHint()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
-                <button ng-click="guess()" class="decision-button btn-large blue waves-effect waves-light">Guess!</button>
-                <button ng-click="skip()" class="decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Skip</button>
+                <button ng-click="showHint()" class="special-font decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Hint</button>
+                <button ng-click="guess()" class="special-font decision-button btn-large blue waves-effect waves-light">Guess!</button>
+                <button ng-click="skip()" class="special-font decision-button btn-large grey lighten-3 waves-effect waves-light black-text">Skip</button>
                 <div id="progressBar"></div>
-                <h5 class="question">
+                <h5 class="special-font question">
                     {{itemLeft}}/{{itemCount}}
                 </h5>
                 <timer interval="1000" countdown="time" autostart="false" class="transparent"></timer>

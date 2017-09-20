@@ -28,6 +28,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
 
     //Initialize array of scores
     $scope.scoreArray = new Map();
+    $scope.fastestGuess = new Map();
 
     //Initialize Facebook provider object;
     var provider = new firebase.auth.FacebookAuthProvider();
@@ -85,12 +86,6 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     }
 
     $scope.startGame = function() {
-        $.notify({
-            title: '<strong>Heads up!</strong>',
-            message: 'You can use any of bootstraps other alert styles as well by default.'
-        }, {
-            type: 'success'
-        });
         console.log("started game");
         $('#scoreText').show();
         $('#questionText').html('What brand has this image/logo?');
@@ -155,6 +150,24 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         $scope.playButtonsHide = true;
         $('.sk-cube-grid').hide();
         $('#wholeGame').show();
+
+        //Get fastest time
+        var minTime = 31;
+        for (var [brand, time] of $scope.fastestGuess) {
+            console.log(brand + ' = ' + time);
+            if (time < minTime) minTime = time;
+        }
+
+        for (var [brand, time] of $scope.fastestGuess) {
+            console.log(brand + ' = ' + time);
+            if (time == minTime) {
+                $scope.fastestBrand = brand;
+                $scope.fastestTime = time;
+            }
+        }
+        $('#questionText').hide();
+        $('#fastestBrandText').show();
+
         Materialize.toast('Congratulations!', 3000, 'successToast');
         var scoreText = "";
         if ($scope.finalScore < 20) {
@@ -322,7 +335,9 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
             totalScore = hintScore + timeScore;
             console.log("Your total score is: " + totalScore);
 
-            //Log score for current guess
+            $scope.fastestGuess.set(rightAnswer, currentTime);
+            console.log($scope.fastestGuess);
+
             $scope.scoreArray.set(rightAnswer, totalScore);
             console.log($scope.scoreArray);
 

@@ -1,5 +1,14 @@
 /* app css stylesheet */
 
+@font-face {
+    font-family: "adam-gorry";
+    src: url('font/adam_gorry_lights.ttf') format("truetype");
+}
+
+.special-font {
+    font-family: "adam-gorry";
+}
+
 #wholeGame {
     margin-top: 50px;
 }
@@ -138,8 +147,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.start-button {
-}
+.start-button {}
 
 .quadrant {
     height: 15vh;
