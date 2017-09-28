@@ -5,6 +5,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
     $scope.part3 = "images/speedlogo-3.gif";
     $scope.part4 = "images/speedlogo-4.gif";
     $scope.imageSrc = $firebaseArray(ref);
+    console.log($scope.imageSrc);
     $scope.imageSrc.$loaded().then(function() {
         console.log($scope.imageSrc[0].part1.src);
 
@@ -301,7 +302,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         rightAnswer = rightAnswer.replace(/\s+/g, '');
         rightAnswer = rightAnswer.toLowerCase();
 
-        if (userAnswer === rightAnswer) {
+        if (userAnswer === rightAnswer || (rightAnswer=="mcdo" && userAnswer=="mcdonalds") || (rightAnswer=="kremils" && userAnswer=="kremil s") || (rightAnswer=="kremils" && userAnswer=="kremil-s")) {
             var hintScore;
             var timeScore;
             var currentTime = $scope.currentTime;
