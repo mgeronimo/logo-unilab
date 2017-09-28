@@ -302,7 +302,7 @@ angular.module('myApp').controller("MainController", function($scope, $firebaseO
         rightAnswer = rightAnswer.replace(/\s+/g, '');
         rightAnswer = rightAnswer.toLowerCase();
 
-        if (userAnswer === rightAnswer || (rightAnswer=="mcdo" && userAnswer=="mcdonalds") || (rightAnswer=="kremils" && userAnswer=="kremil s") || (rightAnswer=="kremils" && userAnswer=="kremil-s")) {
+        if (userAnswer === rightAnswer || (rightAnswer=="mcdo" && userAnswer=="mcdonalds") || (rightAnswer=="mcdo" && userAnswer=="mcdonald's") || (rightAnswer=="kremils" && userAnswer=="kremil s") || (rightAnswer=="kremils" && userAnswer=="kremil-s") || (rightAnswer=="kremils" && userAnswer=="kremil")) {
             var hintScore;
             var timeScore;
             var currentTime = $scope.currentTime;
