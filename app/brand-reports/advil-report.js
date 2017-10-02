@@ -7,7 +7,7 @@ window.onload = function() {
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.attempt) + "</td>";
+            //reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.attempt) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firstGuess) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firsthints) + "</td>";
             reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firstSeconds) + "</td>";
