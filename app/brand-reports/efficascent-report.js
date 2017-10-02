@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().efficascent.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

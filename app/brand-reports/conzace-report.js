@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().conzace.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

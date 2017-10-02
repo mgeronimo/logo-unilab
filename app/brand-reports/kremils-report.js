@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().kremils.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

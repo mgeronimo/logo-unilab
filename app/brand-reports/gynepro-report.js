@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gynepro.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

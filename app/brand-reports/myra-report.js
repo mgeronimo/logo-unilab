@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().myra.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

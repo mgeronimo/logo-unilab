@@ -6,19 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().neozep.guessRightCount) + "</td>";
-
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.guessRightCount) : "0") + "</td>";
 
             reportsTable += "</tr>";
             ccount++;

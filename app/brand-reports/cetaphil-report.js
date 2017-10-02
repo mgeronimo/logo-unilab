@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().cetaphil.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

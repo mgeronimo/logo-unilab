@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().biogesic.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().skelan.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('skelan') ? checkUndefined(childSnapshot.val().skelan.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

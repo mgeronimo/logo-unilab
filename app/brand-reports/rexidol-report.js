@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().rexidol.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";
