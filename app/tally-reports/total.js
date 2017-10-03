@@ -2,7 +2,7 @@ window.onload = function() {
 
     var advilCounter = 0;
     var ref2 = firebase.database().ref().child("users/");
-    ref.once("value").then(function(snapshot) {
+    ref2.once("value").then(function(snapshot) {
         console.log(snapshot.val().length);
         if(snapshot.hasChild('advil')) advilCounter++;
     });
