@@ -3,10 +3,14 @@ window.onload = function() {
     var advilCounter = 0;
     var ref2 = firebase.database().ref().child("users");
     ref2.once("value").then(function(snapshot) {
-        console.log(snapshot.val().length);
-        if(snapshot.hasChild('advil')) advilCounter++;
+        snapshot.forEach(function(childSnapshot) {
+            console.log(childSnapshot.val().length);
+            if(childSnapshot.hasChild('advil')) advilCounter++;
 
-        console.log(advilCounter);
+        }
+
+            console.log(advilCounter);
+        
 
     });
 
