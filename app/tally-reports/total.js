@@ -5,9 +5,11 @@ window.onload = function() {
     ref2.once("value").then(function(snapshot) {
         console.log(snapshot.val().length);
         if(snapshot.hasChild('advil')) advilCounter++;
+
+        console.log(advilCounter);
+
     });
 
-    console.log(advilCounter);
 
     var ref = firebase.database().ref().child("tally/");
     var newArray = [];
