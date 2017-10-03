@@ -3,7 +3,7 @@ window.onload = function() {
     var newArray = [];
     var indexArray = [];
     ref.once("value").then(function(snapshot) {
-
+        console.log(snapshot);
         var i = 0;
         var advilCount = 0;
 
