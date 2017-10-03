@@ -1,9 +1,19 @@
 window.onload = function() {
+
+    var advilCounter = 0;
+    var ref2 = firebase.database().ref().child("users/");
+    ref.once("value").then(function(snapshot) {
+        console.log(snapshot.val().length);
+        if(snapshot.hasChild('advil')) advilCounter++;
+    }
+
+    console.log(advilCounter);
+
     var ref = firebase.database().ref().child("tally/");
     var newArray = [];
     var indexArray = [];
     ref.once("value").then(function(snapshot) {
-        console.log(snapshot.val().user);
+
         var i = 0;
         var advilCount = 0;
 
