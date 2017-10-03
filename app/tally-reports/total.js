@@ -3,11 +3,14 @@ window.onload = function() {
     var newArray = [];
     var indexArray = [];
     ref.once("value").then(function(snapshot) {
-        console.log(snapshot.val().length);
+
         var i = 0;
+        var advilCount = 0;
+
         document.getElementById("advilScore").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgScore.toFixed(2) : 0;
         document.getElementById("advilHints").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgHints.toFixed(2) : 0;
         document.getElementById("advilSeconds").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgSeconds.toFixed(2) : 0;
+        document.getElementById("advilRespondent").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? advilCount++ : 0;
 
         document.getElementById("alaxanScore").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgScore.toFixed(2) : 0;
         document.getElementById("alaxanHints").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgHints.toFixed(2) : 0;
