@@ -7,10 +7,10 @@ window.onload = function() {
             console.log(childSnapshot.val().length);
             if(childSnapshot.hasChild('advil')) advilCounter++;
 
-        }
+        });
 
             console.log(advilCounter);
-        
+
 
     });
 
