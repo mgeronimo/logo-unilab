@@ -5,7 +5,7 @@ window.onload = function() {
     ref.once("value").then(function(snapshot) {
         console.log(snapshot.val().length);
         if(snapshot.hasChild('advil')) advilCounter++;
-    }
+    });
 
     console.log(advilCounter);
 
