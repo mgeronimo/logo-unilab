@@ -31,12 +31,17 @@ window.onload = function() {
     var uhpCounter = 0;
     var unilabCounter = 0;
     var vicksCounter = 0;
+    var totalRespondents = 0;
+
 
     var respondent = firebase.database().ref().child("users");
 
     respondent.once("value").then(function(snapshot) {
+        console.log(snapshot.val());
         snapshot.forEach(function(childSnapshot) {
             
+            totalRespondents++;
+
             if(childSnapshot.hasChild('advil'))     advilCounter++;
             if(childSnapshot.hasChild('alaxan'))    alaxanCounter++;
             if(childSnapshot.hasChild('allerta'))   allertaCounter++;
@@ -69,9 +74,15 @@ window.onload = function() {
             if(childSnapshot.hasChild('unilab'))    unilabCounter++;
             if(childSnapshot.hasChild('vicks'))     vicksCounter++;
 
+            /*totalRespondents = (parseInt(advilCounter) + parseInt(alaxanCounter) + parseInt(allertaCounter) + parseInt(ascofCounter) + parseInt(biofluCounter) + parseInt(biogesicCounter) + 
+                parseInt(celetequeCounter) + parseInt(centrumCounter) + parseInt(cetaphilCounter) + parseInt(conzaceCounter) +
+                parseInt(decolgenCounter) + parseInt(diatabsCounter) + parseInt(efficascentCounter) + parseInt(enervonCounter) + parseInt(gatoradeCounter) + parseInt(gyneproCounter) + 
+                parseInt(kremilsCounter) + parseInt(lactacydCounter) + parseInt(mcdoCounter) + parseInt(myraCounter) + parseInt(neozepCounter) +
+                parseInt(phcareCounter) + parseInt(rexidolCounter) + parseInt(ritemedCounter) + parseInt(robitussinCounter) + parseInt(skelanCounter) + parseInt(solmuxCounter) + 
+                parseInt(tgpCounter) + parseInt(uhpCounter) + parseInt(unilabCounter) + parseInt(vicksCounter));*/
+
         });
     });
-
 
     var ref = firebase.database().ref().child("tally/");
     var newArray = [];
@@ -238,14 +249,19 @@ window.onload = function() {
         $('.sk-cube-grid').hide();
         $('#exportButton').show();
         $('#mainTable').show();
-        $('#mainTable').DataTable();
+        //$('#mainTable').DataTable();
 
 
     }).catch(function(error) {
         console.log(error)
     });
 
+    setTimeout(function(){ document.getElementById("totalRespondents").innerHTML = totalRespondents } , 3000 );
+    //document.getElementById("totalRespondents").innerHTML = totalRespondents;
+
 }
+
+
 
 function checkUndefined(val) {
     var v = val;
