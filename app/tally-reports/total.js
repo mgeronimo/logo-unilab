@@ -246,6 +246,43 @@ window.onload = function() {
         document.getElementById("vicksSeconds").innerHTML = snapshot.hasChild('vicks') && snapshot.val().vicks.total != null ? snapshot.val().vicks.total.avgSeconds.toFixed(2) : 0;
         document.getElementById("vicksRespondent").innerHTML = vicksCounter;
 
+        var totalAvgScore = parseInt($('#advilScore').text()) + parseInt($('#alaxanScore').text()) + parseInt($('#ascofScore').text()) + parseInt($('#biofluScore').text()) +
+            parseInt($('#biogesicScore').text()) + parseInt($('#celetequeScore').text()) + parseInt($('#centrumScore').text()) + parseInt($('#cetaphilScore').text()) + 
+            parseInt($('#conzaceScore').text()) + parseInt($('#decolgenScore').text()) + parseInt($('#diatabsScore').text()) + parseInt($('#efficascentScore').text()) +
+            parseInt($('#enervonScore').text()) + parseInt($('#gatoradeScore').text()) + parseInt($('#gyneproScore').text()) + parseInt($('#kremilsScore').text()) +
+            parseInt($('#lactacydScore').text()) + parseInt($('#mcdoScore').text()) + parseInt($('#myraScore').text()) + parseInt($('#neozepScore').text()) +
+            parseInt($('#phcareScore').text()) + parseInt($('#rexidolScore').text()) + parseInt($('#ritemedScore').text()) + parseInt($('#robitussinScore').text()) +
+            parseInt($('#skelanScore').text()) + parseInt($('#solmuxScore').text()) + parseInt($('#tgpScore').text()) + parseInt($('#uhpScore').text()) +
+            parseInt($('#unilabScore').text()) + parseInt($('#vicksScore').text()) + parseInt($('#allertaScore').text());
+
+        var totalAvgHint = parseInt($('#advilHints').text()) + parseInt($('#alaxanHints').text()) + parseInt($('#ascofHints').text()) + parseInt($('#biofluHints').text()) +
+            parseInt($('#biogesicHints').text()) + parseInt($('#celetequeHints').text()) + parseInt($('#centrumHints').text()) + parseInt($('#cetaphilHints').text()) + 
+            parseInt($('#conzaceHints').text()) + parseInt($('#decolgenHints').text()) + parseInt($('#diatabsHints').text()) + parseInt($('#efficascentHints').text()) +
+            parseInt($('#enervonHints').text()) + parseInt($('#gatoradeHints').text()) + parseInt($('#gyneproHints').text()) + parseInt($('#kremilsHints').text()) +
+            parseInt($('#lactacydHints').text()) + parseInt($('#mcdoHints').text()) + parseInt($('#myraHints').text()) + parseInt($('#neozepHints').text()) +
+            parseInt($('#phcareHints').text()) + parseInt($('#rexidolHints').text()) + parseInt($('#ritemedHints').text()) + parseInt($('#robitussinHints').text()) +
+            parseInt($('#skelanHints').text()) + parseInt($('#solmuxHints').text()) + parseInt($('#tgpHints').text()) + parseInt($('#uhpHints').text()) +
+            parseInt($('#unilabHints').text()) + parseInt($('#vicksHints').text()) + parseInt($('#allertaHints').text());
+
+        var totalAvgSecond = parseInt($('#advilSeconds').text()) + parseInt($('#alaxanSeconds').text()) + parseInt($('#ascofSeconds').text()) + parseInt($('#biofluSeconds').text()) +
+            parseInt($('#biogesicSeconds').text()) + parseInt($('#celetequeSeconds').text()) + parseInt($('#centrumSeconds').text()) + parseInt($('#cetaphilSeconds').text()) + 
+            parseInt($('#conzaceSeconds').text()) + parseInt($('#decolgenSeconds').text()) + parseInt($('#diatabsSeconds').text()) + parseInt($('#efficascentSeconds').text()) +
+            parseInt($('#enervonSeconds').text()) + parseInt($('#gatoradeSeconds').text()) + parseInt($('#gyneproSeconds').text()) + parseInt($('#kremilsSeconds').text()) +
+            parseInt($('#lactacydSeconds').text()) + parseInt($('#mcdoSeconds').text()) + parseInt($('#myraSeconds').text()) + parseInt($('#neozepSeconds').text()) +
+            parseInt($('#phcareSeconds').text()) + parseInt($('#rexidolSeconds').text()) + parseInt($('#ritemedSeconds').text()) + parseInt($('#robitussinSeconds').text()) +
+            parseInt($('#skelanSeconds').text()) + parseInt($('#solmuxSeconds').text()) + parseInt($('#tgpSeconds').text()) + parseInt($('#uhpSeconds').text()) +
+            parseInt($('#unilabSeconds').text()) + parseInt($('#vicksSeconds').text()) + parseInt($('#allertaSeconds').text());
+
+        totalAvgScore = totalAvgScore / 31;
+        totalAvgHint  = totalAvgHint / 31;
+        totalAvgSecond  = totalAvgSecond / 31;
+
+        document.getElementById("totalRespondents").innerHTML = totalRespondents;
+        document.getElementById("totalAvgScore").innerHTML = totalAvgScore.toFixed(2);
+        document.getElementById("totalAvgHint").innerHTML = totalAvgHint.toFixed(2);
+        document.getElementById("totalAvgSecond").innerHTML = totalAvgSecond.toFixed(2);
+
+
         $('.sk-cube-grid').hide();
         $('#exportButton').show();
         $('#mainTable').show();
@@ -256,8 +293,7 @@ window.onload = function() {
         console.log(error)
     });
 
-    setTimeout(function(){ document.getElementById("totalRespondents").innerHTML = totalRespondents } , 3000 );
-    //document.getElementById("totalRespondents").innerHTML = totalRespondents;
+    //setTimeout(function(){ document.getElementById("totalRespondents").innerHTML = totalRespondents } , 9000 );
 
 }
 
