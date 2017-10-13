@@ -130,7 +130,7 @@ window.onload = function() {
     var respondent = firebase.database().ref().child("users");
 
     respondent.once("value").then(function(snapshot) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
         snapshot.forEach(function(childSnapshot) {
             
             totalRespondents++;
@@ -186,7 +186,7 @@ window.onload = function() {
 
             if(childSnapshot.hasChild('centrum')) {
                 centrumCorrectCounter = (centrumCorrectCounter + childSnapshot.val().centrum.guessRightCount);
-                centrumIncorrectCounter = (centrumIncorrectCounter + (parseInt(childSnapshot.val().centrum.attempt) - parseInt(childSnapshot.val().centrum.guessRightCount)));
+                centrumIncorrectCounter = (centrumIncorrectCounter + ((childSnapshot.val().centrum.attempt == null ? 0 : childSnapshot.val().centrum.attempt) - (childSnapshot.val().centrum.guessRightCount == null ? 0 : childSnapshot.val().centrum.guessRightCount)));
             }else{
                 centrumSkipCounter++;
             }
@@ -214,14 +214,14 @@ window.onload = function() {
 
             if(childSnapshot.hasChild('diatabs')) {
                 diatabsCorrectCounter = (diatabsCorrectCounter + childSnapshot.val().diatabs.guessRightCount);
-                diatabsIncorrectCounter = (diatabsIncorrectCounter + (childSnapshot.val().diatabs.attempt - childSnapshot.val().diatabs.guessRightCount));
+                diatabsIncorrectCounter = (diatabsIncorrectCounter + ((childSnapshot.val().diatabs.attempt == null ? 0 : childSnapshot.val().diatabs.attempt) - (childSnapshot.val().diatabs.guessRightCount == null ? 0 : childSnapshot.val().diatabs.guessRightCount)));
             }else{
                 diatabsSkipCounter++;
             }
 
             if(childSnapshot.hasChild('efficascent')) {
-                efficascentCorrectCounter = (efficascentCorrectCounter + childSnapshot.val().efficascent.guessRightCount);
-                efficascentIncorrectCounter = (efficascentIncorrectCounter + (childSnapshot.val().efficascent.attempt - childSnapshot.val().efficascent.guessRightCount));
+                efficascentCorrectCounter = (efficascentCorrectCounter + (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount));
+                efficascentIncorrectCounter = (efficascentIncorrectCounter + ((childSnapshot.val().efficascent.attempt == null ? 0 : childSnapshot.val().efficascent.attempt) - (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount)));
             }else{
                 efficascentSkipCounter++;
             }
@@ -262,8 +262,8 @@ window.onload = function() {
             }
 
             if(childSnapshot.hasChild('mcdo')) {
-                mcdoCorrectCounter = (mcdoCorrectCounter + childSnapshot.val().mcdo.guessRightCount);
-                mcdoIncorrectCounter = (mcdoIncorrectCounter + (childSnapshot.val().mcdo.attempt - childSnapshot.val().mcdo.guessRightCount));
+                mcdoCorrectCounter = (mcdoCorrectCounter + (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount));
+                mcdoIncorrectCounter = (mcdoIncorrectCounter + ((childSnapshot.val().mcdo.attempt == null ? 0 : childSnapshot.val().mcdo.attempt) - (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount)));
             }else{
                 mcdoSkipCounter++;
             }
@@ -311,8 +311,8 @@ window.onload = function() {
             }
 
             if(childSnapshot.hasChild('skelan')) {
-                skelanCorrectCounter = (skelanCorrectCounter + childSnapshot.val().skelan.guessRightCount);
-                skelanIncorrectCounter = (skelanIncorrectCounter + (childSnapshot.val().skelan.attempt - childSnapshot.val().skelan.guessRightCount));
+                skelanCorrectCounter = (skelanCorrectCounter + (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount));
+                skelanIncorrectCounter = (skelanIncorrectCounter + ((childSnapshot.val().skelan.attempt == null ? 0 : childSnapshot.val().skelan.attempt) - (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount)));
             }else{
                 skelanSkipCounter++;
             }
@@ -618,7 +618,7 @@ window.onload = function() {
         document.getElementById("totalAvgSecond").innerHTML = totalAvgSecond.toFixed(2);
         //$('#total2').text(totalRespondents);
 
-        $('td:contains("NaN")').text(0);
+        //$('td:contains("NaN")').text(0);
 
 
         $('.sk-cube-grid').hide();
