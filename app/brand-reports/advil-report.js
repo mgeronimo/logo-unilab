@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            //reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().advil.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.attempt) : "0")  + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstGuess) : "0")  + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firsthints) : "0")  + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstSeconds) : "0")  + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

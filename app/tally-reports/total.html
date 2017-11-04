@@ -127,12 +127,15 @@
                                       <div class="sk-cube sk-cube8"></div>
                                       <div class="sk-cube sk-cube9"></div>
                                     </div>
-                                    <table id="mainTable" class="table centered highlight bordered" hidden>
+                                    <table id="mainTable" class="table centered highlight bordered  table-striped" hidden>
                                         <thead class="text-primary">
                                             <th>Brand</th>
                                             <th>Average Score</th>
                                             <th>Average Hints</th>
                                             <th>Average Seconds</th>
+                                            <th>Guessed Correctly</th>
+                                            <th>Guessed Incorrectly</th>
+                                            <th>Skipped Guessing</th>
                                         </thead>
                                         <tbody id="alaxan">
                                             <tr>
@@ -140,186 +143,287 @@
                                                 <td id="advilScore"></td>
                                                 <td id="advilHints"></td>
                                                 <td id="advilSeconds"></td>
+                                                <td id="advilCorrect"></td>
+                                                <td id="advilIncorrect"></td>
+                                                <td id="advilSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Alaxan</td>
                                                 <td id="alaxanScore"></td>
                                                 <td id="alaxanHints"></td>
                                                 <td id="alaxanSeconds"></td>
+                                                <td id="alaxanCorrect"></td>
+                                                <td id="alaxanIncorrect"></td>
+                                                <td id="alaxanSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Allerta</td>
                                                 <td id="allertaScore"></td>
                                                 <td id="allertaHints"></td>
                                                 <td id="allertaSeconds"></td>
+                                                <td id="allertaCorrect"></td>
+                                                <td id="allertaIncorrect"></td>
+                                                <td id="allertaSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Ascof</td>
                                                 <td id="ascofScore"></td>
                                                 <td id="ascofHints"></td>
                                                 <td id="ascofSeconds"></td>
+                                                <td id="ascofCorrect"></td>
+                                                <td id="ascofIncorrect"></td>
+                                                <td id="ascofSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Bioflu</td>
                                                 <td id="biofluScore"></td>
                                                 <td id="biofluHints"></td>
                                                 <td id="biofluSeconds"></td>
+                                                <td id="biofluCorrect"></td>
+                                                <td id="biofluIncorrect"></td>
+                                                <td id="biofluSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Biogesic</td>
                                                 <td id="biogesicScore"></td>
                                                 <td id="biogesicHints"></td>
                                                 <td id="biogesicSeconds"></td>
+                                                <td id="biogesicCorrect"></td>
+                                                <td id="biogesicIncorrect"></td>
+                                                <td id="biogesicSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Celeteque</td>
                                                 <td id="celetequeScore"></td>
                                                 <td id="celetequeHints"></td>
                                                 <td id="celetequeSeconds"></td>
+                                                <td id="celetequeCorrect"></td>
+                                                <td id="celetequeIncorrect"></td>
+                                                <td id="celetequeSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Centrum</td>
                                                 <td id="centrumScore"></td>
                                                 <td id="centrumHints"></td>
                                                 <td id="centrumSeconds"></td>
+                                                <td id="centrumCorrect"></td>
+                                                <td id="centrumIncorrect"></td>
+                                                <td id="centrumSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Cetaphil</td>
                                                 <td id="cetaphilScore"></td>
                                                 <td id="cetaphilHints"></td>
                                                 <td id="cetaphilSeconds"></td>
+                                                <td id="cetaphilCorrect"></td>
+                                                <td id="cetaphilIncorrect"></td>
+                                                <td id="cetaphilSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Conzace</td>
                                                 <td id="conzaceScore"></td>
                                                 <td id="conzaceHints"></td>
                                                 <td id="conzaceSeconds"></td>
+                                                <td id="conzaceCorrect"></td>
+                                                <td id="conzaceIncorrect"></td>
+                                                <td id="conzaceSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Decolgen</td>
                                                 <td id="decolgenScore"></td>
                                                 <td id="decolgenHints"></td>
                                                 <td id="decolgenSeconds"></td>
+                                                <td id="decolgenCorrect"></td>
+                                                <td id="decolgenIncorrect"></td>
+                                                <td id="decolgenSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Diatabs</td>
                                                 <td id="diatabsScore"></td>
                                                 <td id="diatabsHints"></td>
                                                 <td id="diatabsSeconds"></td>
+                                                <td id="diatabsCorrect"></td>
+                                                <td id="diatabsIncorrect"></td>
+                                                <td id="diatabsSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Efficascent</td>
                                                 <td id="efficascentScore"></td>
                                                 <td id="efficascentHints"></td>
                                                 <td id="efficascentSeconds"></td>
+                                                <td id="efficascentCorrect"></td>
+                                                <td id="efficascentIncorrect"></td>
+                                                <td id="efficascentSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Enervon</td>
                                                 <td id="enervonScore"></td>
                                                 <td id="enervonHints"></td>
                                                 <td id="enervonSeconds"></td>
+                                                <td id="enervonCorrect"></td>
+                                                <td id="enervonIncorrect"></td>
+                                                <td id="enervonSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Gatorade</td>
                                                 <td id="gatoradeScore"></td>
                                                 <td id="gatoradeHints"></td>
                                                 <td id="gatoradeSeconds"></td>
+                                                <td id="gatoradeCorrect"></td>
+                                                <td id="gatoradeIncorrect"></td>
+                                                <td id="gatoradeSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Gynepro</td>
                                                 <td id="gyneproScore"></td>
                                                 <td id="gyneproHints"></td>
                                                 <td id="gyneproSeconds"></td>
+                                                <td id="gyneproCorrect"></td>
+                                                <td id="gyneproIncorrect"></td>
+                                                <td id="gyneproSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Kremils</td>
                                                 <td id="kremilsScore"></td>
                                                 <td id="kremilsHints"></td>
                                                 <td id="kremilsSeconds"></td>
+                                                <td id="kremilsCorrect"></td>
+                                                <td id="kremilsIncorrect"></td>
+                                                <td id="kremilsSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Lactacyd</td>
                                                 <td id="lactacydScore"></td>
                                                 <td id="lactacydHints"></td>
                                                 <td id="lactacydSeconds"></td>
+                                                <td id="lactacydCorrect"></td>
+                                                <td id="lactacydIncorrect"></td>
+                                                <td id="lactacydSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Mcdo</td>
                                                 <td id="mcdoScore"></td>
                                                 <td id="mcdoHints"></td>
                                                 <td id="mcdoSeconds"></td>
+                                                <td id="mcdoCorrect"></td>
+                                                <td id="mcdoIncorrect"></td>
+                                                <td id="mcdoSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Myra</td>
                                                 <td id="myraScore"></td>
                                                 <td id="myraHints"></td>
                                                 <td id="myraSeconds"></td>
+                                                <td id="myraCorrect"></td>
+                                                <td id="myraIncorrect"></td>
+                                                <td id="myraSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Neozep</td>
                                                 <td id="neozepScore"></td>
                                                 <td id="neozepHints"></td>
                                                 <td id="neozepSeconds"></td>
+                                                <td id="neozepCorrect"></td>
+                                                <td id="neozepIncorrect"></td>
+                                                <td id="neozepSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Phcare</td>
                                                 <td id="phcareScore"></td>
                                                 <td id="phcareHints"></td>
                                                 <td id="phcareSeconds"></td>
+                                                <td id="phcareCorrect"></td>
+                                                <td id="phcareIncorrect"></td>
+                                                <td id="phcareSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Rexidol</td>
                                                 <td id="rexidolScore"></td>
                                                 <td id="rexidolHints"></td>
                                                 <td id="rexidolSeconds"></td>
+                                                <td id="rexidolCorrect"></td>
+                                                <td id="rexidolIncorrect"></td>
+                                                <td id="rexidolSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Ritemed</td>
                                                 <td id="ritemedScore"></td>
                                                 <td id="ritemedHints"></td>
                                                 <td id="ritemedSeconds"></td>
+                                                <td id="ritemedCorrect"></td>
+                                                <td id="ritemedIncorrect"></td>
+                                                <td id="ritemedSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Robitussin</td>
                                                 <td id="robitussinScore"></td>
                                                 <td id="robitussinHints"></td>
                                                 <td id="robitussinSeconds"></td>
+                                                <td id="robitussinCorrect"></td>
+                                                <td id="robitussinIncorrect"></td>
+                                                <td id="robitussinSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Skelan</td>
                                                 <td id="skelanScore"></td>
                                                 <td id="skelanHints"></td>
                                                 <td id="skelanSeconds"></td>
+                                                <td id="skelanCorrect"></td>
+                                                <td id="skelanIncorrect"></td>
+                                                <td id="skelanSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Solmux</td>
                                                 <td id="solmuxScore"></td>
                                                 <td id="solmuxHints"></td>
                                                 <td id="solmuxSeconds"></td>
+                                                <td id="solmuxCorrect"></td>
+                                                <td id="solmuxIncorrect"></td>
+                                                <td id="solmuxSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>The Generics Pharmacy</td>
                                                 <td id="tgpScore"></td>
                                                 <td id="tgpHints"></td>
                                                 <td id="tgpSeconds"></td>
+                                                <td id="tgpCorrect"></td>
+                                                <td id="tgpIncorrect"></td>
+                                                <td id="tgpSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>United Home</td>
                                                 <td id="uhpScore"></td>
                                                 <td id="uhpHints"></td>
                                                 <td id="uhpSeconds"></td>
+                                                <td id="uhpCorrect"></td>
+                                                <td id="uhpIncorrect"></td>
+                                                <td id="uhpSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Unilab</td>
                                                 <td id="unilabScore"></td>
                                                 <td id="unilabHints"></td>
                                                 <td id="unilabSeconds"></td>
+                                                <td id="unilabCorrect"></td>
+                                                <td id="unilabIncorrect"></td>
+                                                <td id="unilabSkip"></td>
                                             </tr>
                                             <tr>
                                                 <td>Vicks</td>
                                                 <td id="vicksScore"></td>
                                                 <td id="vicksHints"></td>
                                                 <td id="vicksSeconds"></td>
+                                                <td id="vicksCorrect"></td>
+                                                <td id="vicksIncorrect"></td>
+                                                <td id="vicksSkip"></td>
+                                            </tr>
+                                            <tr><td colspan="7">&nbsp;</td></tr>
+                                            <tr>
+                                                <td align="right">TOTAL</td>
+                                                <td align="right" id="totalAvgScore"></td>
+                                                <td align="right" id="totalAvgHint"></td>
+                                                <td align="right" id="totalAvgSecond"></td>
+                                                <td id="totalRespondents" class="text-center" colspan="3"></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -331,6 +435,35 @@
 
 
                                 <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            
+                            <div class="card-content">
+                                <h4 class="card-title">Respondents</h4>
+                                <table id="respondentsTable" class="table table-striped highlight bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Sex</th>
+                                            <th>No of Attempt</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                                <br/>
+                                <div id="exportButton2" class='button' style="text-align: center;" hidden>
+                                    <a href="#" id="exportRespondents" class="btn btn-info">Click Here To Export The Table Data into a CSV File
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -397,6 +530,7 @@
                     return $text.replace('"', '""'); // escape double quotes
                 }
             }
+
             $("#export").click(function(event) {
                 // var outputFile = 'export'
                 var outputFile = window.prompt(
@@ -408,6 +542,22 @@
                 // CSV
                 exportTableToCSV.apply(this, [$(
                     '#dvData>table'), outputFile]);
+
+                // IF CSV, don't do event.preventDefault() or return false
+                // We actually need this to be a typical hyperlink
+            });
+
+            $("#exportRespondents").click(function(event) {
+                // var outputFile = 'export'
+                var outputFile = window.prompt(
+                    "What do you want to name your output file (Note: This won't have any effect on Safari)"
+                ) || 'export';
+                outputFile = outputFile.replace('.csv', '') +
+                    '.csv'
+
+                // CSV
+                exportTableToCSV.apply(this, [$(
+                    '#respondentsTable'), outputFile]);
 
                 // IF CSV, don't do event.preventDefault() or return false
                 // We actually need this to be a typical hyperlink

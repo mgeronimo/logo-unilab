@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().enervon.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('enervon') ? checkUndefined(childSnapshot.val().enervon.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

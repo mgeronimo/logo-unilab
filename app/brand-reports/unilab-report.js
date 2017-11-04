@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().unilab.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().robitussin.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rubitussin') ? checkUndefined(childSnapshot.val().rubitussin.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

@@ -6,26 +6,27 @@ window.onload = function() {
         snapshot.forEach(function(childSnapshot) {
             if(checkUndefined(childSnapshot.val().alaxan)==undefined)
                 return;
-            else
-            {reportsTable += "<tr>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().sex) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().age) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.attempt) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstGuess) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstHints) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstSeconds) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.firstScore) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.guessRightOnAttempt) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgGuess) + "%</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgHints) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgSeconds).toFixed(2) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.avgScore).toFixed(2) + "</td>";
-                        reportsTable += "<td>" + checkUndefined(childSnapshot.val().alaxan.guessRightCount) + "</td>";
-            
-            
-                        reportsTable += "</tr>";
-                        ccount++;}
+            else{
+                reportsTable += "<tr>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().sex) + "</td>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().age) + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.attempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstGuess) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstHints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstSeconds) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.guessRightOnAttempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgGuess) : "0") + "%</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgHints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgSeconds).toFixed(2) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgScore).toFixed(2) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.guessRightCount) : "0") + "</td>";
+    
+    
+                reportsTable += "</tr>";
+                ccount++;
+            }
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('alaxan').innerHTML = reportsTable;

@@ -6,19 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().centrum.guessRightCount) + "</td>";
-
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.guessRightCount) : "0") + "</td>";
 
             reportsTable += "</tr>";
             ccount++;

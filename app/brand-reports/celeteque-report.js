@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().celeteque.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('celeteque') ? checkUndefined(childSnapshot.val().celeteque.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

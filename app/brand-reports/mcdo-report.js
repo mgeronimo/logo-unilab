@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().mcdo.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('mcdo') ? checkUndefined(childSnapshot.val().mcdo.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

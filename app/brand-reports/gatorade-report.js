@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().gatorade.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

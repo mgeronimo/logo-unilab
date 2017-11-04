@@ -6,18 +6,18 @@ window.onload = function() {
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
             reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.key) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.attempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.firstGuess) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.firsthints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.firstSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.firstScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.guessRightOnAttempt) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.avgGuess) + "%</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.avgHints) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.avgSeconds) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.avgScore) + "</td>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().solmux.guessRightCount) + "</td>";
+            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.attempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.firstGuess) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.firsthints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.firstSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.firstScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.guessRightOnAttempt) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgGuess) : "0") + "%</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgHints) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgSeconds) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgScore) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.guessRightCount) : "0") + "</td>";
 
 
             reportsTable += "</tr>";
