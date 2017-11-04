@@ -1,6 +1,7 @@
 window.onload = function() {
     var ref = firebase.database().ref().child("users");
     ref.once("value").then(function(snapshot) {
+        console.log(snapshot);
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {

@@ -3,6 +3,7 @@ window.onload = function() {
     var newArray = [];
     var indexArray = [];
     ref.once("value").then(function(snapshot) {
+        console.log(snapshot.val());
         var i = 0;
         document.getElementById("advilScore").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgScore.toFixed(2) : 0;
         document.getElementById("advilHints").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgHints.toFixed(2) : 0;
