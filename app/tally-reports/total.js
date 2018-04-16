@@ -402,6 +402,8 @@ window.onload = function() {
                     <td>'+childSnapshot.val().attempt +'</td></tr>');
             }
 
+            score = 0;
+
         });
     });
     
