@@ -2,11 +2,11 @@ window.onload = function() {
 
     var advilCorrectCounter = 0, 
         advilIncorrectCounter = 0, 
-        advilSkipCounter = 0;
-        advilTotalAttempt=0;
-        advilTotalRespondentOnFirstAttempt=0;
-        advilScoreArray = [];
-        advilHintsArray = [];
+        advilSkipCounter = 0,
+        advilTotalAttempt=0,
+        advilTotalRespondentOnFirstAttempt=0,
+        advilScoreArray = [],
+        advilHintsArray = [],
         advilSecondsArray = [];
 
     var alaxanCorrectCounter = 0, 
