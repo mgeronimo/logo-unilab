@@ -386,12 +386,12 @@ window.onload = function() {
 
             if(
                 childSnapshot.val().name != "Alexandre Gerona" 
-                || childSnapshot.val().name != "Romel Almarinez" 
-                || childSnapshot.val().name != "Madi Geronimo" 
-                || childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
-                || childSnapshot.val().name != "Bes Gaviola Chua"
-                || childSnapshot.val().name != "Khamylle Castillo"
-                || childSnapshot.val().name != "Grace Connexion"
+                && childSnapshot.val().name != "Romel Almarinez" 
+                && childSnapshot.val().name != "Madi Geronimo" 
+                && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
+                && childSnapshot.val().name != "Bes Gaviola Chua"
+                && childSnapshot.val().name != "Khamylle Castillo"
+                && childSnapshot.val().name != "Grace Connexion"
             ) {
                 $('#respondentsTable tbody').append('<tr>\
                     <td>'+totalRespondents+'</td>\
