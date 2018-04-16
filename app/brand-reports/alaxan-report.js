@@ -4,9 +4,16 @@ window.onload = function() {
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
-            if(checkUndefined(childSnapshot.val().alaxan)==undefined)
-                return;
-            else{
+            
+            if(
+                childSnapshot.val().name != "Alexandre Gerona" 
+                && childSnapshot.val().name != "Romel Almarinez" 
+                && childSnapshot.val().name != "Madi Geronimo" 
+                && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
+                && childSnapshot.val().name != "Bes Gaviola Chua"
+                && childSnapshot.val().name != "Khamylle Castillo"
+                && childSnapshot.val().name != "Grace Connexion"
+            ) {
                 reportsTable += "<tr>";
                 reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
                 reportsTable += "<td>" + checkUndefined(childSnapshot.val().sex) + "</td>";
@@ -22,11 +29,12 @@ window.onload = function() {
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgSeconds).toFixed(2) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgScore).toFixed(2) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.guessRightCount) : "0") + "</td>";
-    
-    
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.sumScore) : "0") + "</td>";
+
                 reportsTable += "</tr>";
                 ccount++;
             }
+            
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('alaxan').innerHTML = reportsTable;

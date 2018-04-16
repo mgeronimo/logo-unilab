@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gatorade') ? checkUndefined(childSnapshot.val().gatorade.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

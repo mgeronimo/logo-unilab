@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('kremils') ? checkUndefined(childSnapshot.val().kremils.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

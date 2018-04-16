@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('centrum') ? checkUndefined(childSnapshot.val().centrum.sumScore) : "0") + "</td>";
 
             reportsTable += "</tr>";
             ccount++;

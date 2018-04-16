@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('neozep') ? checkUndefined(childSnapshot.val().neozep.sumScore) : "0") + "</td>";
 
             reportsTable += "</tr>";
             ccount++;

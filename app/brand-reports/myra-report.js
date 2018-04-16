@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('myra') ? checkUndefined(childSnapshot.val().myra.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('efficascent') ? checkUndefined(childSnapshot.val().efficascent.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

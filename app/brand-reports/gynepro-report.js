@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('gynepro') ? checkUndefined(childSnapshot.val().gynepro.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

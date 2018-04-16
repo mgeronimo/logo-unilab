@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('solmux') ? checkUndefined(childSnapshot.val().solmux.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

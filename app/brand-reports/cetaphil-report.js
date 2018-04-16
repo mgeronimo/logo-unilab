@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('cetaphil') ? checkUndefined(childSnapshot.val().cetaphil.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

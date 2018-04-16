@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('rexidol') ? checkUndefined(childSnapshot.val().rexidol.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('ritemed') ? checkUndefined(childSnapshot.val().ritemed.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('ritemed') ? checkUndefined(childSnapshot.val().ritemed.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('ritemed') ? checkUndefined(childSnapshot.val().ritemed.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('ritemed') ? checkUndefined(childSnapshot.val().ritemed.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

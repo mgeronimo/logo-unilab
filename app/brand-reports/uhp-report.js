@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('uhp') ? checkUndefined(childSnapshot.val().uhp.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('uhp') ? checkUndefined(childSnapshot.val().uhp.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('uhp') ? checkUndefined(childSnapshot.val().uhp.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('uhp') ? checkUndefined(childSnapshot.val().uhp.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

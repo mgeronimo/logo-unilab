@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('conzace') ? checkUndefined(childSnapshot.val().conzace.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

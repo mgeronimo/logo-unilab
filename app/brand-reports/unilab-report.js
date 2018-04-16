@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('unilab') ? checkUndefined(childSnapshot.val().unilab.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";

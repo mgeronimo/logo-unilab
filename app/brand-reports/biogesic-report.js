@@ -18,6 +18,7 @@ window.onload = function() {
             reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgSeconds) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.avgScore) : "0") + "</td>";
             reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.guessRightCount) : "0") + "</td>";
+            reportsTable += "<td>" + (childSnapshot.hasChild('biogesic') ? checkUndefined(childSnapshot.val().biogesic.sumScore) : "0") + "</td>";
 
 
             reportsTable += "</tr>";
