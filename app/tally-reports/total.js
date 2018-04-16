@@ -137,7 +137,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('advil')) {
                 advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
                 advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
-                score = score + ( childSnapshot.val().advil.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().advil.firstScore;
             }else{
                 advilSkipCounter++;
             }
@@ -145,7 +145,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('alaxan')) {
                 alaxanCorrectCounter = (alaxanCorrectCounter + childSnapshot.val().alaxan.guessRightCount);
                 alaxanIncorrectCounter = (alaxanIncorrectCounter + (childSnapshot.val().alaxan.attempt - childSnapshot.val().alaxan.guessRightCount));
-                score = score + ( childSnapshot.val().alaxan.firstGuess ? 1 : 0 );                
+                score = score + childSnapshot.val().alaxan.firstScore;                
             }else{
                 unilabSkipCounter++;
             }
@@ -153,7 +153,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('allerta')) {
                 allertaCorrectCounter = (allertaCorrectCounter + childSnapshot.val().allerta.guessRightCount);
                 allertaIncorrectCounter = (allertaIncorrectCounter + (childSnapshot.val().allerta.attempt - childSnapshot.val().allerta.guessRightCount));
-                score = score + ( childSnapshot.val().allerta.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().allerta.firstScore;
             }else{
                 allertaSkipCounter++;
             }
@@ -161,7 +161,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('ascof')) {
                 ascofCorrectCounter = (ascofCorrectCounter + childSnapshot.val().ascof.guessRightCount);
                 ascofIncorrectCounter = (ascofIncorrectCounter + (childSnapshot.val().ascof.attempt - childSnapshot.val().ascof.guessRightCount));
-                score = score + ( childSnapshot.val().ascof.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().ascof.firstScore;
             }else{
                 ascofSkipCounter++;
             }
@@ -169,7 +169,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('bioflu')) {
                 biofluCorrectCounter = (biofluCorrectCounter + childSnapshot.val().bioflu.guessRightCount);
                 biofluIncorrectCounter = (biofluIncorrectCounter + (childSnapshot.val().bioflu.attempt - childSnapshot.val().bioflu.guessRightCount));
-                score = score + ( childSnapshot.val().bioflu.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().bioflu.firstScore;
             }else{
                 biofluSkipCounter++;
             }
@@ -177,7 +177,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('biogesic')) {
                 biogesicCorrectCounter = (biogesicCorrectCounter + childSnapshot.val().biogesic.guessRightCount);
                 biogesicIncorrectCounter = (biogesicIncorrectCounter + (childSnapshot.val().biogesic.attempt - childSnapshot.val().biogesic.guessRightCount));
-                score = score + ( childSnapshot.val().biogesic.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().biogesic.firstScore;
             }else{
                 biogesicSkipCounter++;
             }
@@ -185,7 +185,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('celeteque')) {
                 celetequeCorrectCounter = (celetequeCorrectCounter + childSnapshot.val().celeteque.guessRightCount);
                 celetequeIncorrectCounter = (celetequeIncorrectCounter + (childSnapshot.val().celeteque.attempt - childSnapshot.val().celeteque.guessRightCount));
-                score = score + ( childSnapshot.val().celeteque.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().celeteque.firstScore;
             }else{
                 celetequeSkipCounter++;
             }
@@ -193,7 +193,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('centrum')) {
                 centrumCorrectCounter = (centrumCorrectCounter + childSnapshot.val().centrum.guessRightCount);
                 centrumIncorrectCounter = (centrumIncorrectCounter + ((childSnapshot.val().centrum.attempt == null ? 0 : childSnapshot.val().centrum.attempt) - (childSnapshot.val().centrum.guessRightCount == null ? 0 : childSnapshot.val().centrum.guessRightCount)));
-                score = score + ( childSnapshot.val().centrum.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().centrum.firstScore;
             }else{
                 centrumSkipCounter++;
             }
@@ -201,7 +201,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('cetaphil')) {
                 cetaphilCorrectCounter = (cetaphilCorrectCounter + childSnapshot.val().cetaphil.guessRightCount);
                 cetaphilIncorrectCounter = (cetaphilIncorrectCounter + (childSnapshot.val().cetaphil.attempt - childSnapshot.val().cetaphil.guessRightCount));
-                score = score + ( childSnapshot.val().cetaphil.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().cetaphil.firstScore;
             }else{
                 cetaphilSkipCounter++;
             }
@@ -209,7 +209,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('conzace')) {
                 conzaceCorrectCounter = (conzaceCorrectCounter + childSnapshot.val().conzace.guessRightCount);
                 conzaceIncorrectCounter = (conzaceIncorrectCounter + (childSnapshot.val().conzace.attempt - childSnapshot.val().conzace.guessRightCount));
-                score = score + ( childSnapshot.val().conzace.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().conzace.firstScore;
             }else{
                 conzaceSkipCounter++;
             }
@@ -217,7 +217,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('decolgen')) {
                 decolgenCorrectCounter = (decolgenCorrectCounter + childSnapshot.val().decolgen.guessRightCount);
                 decolgenIncorrectCounter = (decolgenIncorrectCounter + (childSnapshot.val().decolgen.attempt - childSnapshot.val().decolgen.guessRightCount));
-                score = score + ( childSnapshot.val().decolgen.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().decolgen.firstScore;
             }else{
                 decolgenSkipCounter++;
             }
@@ -225,7 +225,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('diatabs')) {
                 diatabsCorrectCounter = (diatabsCorrectCounter + childSnapshot.val().diatabs.guessRightCount);
                 diatabsIncorrectCounter = (diatabsIncorrectCounter + ((childSnapshot.val().diatabs.attempt == null ? 0 : childSnapshot.val().diatabs.attempt) - (childSnapshot.val().diatabs.guessRightCount == null ? 0 : childSnapshot.val().diatabs.guessRightCount)));
-                score = score + ( childSnapshot.val().diatabs.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().diatabs.firstScore;
             }else{
                 diatabsSkipCounter++;
             }
@@ -233,7 +233,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('efficascent')) {
                 efficascentCorrectCounter = (efficascentCorrectCounter + (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount));
                 efficascentIncorrectCounter = (efficascentIncorrectCounter + ((childSnapshot.val().efficascent.attempt == null ? 0 : childSnapshot.val().efficascent.attempt) - (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount)));
-                score = score + ( childSnapshot.val().efficascent.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().efficascent.firstScore;
             }else{
                 efficascentSkipCounter++;
             }
@@ -241,7 +241,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('enervon')) {
                 enervonCorrectCounter = (enervonCorrectCounter + childSnapshot.val().enervon.guessRightCount);
                 enervonIncorrectCounter = (enervonIncorrectCounter + (childSnapshot.val().enervon.attempt - childSnapshot.val().enervon.guessRightCount));
-                score = score + ( childSnapshot.val().enervon.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().enervon.firstScore;
             }else{
                 enervonSkipCounter++;
             }
@@ -249,7 +249,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('gatorade')) {
                 gatoradeCorrectCounter = (gatoradeCorrectCounter + childSnapshot.val().gatorade.guessRightCount);
                 gatoradeIncorrectCounter = (gatoradeIncorrectCounter + (childSnapshot.val().gatorade.attempt - childSnapshot.val().gatorade.guessRightCount));
-                score = score + ( childSnapshot.val().gatorade.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().gatorade.firstScore;
             }else{
                 gatoradeSkipCounter++;
             }
@@ -257,7 +257,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('gynepro')) {
                 gyneproCorrectCounter = (gyneproCorrectCounter + childSnapshot.val().gynepro.guessRightCount);
                 gyneproIncorrectCounter = (gyneproIncorrectCounter + (childSnapshot.val().gynepro.attempt - childSnapshot.val().gynepro.guessRightCount));
-                score = score + ( childSnapshot.val().gynepro.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().gynepro.firstScore;
             }else{
                 gyneproSkipCounter++;
             }
@@ -265,7 +265,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('kremils')) {
                 kremilsCorrectCounter = (kremilsCorrectCounter + childSnapshot.val().kremils.guessRightCount);
                 kremilsIncorrectCounter = (kremilsIncorrectCounter + (childSnapshot.val().kremils.attempt - childSnapshot.val().kremils.guessRightCount));
-                score = score + ( childSnapshot.val().kremils.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().kremils.firstScore;
             }else{
                 kremilsSkipCounter++;
             }
@@ -273,7 +273,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('lactacyd')) {
                 lactacydCorrectCounter = (lactacydCorrectCounter + childSnapshot.val().lactacyd.guessRightCount);
                 lactacydIncorrectCounter = (lactacydIncorrectCounter + (childSnapshot.val().lactacyd.attempt - childSnapshot.val().lactacyd.guessRightCount));
-                score = score + ( childSnapshot.val().lactacyd.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().lactacyd.firstScore;
             }else{
                 lactacydSkipCounter++;
             }
@@ -281,7 +281,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('mcdo')) {
                 mcdoCorrectCounter = (mcdoCorrectCounter + (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount));
                 mcdoIncorrectCounter = (mcdoIncorrectCounter + ((childSnapshot.val().mcdo.attempt == null ? 0 : childSnapshot.val().mcdo.attempt) - (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount)));
-                score = score + ( childSnapshot.val().mcdo.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().mcdo.firstScore;
             }else{
                 mcdoSkipCounter++;
             }
@@ -289,7 +289,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('myra')) {
                 myraCorrectCounter = (myraCorrectCounter + childSnapshot.val().myra.guessRightCount);
                 myraIncorrectCounter = (myraIncorrectCounter + (childSnapshot.val().myra.attempt - childSnapshot.val().myra.guessRightCount));
-                score = score + ( childSnapshot.val().myra.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().myra.firstScore;
             }else{
                 myraSkipCounter++;
             }
@@ -297,7 +297,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('neozep')) {
                 neozepCorrectCounter = (neozepCorrectCounter + childSnapshot.val().neozep.guessRightCount);
                 neozepIncorrectCounter = (neozepIncorrectCounter + (childSnapshot.val().neozep.attempt - childSnapshot.val().neozep.guessRightCount));
-                score = score + ( childSnapshot.val().neozep.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().neozep.firstScore;
             }else{
                 neozepSkipCounter++;
             }
@@ -305,7 +305,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('phcare')) {
                 phcareCorrectCounter = (phcareCorrectCounter + childSnapshot.val().phcare.guessRightCount);
                 phcareIncorrectCounter = (phcareIncorrectCounter + (childSnapshot.val().phcare.attempt - childSnapshot.val().phcare.guessRightCount));
-                score = score + ( childSnapshot.val().phcare.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().phcare.firstScore;
             }else{
                 phcareSkipCounter++;
             }
@@ -313,7 +313,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('rexidol')) {
                 rexidolCorrectCounter = (rexidolCorrectCounter + childSnapshot.val().rexidol.guessRightCount);
                 rexidolIncorrectCounter = (rexidolIncorrectCounter + (childSnapshot.val().rexidol.attempt - childSnapshot.val().rexidol.guessRightCount));
-                score = score + ( childSnapshot.val().rexidol.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().rexidol.firstScore;
             }else{
                 rexidolSkipCounter++;
             }
@@ -321,7 +321,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('ritemed')) {
                 ritemedCorrectCounter = (ritemedCorrectCounter + childSnapshot.val().ritemed.guessRightCount);
                 ritemedIncorrectCounter = (ritemedIncorrectCounter + (childSnapshot.val().ritemed.attempt - childSnapshot.val().ritemed.guessRightCount));
-                score = score + ( childSnapshot.val().ritemed.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().ritemed.firstScore;
             }else{
                 ritemedSkipCounter++;
             }
@@ -329,7 +329,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('robitussin')) {
                 robitussinCorrectCounter = (robitussinCorrectCounter + childSnapshot.val().robitussin.guessRightCount);
                 robitussinIncorrectCounter = (robitussinIncorrectCounter + (childSnapshot.val().robitussin.attempt - childSnapshot.val().robitussin.guessRightCount));
-                score = score + ( childSnapshot.val().robitussin.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().robitussin.firstScore;
             }else{
                 robitussinSkipCounter++;
             }
@@ -337,7 +337,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('skelan')) {
                 skelanCorrectCounter = (skelanCorrectCounter + (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount));
                 skelanIncorrectCounter = (skelanIncorrectCounter + ((childSnapshot.val().skelan.attempt == null ? 0 : childSnapshot.val().skelan.attempt) - (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount)));
-                score = score + ( childSnapshot.val().skelan.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().skelan.firstScore;
             }else{
                 skelanSkipCounter++;
             }
@@ -345,7 +345,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('solmux')) {
                 solmuxCorrectCounter = (solmuxCorrectCounter + childSnapshot.val().solmux.guessRightCount);
                 solmuxIncorrectCounter = (solmuxIncorrectCounter + (childSnapshot.val().solmux.attempt - childSnapshot.val().solmux.guessRightCount));
-                score = score + ( childSnapshot.val().solmux.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().solmux.firstScore;
             }else{
                 solmuxSkipCounter++;
             }
@@ -353,7 +353,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('tgp')) {
                 tgpCorrectCounter = (tgpCorrectCounter + childSnapshot.val().tgp.guessRightCount);
                 tgpIncorrectCounter = (tgpIncorrectCounter + (childSnapshot.val().tgp.attempt - childSnapshot.val().tgp.guessRightCount));
-                score = score + ( childSnapshot.val().tgp.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().tgp.firstScore;
             }else{
                 tgpSkipCounter++;
             }
@@ -361,7 +361,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('uhp')) {
                 uhpCorrectCounter = (uhpCorrectCounter + childSnapshot.val().uhp.guessRightCount);
                 uhpIncorrectCounter = (uhpIncorrectCounter + (childSnapshot.val().uhp.attempt - childSnapshot.val().uhp.guessRightCount));
-                score = score + ( childSnapshot.val().uhp.firstGuess ? 1 : 0 );
+                score = score + childSnapshot.val().uhp.firstScore;
             }else{
                 uhpSkipCounter++;
             }
@@ -369,7 +369,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('unilab')) {
                 unilabCorrectCounter = (unilabCorrectCounter + childSnapshot.val().unilab.guessRightCount);
                 unilabIncorrectCounter = (unilabIncorrectCounter + (childSnapshot.val().unilab.attempt - childSnapshot.val().unilab.guessRightCount));
-                score = score + ( childSnapshot.val().unilab.firstGuess ? 1 : 0 ) ;
+                score = score + childSnapshot.val().unilab.firstScore;
             }else{
                 unilabSkipCounter++;
             }
@@ -377,7 +377,7 @@ window.onload = function() {
             if(childSnapshot.hasChild('vicks')) { 
                 vicksCorrectCounter = (vicksCorrectCounter + childSnapshot.val().vicks.guessRightCount);
                 vicksIncorrectCounter = (vicksIncorrectCounter + (childSnapshot.val().vicks.attempt - childSnapshot.val().vicks.guessRightCount));
-                score = score + ( childSnapshot.val().vicks.firstGuess ? 1 : 0 ) ;
+                score = score + childSnapshot.val().vicks.firstScore;
             } else {
                 vicksSkipCounter++;
             }
