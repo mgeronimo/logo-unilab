@@ -436,7 +436,7 @@ window.onload = function() {
         document.getElementById("advilIncorrect").innerHTML = advilIncorrectCounter;
         document.getElementById("advilSkip").innerHTML = advilSkipCounter;
         document.getElementById("advilTotalRespondentOnFirstAttempt").innerHTML = advilTotalRespondentOnFirstAttempt;
-        document.getElementById("advilTotalAttemp").innerHTML = advilTotalAttemp;
+        document.getElementById("advilTotalAttempt").innerHTML = advilTotalAttempt;
 
         document.getElementById("alaxanScore").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgScore.toFixed(2) : 0;
         document.getElementById("alaxanHints").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgHints.toFixed(2) : 0;
