@@ -417,6 +417,8 @@ window.onload = function() {
 
         });
     });
+
+    console.log(advilScoreArray);
     
     var ref = firebase.database().ref().child("tally/");
     var newArray = [];
