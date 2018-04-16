@@ -139,8 +139,6 @@ window.onload = function() {
         //console.log(snapshot.val());
         snapshot.forEach(function(childSnapshot) {
             
-            totalRespondents++;
-            
             if(childSnapshot.hasChild('advil')) {
                 advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
                 advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
@@ -148,6 +146,8 @@ window.onload = function() {
                 advilScoreArray.push(childSnapshot.val().advil.sumScore);
                 advilHintsArray.push(childSnapshot.val().advil.sumHints);
                 advilSecondsArray.push(childSnapshot.val().advil.sumSeconds);
+                advilTotalRespondentOnFirstAttempt = advilTotalRespondentOnFirstAttempt + (childSnapshot.val().advil.attempt == 1 ? 1 : 0);
+                advilTotalAttempt = advilTotalAttempt + childSnapshot.val().advil.attempt;
             }else{
                 advilSkipCounter++;
             }
@@ -402,7 +402,7 @@ window.onload = function() {
                 && childSnapshot.val().name != "Grace Connexion"
             ) {
 
-                totalRespondents--;
+                totalRespondents++;
 
                 $('#respondentsTable tbody').append('<tr>\
                     <td>'+totalRespondents+'</td>\
@@ -681,7 +681,7 @@ window.onload = function() {
         totalAvgHint  = totalAvgHint / 31;
         totalAvgSecond  = totalAvgSecond / 31;
 
-        document.getElementById("totalRespondents").innerHTML = totalRespondents;
+        document.getElementById("totalRespondentsOnFirstAttempt").innerHTML = totalRespondents;
         document.getElementById("totalAvgScore").innerHTML = totalAvgScore.toFixed(2);
         document.getElementById("totalAvgHint").innerHTML = totalAvgHint.toFixed(2);
         document.getElementById("totalAvgSecond").innerHTML = totalAvgSecond.toFixed(2);
