@@ -5,24 +5,35 @@ window.onload = function() {
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
-            reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.attempt) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstGuess) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firsthints) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstSeconds) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstScore) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.guessRightOnAttempt) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgGuess) : "0") + "%</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgHints) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgSeconds) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgScore) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.guessRightCount) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.sumScore) : "0") + "</td>";
+
+            if(
+                childSnapshot.val().name != "Alexandre Gerona" 
+                && childSnapshot.val().name != "Romel Almarinez" 
+                && childSnapshot.val().name != "Madi Geronimo" 
+                && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
+                && childSnapshot.val().name != "Bes Gaviola Chua"
+                && childSnapshot.val().name != "Khamylle Castillo"
+                && childSnapshot.val().name != "Grace Connexion"
+            ) {
+                reportsTable += "<tr>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.attempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstGuess) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firsthints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstSeconds) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.firstScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.guessRightOnAttempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgGuess) : "0") + "%</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgHints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgSeconds) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.avgScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.guessRightCount) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('tgp') ? checkUndefined(childSnapshot.val().tgp.sumScore) : "0") + "</td>";
 
 
-            reportsTable += "</tr>";
-            ccount++;
+                reportsTable += "</tr>";
+                ccount++;
+            }
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('tgp').innerHTML = reportsTable;

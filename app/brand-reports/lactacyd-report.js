@@ -5,24 +5,35 @@ window.onload = function() {
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
-            reportsTable += "<tr>";
-            reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.attempt) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstGuess) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firsthints) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstSeconds) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstScore) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.guessRightOnAttempt) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgGuess) : "0") + "%</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgHints) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgSeconds) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgScore) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.guessRightCount) : "0") + "</td>";
-            reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.sumScore) : "0") + "</td>";
+
+            if(
+                childSnapshot.val().name != "Alexandre Gerona" 
+                && childSnapshot.val().name != "Romel Almarinez" 
+                && childSnapshot.val().name != "Madi Geronimo" 
+                && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
+                && childSnapshot.val().name != "Bes Gaviola Chua"
+                && childSnapshot.val().name != "Khamylle Castillo"
+                && childSnapshot.val().name != "Grace Connexion"
+            ) {
+                reportsTable += "<tr>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.attempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstGuess) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firsthints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstSeconds) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.firstScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.guessRightOnAttempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgGuess) : "0") + "%</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgHints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgSeconds) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.avgScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.guessRightCount) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('lactacyd') ? checkUndefined(childSnapshot.val().lactacyd.sumScore) : "0") + "</td>";
 
 
-            reportsTable += "</tr>";
-            ccount++;
+                reportsTable += "</tr>";
+                ccount++;
+            }
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('lactacyd').innerHTML = reportsTable;
