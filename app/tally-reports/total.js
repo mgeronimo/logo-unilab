@@ -3,6 +3,11 @@ window.onload = function() {
     var advilCorrectCounter = 0, 
         advilIncorrectCounter = 0, 
         advilSkipCounter = 0;
+        advilTotalAttempt=0;
+        advilTotalFirstAttempt=0;
+        advilScoreArray = [];
+        advilHintsArray = [];
+        advilSecondsArray = [];
 
     var alaxanCorrectCounter = 0, 
         alaxanIncorrectCounter = 0, 
@@ -138,6 +143,9 @@ window.onload = function() {
                 advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
                 advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
                 score = score + childSnapshot.val().advil.firstScore;
+                advilScoreArray.push(childSnapshot.val().advil.sumScore);
+                advilHintsArray.push(childSnapshot.val().advil.sumHints);
+                advilSecondsArray.push(childSnapshot.val().advil.sumSeconds);
             }else{
                 advilSkipCounter++;
             }
@@ -416,8 +424,14 @@ window.onload = function() {
         var i = 0;
         
         document.getElementById("advilScore").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgScore.toFixed(2) : 0;
+        document.getElementById("advilHighestScore").innerHTML = Math.max(advilScoreArray);
+        document.getElementById("advilLowestScore").innerHTML = Math.min(advilScoreArray);
         document.getElementById("advilHints").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgHints.toFixed(2) : 0;
+        document.getElementById("advilHighestHints").innerHTML = Math.max(advilHintsArray);
+        document.getElementById("advilLowestHints").innerHTML = Math.min(advilHintsArray);
         document.getElementById("advilSeconds").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgSeconds.toFixed(2) : 0;
+        document.getElementById("advilHighestSeconds").innerHTML = Math.max(advilSecondsArray);
+        document.getElementById("advilLowestSeconds").innerHTML = Math.min(advilSecondsArray);
         document.getElementById("advilCorrect").innerHTML = advilCorrectCounter;
         document.getElementById("advilIncorrect").innerHTML = advilIncorrectCounter;
         document.getElementById("advilSkip").innerHTML = advilSkipCounter;
