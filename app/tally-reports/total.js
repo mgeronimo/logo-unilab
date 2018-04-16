@@ -139,6 +139,8 @@ window.onload = function() {
         //console.log(snapshot.val());
         snapshot.forEach(function(childSnapshot) {
             
+            totalRespondents++;
+            
             if(childSnapshot.hasChild('advil')) {
                 advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
                 advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
@@ -400,7 +402,7 @@ window.onload = function() {
                 && childSnapshot.val().name != "Grace Connexion"
             ) {
 
-                totalRespondents++;
+                totalRespondents--;
 
                 $('#respondentsTable tbody').append('<tr>\
                     <td>'+totalRespondents+'</td>\
