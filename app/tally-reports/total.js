@@ -398,7 +398,7 @@ window.onload = function() {
                     childSnapshot.val().centrum.sumHints > 0 ? centrumHintsArray.push(childSnapshot.val().centrum.sumHints) : '';
                     childSnapshot.val().centrum.sumSeconds > 0 ? centrumSecondsArray.push(childSnapshot.val().centrum.sumSeconds) : '';
                     centrumTotalRespondentOnFirstAttempt = centrumTotalRespondentOnFirstAttempt + (childSnapshot.val().centrum.attempt == 1 ? 1 : 0);
-                    centrumTotalAttempt = centrumTotalAttempt + childSnapshot.val().centrum.attempt; 
+                    centrumTotalAttempt = centrumTotalAttempt + (childSnapshot.val().centrum.attempt > 0 ? childSnapshot.val().centrum.attempt : 0); 
                 }else{
                     centrumSkipCounter++;
                 }
@@ -450,7 +450,7 @@ window.onload = function() {
                     childSnapshot.val().diatabs.sumHints > 0 ? diatabsHintsArray.push(childSnapshot.val().diatabs.sumHints) : '';
                     childSnapshot.val().diatabs.sumSeconds > 0 ? diatabsSecondsArray.push(childSnapshot.val().diatabs.sumSeconds) : '';
                     diatabsTotalRespondentOnFirstAttempt = diatabsTotalRespondentOnFirstAttempt + (childSnapshot.val().diatabs.attempt == 1 ? 1 : 0);
-                    diatabsTotalAttempt = diatabsTotalAttempt + childSnapshot.val().diatabs.attempt; 
+                    diatabsTotalAttempt = diatabsTotalAttempt + ( childSnapshot.val().diatabs.attempt > 0 ? childSnapshot.val().diatabs.attempt : 0); 
                 }else{
                     diatabsSkipCounter++;
                 }
@@ -463,7 +463,7 @@ window.onload = function() {
                     childSnapshot.val().efficascent.sumHints > 0 ? efficascentHintsArray.push(childSnapshot.val().efficascent.sumHints) : '';
                     childSnapshot.val().efficascent.sumSeconds > 0 ? efficascentSecondsArray.push(childSnapshot.val().efficascent.sumSeconds) : '';
                     efficascentTotalRespondentOnFirstAttempt = efficascentTotalRespondentOnFirstAttempt + (childSnapshot.val().efficascent.attempt == 1 ? 1 : 0);
-                    efficascentTotalAttempt = efficascentTotalAttempt + childSnapshot.val().efficascent.attempt; 
+                    efficascentTotalAttempt = efficascentTotalAttempt + ( childSnapshot.val().efficascent.attempt > 0 ? childSnapshot.val().efficascent.attempt : 0); 
                 }else{
                     efficascentSkipCounter++;
                 }
@@ -541,7 +541,7 @@ window.onload = function() {
                     childSnapshot.val().mcdo.sumHints > 0 ? mcdoHintsArray.push(childSnapshot.val().mcdo.sumHints) : '';
                     childSnapshot.val().mcdo.sumSeconds > 0 ? mcdoSecondsArray.push(childSnapshot.val().mcdo.sumSeconds) : '';
                     mcdoTotalRespondentOnFirstAttempt = mcdoTotalRespondentOnFirstAttempt + (childSnapshot.val().mcdo.attempt == 1 ? 1 : 0);
-                    mcdoTotalAttempt = mcdoTotalAttempt + childSnapshot.val().mcdo.attempt; 
+                    mcdoTotalAttempt = mcdoTotalAttempt + ( childSnapshot.val().mcdo.attempt > 0 ? childSnapshot.val().mcdo.attempt : 0); 
                 }else{
                     mcdoSkipCounter++;
                 }
@@ -632,7 +632,7 @@ window.onload = function() {
                     childSnapshot.val().skelan.sumHints > 0 ? skelanHintsArray.push(childSnapshot.val().skelan.sumHints) : '';
                     childSnapshot.val().skelan.sumSeconds > 0 ? skelanSecondsArray.push(childSnapshot.val().skelan.sumSeconds) : '';
                     skelanTotalRespondentOnFirstAttempt = skelanTotalRespondentOnFirstAttempt + (childSnapshot.val().skelan.attempt == 1 ? 1 : 0);
-                    skelanTotalAttempt = skelanTotalAttempt + childSnapshot.val().skelan.attempt; 
+                    skelanTotalAttempt = skelanTotalAttempt + ( childSnapshot.val().skelan.attempt > 0 ? childSnapshot.val().skelan.attempt : 0);  
                 }else{
                     skelanSkipCounter++;
                 }
