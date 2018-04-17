@@ -1,11 +1,10 @@
 window.onload = function() {
     var ref = firebase.database().ref().child("users");
-
     ref.once("value").then(function(snapshot) {
         var ccount = 0;
         var reportsTable = "";
         snapshot.forEach(function(childSnapshot) {
-
+            
             if(
                 childSnapshot.val().name != "Alexandre Gerona" 
                 && childSnapshot.val().name != "Romel Almarinez" 
@@ -17,29 +16,32 @@ window.onload = function() {
             ) {
                 reportsTable += "<tr>";
                 reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.attempt) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstGuess) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firsthints) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstSeconds) : "0")  + "</td>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().sex) + "</td>";
+                reportsTable += "<td>" + checkUndefined(childSnapshot.val().age) + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.attempt) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstGuess) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstHints) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstSeconds) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.firstScore) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.guessRightOnAttempt) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgGuess) : "0") + "%</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgHints) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgSeconds) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgScore) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgSeconds).toFixed(2) : "0") + "</td>";
+                reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.avgScore).toFixed(2) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.guessRightCount) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('alaxan') ? checkUndefined(childSnapshot.val().alaxan.sumScore) : "0") + "</td>";
-
 
                 reportsTable += "</tr>";
                 ccount++;
             }
+            
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('alaxan').innerHTML = reportsTable;
+        $('#mainTable').DataTable();
     });
 
-    
+
 
 
 }
@@ -53,7 +55,7 @@ function replaceQ(strAnswers, chars) {
 }
 
 function checkUndefined(val) {
-    var v = val;
+    // var v = val;
     if (val != undefined)
         return val;
     else return 0;
