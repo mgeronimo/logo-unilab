@@ -1049,7 +1049,7 @@ window.onload = function() {
         document.getElementById("gyneproTotalAttempt").innerHTML = gyneproTotalAttempt;
 
         document.getElementById("kremilsScore").innerHTML = snapshot.hasChild('kremils') && snapshot.val().kremils.total != null ? snapshot.val().kremils.total.avgScore.toFixed(2) : 0;
-        document.getElementById("kremilsTotalScore").innerHTML = kremilsTotalScore;
+        //document.getElementById("kremilsTotalScore").innerHTML = kremilsTotalScore;
         document.getElementById("kremilsHighestScore").innerHTML = Math.max.apply(null, kremilsScoreArray);
         document.getElementById("kremilsLowestScore").innerHTML = Math.min.apply(null, kremilsScoreArray);
         document.getElementById("kremilsHints").innerHTML = snapshot.hasChild('kremils') && snapshot.val().kremils.total != null ? snapshot.val().kremils.total.avgHints.toFixed(2) : 0;
