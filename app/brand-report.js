@@ -2,8 +2,9 @@ $(document).ready(function(){
     
     $('#txtBrand').keyup(function(){
 
-        document.getElementById('brand').id = $('#txtBrand').val();
-        document.getElementById('tableHeader').value = $('#txtBrand').val();
+        var brand = $('#txtBrand').val();
+        document.getElementById('brand').id = brand;
+        document.getElementById('tableHeader').value = brand;
         
         var ref = firebase.database().ref().child("users");
 
