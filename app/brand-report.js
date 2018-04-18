@@ -25,18 +25,18 @@ $(document).ready(function(){
                 ) {
                     reportsTable += "<tr>";
                     reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.attempt) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.firstGuess) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.firstHints) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.firstSeconds) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.firstScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.guessRightOnAttempt) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.avgGuess) : "0") + "%</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.avgHints) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.avgSeconds) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.avgScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.guessRightCount) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().brand.sumScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.attempt) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.firstGuess) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.firstHints) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.firstSeconds) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.firstScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.guessRightOnAttempt) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.avgGuess) : "0") + "%</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.avgHints) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.avgSeconds) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.avgScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.guessRightCount) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().{[brand]}.sumScore) : "0") + "</td>";
 
 
                     reportsTable += "</tr>";
