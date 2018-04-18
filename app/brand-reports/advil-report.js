@@ -21,7 +21,7 @@ window.onload = function() {
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstGuess) : "0")  + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstHints) : "0")  + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstSeconds) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstScore) : "0") + "</td>";
+                reportsTable += "<td>" + score(checkUndefined(childSnapshot.val().advil.firstGuess), checkUndefined(childSnapshot.val().advil.firstHints), checkUndefined(childSnapshot.val().advil.firstSeconds)) + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) : "0") + "</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgGuess) : "0") + "%</td>";
                 reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgHints) : "0") + "</td>";
@@ -46,36 +46,39 @@ window.onload = function() {
 
 function score(firsTry, hint, seconds) {
 
-    if(firsTry == "false") return 0;
+    if(firsTry == "true") {;
 
-    var hintScore = 0;
-    var secondsScore = 0;
+        var hintScore = 0;
+        var secondsScore = 0;
 
-    if(hint == 1) { 
-        hintScore = 50; 
-    } else if(hint == 2) {
-        hintScore = 40; 
-    } else if(hint == 3) {
-        hintScore = 20;     
-    } else if(hint == 4) {
-        hintScore = 10;     
+        if(hint == 1) { 
+            hintScore = 50; 
+        } else if(hint == 2) {
+            hintScore = 40; 
+        } else if(hint == 3) {
+            hintScore = 20;     
+        } else if(hint == 4) {
+            hintScore = 10;     
+        } else {
+            hintScore = 0;
+        }
+
+        if(seconds > 0 && seconds <= 5) { 
+            secondsScore = 50; 
+        } else if(seconds >= 6 && seconds <= 10) {
+            secondsScore = 40; 
+        } else if(seconds >= 11 && seconds <= 19) {
+            secondsScore = 20;     
+        } else if(seconds >= 20 && seconds <= 30) {
+            secondsScore = 10;     
+        } else {
+            secondsScore = 0;
+        }
+
+        return hintScore + secondsScore;
     } else {
-        hintScore = 0;
+        return 0;
     }
-
-    if(seconds > 0 && seconds <= 5) { 
-        secondsScore = 50; 
-    } else if(seconds >= 6 && seconds <= 10) {
-        secondsScore = 40; 
-    } else if(seconds >= 11 && seconds <= 19) {
-        secondsScore = 20;     
-    } else if(seconds >= 20 && seconds <= 30) {
-        secondsScore = 10;     
-    } else {
-        secondsScore = 0;
-    }
-
-    return hintScore + secondsScore;
 
 }
 
