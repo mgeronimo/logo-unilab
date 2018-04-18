@@ -860,7 +860,7 @@ window.onload = function() {
         document.getElementById("centrumTotalAttempt").innerHTML = centrumTotalAttempt;
 
         document.getElementById("cetaphilScore").innerHTML = snapshot.hasChild('cetaphil') && snapshot.val().cetaphil.total != null ? snapshot.val().cetaphil.total.avgScore.toFixed(2) : 0;
-        document.getElementById("cethaphilTotalScore").innerHTML = cethaphilScoreArray.reduce(getSum);
+        document.getElementById("cetaphilTotalScore").innerHTML = cetaphilScoreArray.reduce(getSum);
         document.getElementById("cetaphilHighestScore").innerHTML = Math.max.apply(null, cetaphilScoreArray);
         document.getElementById("cetaphilLowestScore").innerHTML = Math.min.apply(null, cetaphilScoreArray);
         document.getElementById("cetaphilHints").innerHTML = snapshot.hasChild('cetaphil') && snapshot.val().cetaphil.total != null ? snapshot.val().cetaphil.total.avgHints.toFixed(2) : 0;
