@@ -1350,7 +1350,7 @@ window.onload = function() {
         totalAvgScore = totalAvgScore / 31;
         totalAvgHint  = totalAvgHint / 31;
         totalAvgSecond  = totalAvgSecond / 31;
-        totalScore  = totalScore / 31;
+        //totalScore  = totalScore / 31;
 
         document.getElementById("totalRespondentsOnFirstAttempt").innerHTML = totalRespondents;
         document.getElementById("totalAvgScore").innerHTML = totalAvgScore.toFixed(2);
