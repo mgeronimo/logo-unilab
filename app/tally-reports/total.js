@@ -1288,32 +1288,32 @@ window.onload = function() {
         document.getElementById("vicksTotalRespondentOnFirstAttempt").innerHTML = vicksTotalRespondentOnFirstAttempt;
         document.getElementById("vicksTotalAttempt").innerHTML = vicksTotalAttempt;
 
-        var totalAvgScore = parseInt($('#advilScore').text()) + parseInt($('#alaxanScore').text()) + parseInt($('#ascofScore').text()) + parseInt($('#biofluScore').text()) +
-            parseInt($('#biogesicScore').text()) + parseInt($('#celetequeScore').text()) + parseInt($('#centrumScore').text()) + parseInt($('#cetaphilScore').text()) + 
-            parseInt($('#conzaceScore').text()) + parseInt($('#decolgenScore').text()) + parseInt($('#diatabsScore').text()) + parseInt($('#efficascentScore').text()) +
-            parseInt($('#enervonScore').text()) + parseInt($('#gatoradeScore').text()) + parseInt($('#gyneproScore').text()) + parseInt($('#kremilsScore').text()) +
-            parseInt($('#lactacydScore').text()) + parseInt($('#mcdoScore').text()) + parseInt($('#myraScore').text()) + parseInt($('#neozepScore').text()) +
-            parseInt($('#phcareScore').text()) + parseInt($('#rexidolScore').text()) + parseInt($('#ritemedScore').text()) + parseInt($('#robitussinScore').text()) +
-            parseInt($('#skelanScore').text()) + parseInt($('#solmuxScore').text()) + parseInt($('#tgpScore').text()) + parseInt($('#uhpScore').text()) +
-            parseInt($('#unilabScore').text()) + parseInt($('#vicksScore').text()) + parseInt($('#allertaScore').text());
+        var totalAvgScore = parseFloat($('#advilScore').text()) + parseFloat($('#alaxanScore').text()) + parseFloat($('#ascofScore').text()) + parseFloat($('#biofluScore').text()) +
+            parseFloat($('#biogesicScore').text()) + parseFloat($('#celetequeScore').text()) + parseFloat($('#centrumScore').text()) + parseFloat($('#cetaphilScore').text()) + 
+            parseFloat($('#conzaceScore').text()) + parseFloat($('#decolgenScore').text()) + parseFloat($('#diatabsScore').text()) + parseFloat($('#efficascentScore').text()) +
+            parseFloat($('#enervonScore').text()) + parseFloat($('#gatoradeScore').text()) + parseFloat($('#gyneproScore').text()) + parseFloat($('#kremilsScore').text()) +
+            parseFloat($('#lactacydScore').text()) + parseFloat($('#mcdoScore').text()) + parseFloat($('#myraScore').text()) + parseFloat($('#neozepScore').text()) +
+            parseFloat($('#phcareScore').text()) + parseFloat($('#rexidolScore').text()) + parseFloat($('#ritemedScore').text()) + parseFloat($('#robitussinScore').text()) +
+            parseFloat($('#skelanScore').text()) + parseFloat($('#solmuxScore').text()) + parseFloat($('#tgpScore').text()) + parseFloat($('#uhpScore').text()) +
+            parseFloat($('#unilabScore').text()) + parseFloat($('#vicksScore').text()) + parseFloat($('#allertaScore').text());
 
-        var totalAvgHint = parseInt($('#advilHints').text()) + parseInt($('#alaxanHints').text()) + parseInt($('#ascofHints').text()) + parseInt($('#biofluHints').text()) +
-            parseInt($('#biogesicHints').text()) + parseInt($('#celetequeHints').text()) + parseInt($('#centrumHints').text()) + parseInt($('#cetaphilHints').text()) + 
-            parseInt($('#conzaceHints').text()) + parseInt($('#decolgenHints').text()) + parseInt($('#diatabsHints').text()) + parseInt($('#efficascentHints').text()) +
-            parseInt($('#enervonHints').text()) + parseInt($('#gatoradeHints').text()) + parseInt($('#gyneproHints').text()) + parseInt($('#kremilsHints').text()) +
-            parseInt($('#lactacydHints').text()) + parseInt($('#mcdoHints').text()) + parseInt($('#myraHints').text()) + parseInt($('#neozepHints').text()) +
-            parseInt($('#phcareHints').text()) + parseInt($('#rexidolHints').text()) + parseInt($('#ritemedHints').text()) + parseInt($('#robitussinHints').text()) +
-            parseInt($('#skelanHints').text()) + parseInt($('#solmuxHints').text()) + parseInt($('#tgpHints').text()) + parseInt($('#uhpHints').text()) +
-            parseInt($('#unilabHints').text()) + parseInt($('#vicksHints').text()) + parseInt($('#allertaHints').text());
+        var totalAvgHint = parseFloat($('#advilHints').text()) + parseFloat($('#alaxanHints').text()) + parseFloat($('#ascofHints').text()) + parseFloat($('#biofluHints').text()) +
+            parseFloat($('#biogesicHints').text()) + parseFloat($('#celetequeHints').text()) + parseFloat($('#centrumHints').text()) + parseFloat($('#cetaphilHints').text()) + 
+            parseFloat($('#conzaceHints').text()) + parseFloat($('#decolgenHints').text()) + parseFloat($('#diatabsHints').text()) + parseFloat($('#efficascentHints').text()) +
+            parseFloat($('#enervonHints').text()) + parseFloat($('#gatoradeHints').text()) + parseFloat($('#gyneproHints').text()) + parseFloat($('#kremilsHints').text()) +
+            parseFloat($('#lactacydHints').text()) + parseFloat($('#mcdoHints').text()) + parseFloat($('#myraHints').text()) + parseFloat($('#neozepHints').text()) +
+            parseFloat($('#phcareHints').text()) + parseFloat($('#rexidolHints').text()) + parseFloat($('#ritemedHints').text()) + parseFloat($('#robitussinHints').text()) +
+            parseFloat($('#skelanHints').text()) + parseFloat($('#solmuxHints').text()) + parseFloat($('#tgpHints').text()) + parseFloat($('#uhpHints').text()) +
+            parseFloat($('#unilabHints').text()) + parseFloat($('#vicksHints').text()) + parseFloat($('#allertaHints').text());
 
-        var totalAvgSecond = parseInt($('#advilSeconds').text()) + parseInt($('#alaxanSeconds').text()) + parseInt($('#ascofSeconds').text()) + parseInt($('#biofluSeconds').text()) +
-            parseInt($('#biogesicSeconds').text()) + parseInt($('#celetequeSeconds').text()) + parseInt($('#centrumSeconds').text()) + parseInt($('#cetaphilSeconds').text()) + 
-            parseInt($('#conzaceSeconds').text()) + parseInt($('#decolgenSeconds').text()) + parseInt($('#diatabsSeconds').text()) + parseInt($('#efficascentSeconds').text()) +
-            parseInt($('#enervonSeconds').text()) + parseInt($('#gatoradeSeconds').text()) + parseInt($('#gyneproSeconds').text()) + parseInt($('#kremilsSeconds').text()) +
-            parseInt($('#lactacydSeconds').text()) + parseInt($('#mcdoSeconds').text()) + parseInt($('#myraSeconds').text()) + parseInt($('#neozepSeconds').text()) +
-            parseInt($('#phcareSeconds').text()) + parseInt($('#rexidolSeconds').text()) + parseInt($('#ritemedSeconds').text()) + parseInt($('#robitussinSeconds').text()) +
-            parseInt($('#skelanSeconds').text()) + parseInt($('#solmuxSeconds').text()) + parseInt($('#tgpSeconds').text()) + parseInt($('#uhpSeconds').text()) +
-            parseInt($('#unilabSeconds').text()) + parseInt($('#vicksSeconds').text()) + parseInt($('#allertaSeconds').text());
+        var totalAvgSecond = parseFloat($('#advilSeconds').text()) + parseFloat($('#alaxanSeconds').text()) + parseFloat($('#ascofSeconds').text()) + parseFloat($('#biofluSeconds').text()) +
+            parseFloat($('#biogesicSeconds').text()) + parseFloat($('#celetequeSeconds').text()) + parseFloat($('#centrumSeconds').text()) + parseFloat($('#cetaphilSeconds').text()) + 
+            parseFloat($('#conzaceSeconds').text()) + parseFloat($('#decolgenSeconds').text()) + parseFloat($('#diatabsSeconds').text()) + parseFloat($('#efficascentSeconds').text()) +
+            parseFloat($('#enervonSeconds').text()) + parseFloat($('#gatoradeSeconds').text()) + parseFloat($('#gyneproSeconds').text()) + parseFloat($('#kremilsSeconds').text()) +
+            parseFloat($('#lactacydSeconds').text()) + parseFloat($('#mcdoSeconds').text()) + parseFloat($('#myraSeconds').text()) + parseFloat($('#neozepSeconds').text()) +
+            parseFloat($('#phcareSeconds').text()) + parseFloat($('#rexidolSeconds').text()) + parseFloat($('#ritemedSeconds').text()) + parseFloat($('#robitussinSeconds').text()) +
+            parseFloat($('#skelanSeconds').text()) + parseFloat($('#solmuxSeconds').text()) + parseFloat($('#tgpSeconds').text()) + parseFloat($('#uhpSeconds').text()) +
+            parseFloat($('#unilabSeconds').text()) + parseFloat($('#vicksSeconds').text()) + parseFloat($('#allertaSeconds').text());
 
         totalAvgScore = totalAvgScore / 31;
         totalAvgHint  = totalAvgHint / 31;
