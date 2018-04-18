@@ -33,12 +33,11 @@
         };
         firebase.initializeApp(config);
 
-        var path = window.location.pathname.split("/");
+        /*var path = window.location.pathname.split("/");
         var brand = path[1].split("-");
-            brand = brand[0];
+            brand = brand[0];*/
     </script>
 
-    <script src="brand-report.js"></script>
     <script src="bower_components/materialize/dist/js/materialize.js"></script>
 
     <div class="wrapper">
@@ -52,6 +51,7 @@
                                 <i class="material-icons">assignment</i>
                             </div>
                             <div class="card-content">
+                                <input class="form-control col-lg-2" id="txtBrand" />
                                 <h4 class="card-title">Reports</h4>
                                 <h4 style="text-align: center">Number of responses: <span id="ccount"></span></h4>
                                 <div class='button' style="text-align: center;">
@@ -60,7 +60,7 @@
                                 </div>
                                 <br/>
                                 <div id="dvData" class="table-responsive">
-                                    <h5><script>brand</script></h5>
+                                    <h5 id="tableHeader"></h5>
                                     <table class="table centered highlight bordered">
                                         <thead class="text-primary">
                                             <th>Name</th>
@@ -94,10 +94,10 @@
     </div>
 
     <script type='text/javascript' src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+    <script src="brand-report.js"></script>    
     <script type="text/javascript">
         $(document).ready(function() {
 
-            document.getElementById('brand').id = brand;
             // This must be a hyperlink
             function exportTableToCSV($table, filename) {
                 var $headers = $table.find('tr:has(th)'),

@@ -1,49 +1,54 @@
-window.onload = function() {
+document.ready(function(){
     
-    var ref = firebase.database().ref().child("users");
+    $('#txtBrand').keyup(function(){
 
-    ref.once("value").then(function(snapshot) {
-        var ccount = 0;
-        var reportsTable = "";
-        snapshot.forEach(function(childSnapshot) {
+        document.getElementById('brand').id = $('#txtBrand').val();
+        document.getElementById('tableHeader').value = $('#txtBrand').val();
+        
+        var ref = firebase.database().ref().child("users");
 
-            if(
-                childSnapshot.val().name != "Alexandre Gerona" 
-                && childSnapshot.val().name != "Romel Almarinez" 
-                && childSnapshot.val().name != "Madi Geronimo" 
-                && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
-                && childSnapshot.val().name != "Bes Gaviola Chua"
-                && childSnapshot.val().name != "Khamylle Castillo"
-                && childSnapshot.val().name != "Grace Connexion"
-            ) {
-                reportsTable += "<tr>";
-                reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).attempt) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstGuess) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstHints) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstSeconds) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).guessRightOnAttempt) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgGuess) : "0") + "%</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgHints) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgSeconds) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).guessRightCount) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).sumScore) : "0") + "</td>";
+        ref.once("value").then(function(snapshot) {
+            var ccount = 0;
+            var reportsTable = "";
+            snapshot.forEach(function(childSnapshot) {
+
+                if(
+                    childSnapshot.val().name != "Alexandre Gerona" 
+                    && childSnapshot.val().name != "Romel Almarinez" 
+                    && childSnapshot.val().name != "Madi Geronimo" 
+                    && childSnapshot.val().name != "Joanne Carla Blanco Almarinez"
+                    && childSnapshot.val().name != "Bes Gaviola Chua"
+                    && childSnapshot.val().name != "Khamylle Castillo"
+                    && childSnapshot.val().name != "Grace Connexion"
+                ) {
+                    reportsTable += "<tr>";
+                    reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).attempt) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstGuess) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstHints) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstSeconds) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).firstScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).guessRightOnAttempt) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgGuess) : "0") + "%</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgHints) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgSeconds) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).avgScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).guessRightCount) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().eval(brand).sumScore) : "0") + "</td>";
 
 
-                reportsTable += "</tr>";
-                ccount++;
-            }
+                    reportsTable += "</tr>";
+                    ccount++;
+                }
+            });
+            document.getElementById('ccount').innerHTML = ccount;
+            document.getElementById(brand).innerHTML = reportsTable;
         });
-        document.getElementById('ccount').innerHTML = ccount;
-        document.getElementById(brand).innerHTML = reportsTable;
-    });
 
     
+    })
 
-
-}
+});
 
 function replaceQ(strAnswers, chars) {
     var i = 0;
