@@ -6,10 +6,6 @@ $(document).ready(function(){
         brand = $('#txtBrand').val();
         //document.getElementById('brand').id = brand;
         document.getElementById('tableHeader').value = brand;
-
-        var report = new object;
-        var a = 'brand';
-        report[a] = brand;
         
         var ref = firebase.database().ref().child("users");
 
@@ -29,18 +25,18 @@ $(document).ready(function(){
                 ) {
                     reportsTable += "<tr>";
                     reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.attempt) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.firstGuess) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.firstHints) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.firstSeconds) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.firstScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.guessRightOnAttempt) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.avgGuess) : "0") + "%</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.avgHints) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.avgSeconds) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.avgScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.guessRightCount) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().report.brand.sumScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].attempt) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstGuess) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstHints) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstSeconds) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].guessRightOnAttempt) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgGuess) : "0") + "%</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgHints) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgSeconds) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].guessRightCount) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].sumScore) : "0") + "</td>";
 
 
                     reportsTable += "</tr>";
