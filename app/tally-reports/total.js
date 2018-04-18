@@ -4,6 +4,7 @@ window.onload = function() {
         advilIncorrectCounter = 0, 
         advilSkipCounter = 0,
         advilTotalAttempt=0,
+        advilTotalScore=0,
         advilTotalRespondentOnFirstAttempt=0,
         advilScoreArray = [],
         advilHintsArray = [],
@@ -13,6 +14,7 @@ window.onload = function() {
         alaxanIncorrectCounter = 0, 
         alaxanSkipCounter = 0;
         alaxanTotalAttempt=0,
+        alaxanTotalScore=0,
         alaxanTotalRespondentOnFirstAttempt=0,
         alaxanScoreArray = [],
         alaxanHintsArray = [],
@@ -22,6 +24,7 @@ window.onload = function() {
         allertaIncorrectCounter = 0, 
         allertaSkipCounter = 0;
         allertaTotalAttempt=0,
+        allertaTotalScore=0,
         allertaTotalRespondentOnFirstAttempt=0,
         allertaScoreArray = [],
         allertaHintsArray = [],
@@ -31,6 +34,7 @@ window.onload = function() {
         ascofIncorrectCounter = 0, 
         ascofSkipCounter = 0;
         ascofTotalAttempt=0,
+        ascofTotalScore=0,
         ascofTotalRespondentOnFirstAttempt=0,
         ascofScoreArray = [],
         ascofHintsArray = [],
@@ -40,6 +44,7 @@ window.onload = function() {
         biofluIncorrectCounter = 0, 
         biofluSkipCounter = 0;
         biofluTotalAttempt=0,
+        biofluTotalScore=0,
         biofluTotalRespondentOnFirstAttempt=0,
         biofluScoreArray = [],
         biofluHintsArray = [],
@@ -49,6 +54,7 @@ window.onload = function() {
         biogesicIncorrectCounter = 0, 
         biogesicSkipCounter = 0;
         biogesicTotalAttempt=0,
+        biogesicTotalScore=0,
         biogesicTotalRespondentOnFirstAttempt=0,
         biogesicScoreArray = [],
         biogesicHintsArray = [],
@@ -58,6 +64,7 @@ window.onload = function() {
         celetequeIncorrectCounter = 0, 
         celetequeSkipCounter = 0;
         celetequeTotalAttempt=0,
+        celetequeTotalScore=0,
         celetequeTotalRespondentOnFirstAttempt=0,
         celetequeScoreArray = [],
         celetequeHintsArray = [],
@@ -67,6 +74,7 @@ window.onload = function() {
         centrumIncorrectCounter = 0, 
         centrumSkipCounter = 0;
         centrumTotalAttempt=0,
+        centrumTotalScore=0,
         centrumTotalRespondentOnFirstAttempt=0,
         centrumScoreArray = [],
         centrumHintsArray = [],
@@ -76,6 +84,7 @@ window.onload = function() {
         cetaphilIncorrectCounter = 0, 
         cetaphilSkipCounter = 0;
         cetaphilTotalAttempt=0,
+        cetaphilTotalScore=0,
         cetaphilTotalRespondentOnFirstAttempt=0,
         cetaphilScoreArray = [],
         cetaphilHintsArray = [],
@@ -85,6 +94,7 @@ window.onload = function() {
         conzaceIncorrectCounter = 0, 
         conzaceSkipCounter = 0;
         conzaceTotalAttempt=0,
+        conzaceTotalScore=0,
         conzaceTotalRespondentOnFirstAttempt=0,
         conzaceScoreArray = [],
         conzaceHintsArray = [],
@@ -94,6 +104,7 @@ window.onload = function() {
         decolgenIncorrectCounter = 0, 
         decolgenSkipCounter = 0;
         decolgenTotalAttempt=0,
+        decolgenTotalScore=0,
         decolgenTotalRespondentOnFirstAttempt=0,
         decolgenScoreArray = [],
         decolgenHintsArray = [],
@@ -103,6 +114,7 @@ window.onload = function() {
         diatabsIncorrectCounter = 0, 
         diatabsSkipCounter = 0;
         diatabsTotalAttempt=0,
+        diatabsTotalScore=0,
         diatabsTotalRespondentOnFirstAttempt=0,
         diatabsScoreArray = [],
         diatabsHintsArray = [],
@@ -112,6 +124,7 @@ window.onload = function() {
         efficascentIncorrectCounter = 0, 
         efficascentSkipCounter = 0;
         efficascentTotalAttempt=0,
+        efficascentTotalScore=0,
         efficascentTotalRespondentOnFirstAttempt=0,
         efficascentScoreArray = [],
         efficascentHintsArray = [],
@@ -121,6 +134,7 @@ window.onload = function() {
         enervonIncorrectCounter = 0, 
         enervonSkipCounter = 0;
         enervonTotalAttempt=0,
+        enervonTotalScore=0,
         enervonTotalRespondentOnFirstAttempt=0,
         enervonScoreArray = [],
         enervonHintsArray = [],
@@ -130,6 +144,7 @@ window.onload = function() {
         gatoradeIncorrectCounter = 0, 
         gatoradeSkipCounter = 0;
         gatoradeTotalAttempt=0,
+        gatoradeTotalScore=0,
         gatoradeTotalRespondentOnFirstAttempt=0,
         gatoradeScoreArray = [],
         gatoradeHintsArray = [],
@@ -139,6 +154,7 @@ window.onload = function() {
         gyneproIncorrectCounter = 0, 
         gyneproSkipCounter = 0;
         gyneproTotalAttempt=0,
+        gyneproTotalScore=0,
         gyneproTotalRespondentOnFirstAttempt=0,
         gyneproScoreArray = [],
         gyneproHintsArray = [],
@@ -148,6 +164,7 @@ window.onload = function() {
         kremilsIncorrectCounter = 0, 
         kremilsSkipCounter = 0;
         kremilsTotalAttempt=0,
+        kermilsTotalScore=0,
         kremilsTotalRespondentOnFirstAttempt=0,
         kremilsScoreArray = [],
         kremilsHintsArray = [],
@@ -157,6 +174,7 @@ window.onload = function() {
         lactacydIncorrectCounter = 0, 
         lactacydSkipCounter = 0;
         lactacydTotalAttempt=0,
+        lactacydTotalScore=0,
         lactacydTotalRespondentOnFirstAttempt=0,
         lactacydScoreArray = [],
         lactacydHintsArray = [],
@@ -166,6 +184,7 @@ window.onload = function() {
         mcdoIncorrectCounter = 0, 
         mcdoSkipCounter = 0;
         mcdoTotalAttempt=0,
+        mcdoTotalScore=0,
         mcdoTotalRespondentOnFirstAttempt=0,
         mcdoScoreArray = [],
         mcdoHintsArray = [],
@@ -175,6 +194,7 @@ window.onload = function() {
         myraIncorrectCounter = 0, 
         myraSkipCounter = 0;
         myraTotalAttempt=0,
+        myraTotalScore=0,
         myraTotalRespondentOnFirstAttempt=0,
         myraScoreArray = [],
         myraHintsArray = [],
@@ -184,6 +204,7 @@ window.onload = function() {
         neozepIncorrectCounter = 0, 
         neozepSkipCounter = 0;
         neozepTotalAttempt=0,
+        neozepTotalScore=0,
         neozepTotalRespondentOnFirstAttempt=0,
         neozepScoreArray = [],
         neozepHintsArray = [],
@@ -193,6 +214,7 @@ window.onload = function() {
         phcareIncorrectCounter = 0, 
         phcareSkipCounter = 0;
         phcareTotalAttempt=0,
+        phcareTotalScore=0,
         phcareTotalRespondentOnFirstAttempt=0,
         phcareScoreArray = [],
         phcareHintsArray = [],
@@ -202,6 +224,7 @@ window.onload = function() {
         rexidolIncorrectCounter = 0, 
         rexidolSkipCounter = 0;
         rexidolTotalAttempt=0,
+        rexidolTotalScore=0,
         rexidolTotalRespondentOnFirstAttempt=0,
         rexidolScoreArray = [],
         rexidolHintsArray = [],
@@ -211,6 +234,7 @@ window.onload = function() {
         ritemedIncorrectCounter = 0, 
         ritemedSkipCounter = 0;
         ritemedTotalAttempt=0,
+        ritemedTotalScore=0,
         ritemedTotalRespondentOnFirstAttempt=0,
         ritemedScoreArray = [],
         ritemedHintsArray = [],
@@ -220,6 +244,7 @@ window.onload = function() {
         robitussinIncorrectCounter = 0, 
         robitussinSkipCounter = 0;
         robitussinTotalAttempt=0,
+        robitussinTotalScore=0,
         robitussinTotalRespondentOnFirstAttempt=0,
         robitussinScoreArray = [],
         robitussinHintsArray = [],
@@ -229,6 +254,7 @@ window.onload = function() {
         skelanIncorrectCounter = 0, 
         skelanSkipCounter = 0;
         skelanTotalAttempt=0,
+        skelanTotalScore=0,
         skelanTotalRespondentOnFirstAttempt=0,
         skelanScoreArray = [],
         skelanHintsArray = [],
@@ -238,6 +264,7 @@ window.onload = function() {
         solmuxIncorrectCounter = 0, 
         solmuxSkipCounter = 0;
         solmuxTotalAttempt=0,
+        solmuxTotalScore=0,
         solmuxTotalRespondentOnFirstAttempt=0,
         solmuxScoreArray = [],
         solmuxHintsArray = [],
@@ -247,6 +274,7 @@ window.onload = function() {
         tgpIncorrectCounter = 0, 
         tgpSkipCounter = 0;
         tgpTotalAttempt=0,
+        tgpTotalScore=0,
         tgpTotalRespondentOnFirstAttempt=0,
         tgpScoreArray = [],
         tgpHintsArray = [],
@@ -256,6 +284,7 @@ window.onload = function() {
         uhpIncorrectCounter = 0, 
         uhpSkipCounter = 0;
         uhpTotalAttempt=0,
+        uhpTotalScore=0,
         uhpTotalRespondentOnFirstAttempt=0,
         uhpScoreArray = [],
         uhpHintsArray = [],
@@ -265,6 +294,7 @@ window.onload = function() {
         unilabIncorrectCounter = 0, 
         unilabSkipCounter = 0;
         unilabTotalAttempt=0,
+        unilabTotalScore=0,
         unilabTotalRespondentOnFirstAttempt=0,
         unilabScoreArray = [],
         unilabHintsArray = [],
@@ -274,6 +304,7 @@ window.onload = function() {
         vicksIncorrectCounter = 0, 
         vicksSkipCounter = 0;
         vicksTotalAttempt=0,
+        vicksTotalScore=0,
         vicksTotalRespondentOnFirstAttempt=0,
         vicksScoreArray = [],
         vicksHintsArray = [],
@@ -303,6 +334,7 @@ window.onload = function() {
                     advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
                     advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
                     score = score + childSnapshot.val().advil.firstScore;
+                    advilTotalScore = advilTotalScore + childSnapshot.val().advil.sumScore;
                     childSnapshot.val().advil.sumScore > 0 ? advilScoreArray.push(childSnapshot.val().advil.sumScore) : '';
                     childSnapshot.val().advil.sumHints > 0 ? advilHintsArray.push(childSnapshot.val().advil.sumHints) : '';
                     childSnapshot.val().advil.sumSeconds > 0 ? advilSecondsArray.push(childSnapshot.val().advil.sumSeconds) : '';
@@ -316,6 +348,7 @@ window.onload = function() {
                     alaxanCorrectCounter = (alaxanCorrectCounter + childSnapshot.val().alaxan.guessRightCount);
                     alaxanIncorrectCounter = (alaxanIncorrectCounter + (childSnapshot.val().alaxan.attempt - childSnapshot.val().alaxan.guessRightCount));
                     score = score + childSnapshot.val().alaxan.firstScore;    
+                    alaxanTotalScore = alaxanTotalScore + childSnapshot.val().alaxan.sumScore;
                     childSnapshot.val().alaxan.sumScore > 0 ? alaxanScoreArray.push(childSnapshot.val().alaxan.sumScore) : '';
                     childSnapshot.val().alaxan.sumHints > 0 ? alaxanHintsArray.push(childSnapshot.val().alaxan.sumHints) : '';
                     childSnapshot.val().alaxan.sumSeconds > 0 ? alaxanSecondsArray.push(childSnapshot.val().alaxan.sumSeconds) : '';
@@ -329,6 +362,7 @@ window.onload = function() {
                     allertaCorrectCounter = (allertaCorrectCounter + childSnapshot.val().allerta.guessRightCount);
                     allertaIncorrectCounter = (allertaIncorrectCounter + (childSnapshot.val().allerta.attempt - childSnapshot.val().allerta.guessRightCount));
                     score = score + childSnapshot.val().allerta.firstScore;
+                    allertaTotalScore = allertaTotalScore + childSnapshot.val().allerta.sumScore;
                     childSnapshot.val().allerta.sumScore > 0 ? allertaScoreArray.push(childSnapshot.val().allerta.sumScore) : '';
                     childSnapshot.val().allerta.sumHints > 0 ? allertaHintsArray.push(childSnapshot.val().allerta.sumHints) : '';
                     childSnapshot.val().allerta.sumSeconds > 0 ? allertaSecondsArray.push(childSnapshot.val().allerta.sumSeconds) : '';
@@ -342,6 +376,7 @@ window.onload = function() {
                     ascofCorrectCounter = (ascofCorrectCounter + childSnapshot.val().ascof.guessRightCount);
                     ascofIncorrectCounter = (ascofIncorrectCounter + (childSnapshot.val().ascof.attempt - childSnapshot.val().ascof.guessRightCount));
                     score = score + childSnapshot.val().ascof.firstScore;
+                    ascofTotalScore = ascofTotalScore + childSnapshot.val().ascof.sumScore;
                     childSnapshot.val().ascof.sumScore > 0 ? ascofScoreArray.push(childSnapshot.val().ascof.sumScore) : '';
                     childSnapshot.val().ascof.sumHints > 0 ? ascofHintsArray.push(childSnapshot.val().ascof.sumHints) : '';
                     childSnapshot.val().ascof.sumSeconds > 0 ? ascofSecondsArray.push(childSnapshot.val().ascof.sumSeconds) : '';
@@ -355,6 +390,7 @@ window.onload = function() {
                     biofluCorrectCounter = (biofluCorrectCounter + childSnapshot.val().bioflu.guessRightCount);
                     biofluIncorrectCounter = (biofluIncorrectCounter + (childSnapshot.val().bioflu.attempt - childSnapshot.val().bioflu.guessRightCount));
                     score = score + childSnapshot.val().bioflu.firstScore;
+                    biofluTotalScore = biofluTotalScore + childSnapshot.val().bioflu.sumScore;
                     childSnapshot.val().bioflu.sumScore > 0 ? biofluScoreArray.push(childSnapshot.val().bioflu.sumScore) : '';
                     childSnapshot.val().bioflu.sumHints > 0 ? biofluHintsArray.push(childSnapshot.val().bioflu.sumHints) : '';
                     childSnapshot.val().bioflu.sumSeconds > 0 ? biofluSecondsArray.push(childSnapshot.val().bioflu.sumSeconds) : '';
@@ -368,6 +404,7 @@ window.onload = function() {
                     biogesicCorrectCounter = (biogesicCorrectCounter + childSnapshot.val().biogesic.guessRightCount);
                     biogesicIncorrectCounter = (biogesicIncorrectCounter + (childSnapshot.val().biogesic.attempt - childSnapshot.val().biogesic.guessRightCount));
                     score = score + childSnapshot.val().biogesic.firstScore;
+                    biogesicTotalScore = biogesicTotalScore + childSnapshot.val().biogesic.sumScore;
                     childSnapshot.val().biogesic.sumScore > 0 ? biogesicScoreArray.push(childSnapshot.val().biogesic.sumScore) : '';
                     childSnapshot.val().biogesic.sumHints > 0 ? biogesicHintsArray.push(childSnapshot.val().biogesic.sumHints) : '';
                     childSnapshot.val().biogesic.sumSeconds > 0 ? biogesicSecondsArray.push(childSnapshot.val().biogesic.sumSeconds) : '';
@@ -381,6 +418,7 @@ window.onload = function() {
                     celetequeCorrectCounter = (celetequeCorrectCounter + childSnapshot.val().celeteque.guessRightCount);
                     celetequeIncorrectCounter = (celetequeIncorrectCounter + (childSnapshot.val().celeteque.attempt - childSnapshot.val().celeteque.guessRightCount));
                     score = score + childSnapshot.val().celeteque.firstScore;
+                    celetequeTotalScore = celetequeTotalScore + childSnapshot.val().celeteque.sumScore;
                     childSnapshot.val().celeteque.sumScore > 0 ? celetequeScoreArray.push(childSnapshot.val().celeteque.sumScore) : '';
                     childSnapshot.val().celeteque.sumHints > 0 ? celetequeHintsArray.push(childSnapshot.val().celeteque.sumHints) : '';
                     childSnapshot.val().celeteque.sumSeconds > 0 ? celetequeSecondsArray.push(childSnapshot.val().celeteque.sumSeconds) : '';
@@ -394,6 +432,7 @@ window.onload = function() {
                     centrumCorrectCounter = (centrumCorrectCounter + childSnapshot.val().centrum.guessRightCount);
                     centrumIncorrectCounter = (centrumIncorrectCounter + ((childSnapshot.val().centrum.attempt == null ? 0 : childSnapshot.val().centrum.attempt) - (childSnapshot.val().centrum.guessRightCount == null ? 0 : childSnapshot.val().centrum.guessRightCount)));
                     score = score + childSnapshot.val().centrum.firstScore;
+                    centrumTotalScore = centrumTotalScore + childSnapshot.val().centrum.sumScore;
                     childSnapshot.val().centrum.sumScore > 0 ? centrumScoreArray.push(childSnapshot.val().centrum.sumScore) : '';
                     childSnapshot.val().centrum.sumHints > 0 ? centrumHintsArray.push(childSnapshot.val().centrum.sumHints) : '';
                     childSnapshot.val().centrum.sumSeconds > 0 ? centrumSecondsArray.push(childSnapshot.val().centrum.sumSeconds) : '';
@@ -407,6 +446,7 @@ window.onload = function() {
                     cetaphilCorrectCounter = (cetaphilCorrectCounter + childSnapshot.val().cetaphil.guessRightCount);
                     cetaphilIncorrectCounter = (cetaphilIncorrectCounter + (childSnapshot.val().cetaphil.attempt - childSnapshot.val().cetaphil.guessRightCount));
                     score = score + childSnapshot.val().cetaphil.firstScore;
+                    cetaphilTotalScore = cetaphilTotalScore + childSnapshot.val().cetaphil.sumScore;
                     childSnapshot.val().cetaphil.sumScore > 0 ? cetaphilScoreArray.push(childSnapshot.val().cetaphil.sumScore) : '';
                     childSnapshot.val().cetaphil.sumHints > 0 ? cetaphilHintsArray.push(childSnapshot.val().cetaphil.sumHints) : '';
                     childSnapshot.val().cetaphil.sumSeconds > 0 ? cetaphilSecondsArray.push(childSnapshot.val().cetaphil.sumSeconds) : '';
@@ -420,6 +460,7 @@ window.onload = function() {
                     conzaceCorrectCounter = (conzaceCorrectCounter + childSnapshot.val().conzace.guessRightCount);
                     conzaceIncorrectCounter = (conzaceIncorrectCounter + (childSnapshot.val().conzace.attempt - childSnapshot.val().conzace.guessRightCount));
                     score = score + childSnapshot.val().conzace.firstScore;
+                    conzaceTotalScore = conzaceTotalScore + childSnapshot.val().conzace.sumScore;
                     childSnapshot.val().conzace.sumScore > 0 ? conzaceScoreArray.push(childSnapshot.val().conzace.sumScore) : '';
                     childSnapshot.val().conzace.sumHints > 0 ? conzaceHintsArray.push(childSnapshot.val().conzace.sumHints) : '';
                     childSnapshot.val().conzace.sumSeconds > 0 ? conzaceSecondsArray.push(childSnapshot.val().conzace.sumSeconds) : '';
@@ -433,6 +474,7 @@ window.onload = function() {
                     decolgenCorrectCounter = (decolgenCorrectCounter + childSnapshot.val().decolgen.guessRightCount);
                     decolgenIncorrectCounter = (decolgenIncorrectCounter + (childSnapshot.val().decolgen.attempt - childSnapshot.val().decolgen.guessRightCount));
                     score = score + childSnapshot.val().decolgen.firstScore;
+                    decolgenTotalScore = decolgenTotalScore + childSnapshot.val().decolgen.sumScore;
                     childSnapshot.val().decolgen.sumScore > 0 ? decolgenScoreArray.push(childSnapshot.val().decolgen.sumScore) : '';
                     childSnapshot.val().decolgen.sumHints > 0 ? decolgenHintsArray.push(childSnapshot.val().decolgen.sumHints) : '';
                     childSnapshot.val().decolgen.sumSeconds > 0 ? decolgenSecondsArray.push(childSnapshot.val().decolgen.sumSeconds) : '';
@@ -446,6 +488,7 @@ window.onload = function() {
                     diatabsCorrectCounter = (diatabsCorrectCounter + childSnapshot.val().diatabs.guessRightCount);
                     diatabsIncorrectCounter = (diatabsIncorrectCounter + ((childSnapshot.val().diatabs.attempt == null ? 0 : childSnapshot.val().diatabs.attempt) - (childSnapshot.val().diatabs.guessRightCount == null ? 0 : childSnapshot.val().diatabs.guessRightCount)));
                     score = score + childSnapshot.val().diatabs.firstScore;
+                    diatabsTotalScore = diatabsTotalScore + childSnapshot.val().diatabs.sumScore;
                     childSnapshot.val().diatabs.sumScore > 0 ? diatabsScoreArray.push(childSnapshot.val().diatabs.sumScore) : '';
                     childSnapshot.val().diatabs.sumHints > 0 ? diatabsHintsArray.push(childSnapshot.val().diatabs.sumHints) : '';
                     childSnapshot.val().diatabs.sumSeconds > 0 ? diatabsSecondsArray.push(childSnapshot.val().diatabs.sumSeconds) : '';
@@ -459,6 +502,7 @@ window.onload = function() {
                     efficascentCorrectCounter = (efficascentCorrectCounter + (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount));
                     efficascentIncorrectCounter = (efficascentIncorrectCounter + ((childSnapshot.val().efficascent.attempt == null ? 0 : childSnapshot.val().efficascent.attempt) - (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount)));
                     score = score + childSnapshot.val().efficascent.firstScore;
+                    efficascentTotalScore = efficascentTotalScore + childSnapshot.val().efficascent.sumScore;
                     childSnapshot.val().efficascent.sumScore > 0 ? efficascentScoreArray.push(childSnapshot.val().efficascent.sumScore) : '';
                     childSnapshot.val().efficascent.sumHints > 0 ? efficascentHintsArray.push(childSnapshot.val().efficascent.sumHints) : '';
                     childSnapshot.val().efficascent.sumSeconds > 0 ? efficascentSecondsArray.push(childSnapshot.val().efficascent.sumSeconds) : '';
@@ -472,6 +516,7 @@ window.onload = function() {
                     enervonCorrectCounter = (enervonCorrectCounter + childSnapshot.val().enervon.guessRightCount);
                     enervonIncorrectCounter = (enervonIncorrectCounter + (childSnapshot.val().enervon.attempt - childSnapshot.val().enervon.guessRightCount));
                     score = score + childSnapshot.val().enervon.firstScore;
+                    enervonTotalScore = enervonTotalScore + childSnapshot.val().enervon.sumScore;
                     childSnapshot.val().enervon.sumScore > 0 ? enervonScoreArray.push(childSnapshot.val().enervon.sumScore) : '';
                     childSnapshot.val().enervon.sumHints > 0 ? enervonHintsArray.push(childSnapshot.val().enervon.sumHints) : '';
                     childSnapshot.val().enervon.sumSeconds > 0 ? enervonSecondsArray.push(childSnapshot.val().enervon.sumSeconds) : '';
@@ -485,6 +530,7 @@ window.onload = function() {
                     gatoradeCorrectCounter = (gatoradeCorrectCounter + childSnapshot.val().gatorade.guessRightCount);
                     gatoradeIncorrectCounter = (gatoradeIncorrectCounter + (childSnapshot.val().gatorade.attempt - childSnapshot.val().gatorade.guessRightCount));
                     score = score + childSnapshot.val().gatorade.firstScore;
+                    gatoradeTotalScore = gatoradeTotalScore + childSnapshot.val().gatorade.sumScore;
                     childSnapshot.val().gatorade.sumScore > 0 ? gatoradeScoreArray.push(childSnapshot.val().gatorade.sumScore) : '';
                     childSnapshot.val().gatorade.sumHints > 0 ? gatoradeHintsArray.push(childSnapshot.val().gatorade.sumHints) : '';
                     childSnapshot.val().gatorade.sumSeconds > 0 ? gatoradeSecondsArray.push(childSnapshot.val().gatorade.sumSeconds) : '';
@@ -498,6 +544,7 @@ window.onload = function() {
                     gyneproCorrectCounter = (gyneproCorrectCounter + childSnapshot.val().gynepro.guessRightCount);
                     gyneproIncorrectCounter = (gyneproIncorrectCounter + (childSnapshot.val().gynepro.attempt - childSnapshot.val().gynepro.guessRightCount));
                     score = score + childSnapshot.val().gynepro.firstScore;
+                    gyneproTotalScore = gyneproTotalScore + childSnapshot.val().gynepro.sumScore;
                     childSnapshot.val().gynepro.sumScore > 0 ? gyneproScoreArray.push(childSnapshot.val().gynepro.sumScore) : '';
                     childSnapshot.val().gynepro.sumHints > 0 ? gyneproHintsArray.push(childSnapshot.val().gynepro.sumHints) : '';
                     childSnapshot.val().gynepro.sumSeconds > 0 ? gyneproSecondsArray.push(childSnapshot.val().gynepro.sumSeconds) : '';
@@ -511,6 +558,7 @@ window.onload = function() {
                     kremilsCorrectCounter = (kremilsCorrectCounter + childSnapshot.val().kremils.guessRightCount);
                     kremilsIncorrectCounter = (kremilsIncorrectCounter + (childSnapshot.val().kremils.attempt - childSnapshot.val().kremils.guessRightCount));
                     score = score + childSnapshot.val().kremils.firstScore;
+                    kremilsTotalScore = kremilsTotalScore + childSnapshot.val().kremils.sumScore;
                     childSnapshot.val().kremils.sumScore > 0 ? kremilsScoreArray.push(childSnapshot.val().kremils.sumScore) : '';
                     childSnapshot.val().kremils.sumHints > 0 ? kremilsHintsArray.push(childSnapshot.val().kremils.sumHints) : '';
                     childSnapshot.val().kremils.sumSeconds > 0 ? kremilsSecondsArray.push(childSnapshot.val().kremils.sumSeconds) : '';
@@ -524,6 +572,7 @@ window.onload = function() {
                     lactacydCorrectCounter = (lactacydCorrectCounter + childSnapshot.val().lactacyd.guessRightCount);
                     lactacydIncorrectCounter = (lactacydIncorrectCounter + (childSnapshot.val().lactacyd.attempt - childSnapshot.val().lactacyd.guessRightCount));
                     score = score + childSnapshot.val().lactacyd.firstScore;
+                    lactacydTotalScore = lactacydTotalScore + childSnapshot.val().lactacyd.sumScore;
                     childSnapshot.val().lactacyd.sumScore > 0 ? lactacydScoreArray.push(childSnapshot.val().lactacyd.sumScore) : '';
                     childSnapshot.val().lactacyd.sumHints > 0 ? lactacydHintsArray.push(childSnapshot.val().lactacyd.sumHints) : '';
                     childSnapshot.val().lactacyd.sumSeconds > 0 ? lactacydSecondsArray.push(childSnapshot.val().lactacyd.sumSeconds) : '';
@@ -537,6 +586,7 @@ window.onload = function() {
                     mcdoCorrectCounter = (mcdoCorrectCounter + (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount));
                     mcdoIncorrectCounter = (mcdoIncorrectCounter + ((childSnapshot.val().mcdo.attempt == null ? 0 : childSnapshot.val().mcdo.attempt) - (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount)));
                     score = score + childSnapshot.val().mcdo.firstScore;
+                    mcdoTotalScore = mcdoTotalScore + childSnapshot.val().mcdo.sumScore;
                     childSnapshot.val().mcdo.sumScore > 0 ? mcdoScoreArray.push(childSnapshot.val().mcdo.sumScore) : '';
                     childSnapshot.val().mcdo.sumHints > 0 ? mcdoHintsArray.push(childSnapshot.val().mcdo.sumHints) : '';
                     childSnapshot.val().mcdo.sumSeconds > 0 ? mcdoSecondsArray.push(childSnapshot.val().mcdo.sumSeconds) : '';
@@ -550,6 +600,7 @@ window.onload = function() {
                     myraCorrectCounter = (myraCorrectCounter + childSnapshot.val().myra.guessRightCount);
                     myraIncorrectCounter = (myraIncorrectCounter + (childSnapshot.val().myra.attempt - childSnapshot.val().myra.guessRightCount));
                     score = score + childSnapshot.val().myra.firstScore;
+                    myraTotalScore = myraTotalScore + childSnapshot.val().myra.sumScore;
                     childSnapshot.val().myra.sumScore > 0 ? myraScoreArray.push(childSnapshot.val().myra.sumScore) : '';
                     childSnapshot.val().myra.sumHints > 0 ? myraHintsArray.push(childSnapshot.val().myra.sumHints) : '';
                     childSnapshot.val().myra.sumSeconds > 0 ? myraSecondsArray.push(childSnapshot.val().myra.sumSeconds) : '';
@@ -563,6 +614,7 @@ window.onload = function() {
                     neozepCorrectCounter = (neozepCorrectCounter + childSnapshot.val().neozep.guessRightCount);
                     neozepIncorrectCounter = (neozepIncorrectCounter + (childSnapshot.val().neozep.attempt - childSnapshot.val().neozep.guessRightCount));
                     score = score + childSnapshot.val().neozep.firstScore;
+                    neozepTotalScore = neozepTotalScore + childSnapshot.val().neozep.sumScore;
                     childSnapshot.val().neozep.sumScore > 0 ? neozepScoreArray.push(childSnapshot.val().neozep.sumScore) : '';
                     childSnapshot.val().neozep.sumHints > 0 ? neozepHintsArray.push(childSnapshot.val().neozep.sumHints) : '';
                     childSnapshot.val().neozep.sumSeconds > 0 ? neozepSecondsArray.push(childSnapshot.val().neozep.sumSeconds) : '';
@@ -576,6 +628,7 @@ window.onload = function() {
                     phcareCorrectCounter = (phcareCorrectCounter + childSnapshot.val().phcare.guessRightCount);
                     phcareIncorrectCounter = (phcareIncorrectCounter + (childSnapshot.val().phcare.attempt - childSnapshot.val().phcare.guessRightCount));
                     score = score + childSnapshot.val().phcare.firstScore;
+                    phcareTotalScore = phcareTotalScore + childSnapshot.val().phcare.sumScore;
                     childSnapshot.val().phcare.sumScore > 0 ? phcareScoreArray.push(childSnapshot.val().phcare.sumScore) : '';
                     childSnapshot.val().phcare.sumHints > 0 ? phcareHintsArray.push(childSnapshot.val().phcare.sumHints) : '';
                     childSnapshot.val().phcare.sumSeconds > 0 ? phcareSecondsArray.push(childSnapshot.val().phcare.sumSeconds) : '';
@@ -589,6 +642,7 @@ window.onload = function() {
                     rexidolCorrectCounter = (rexidolCorrectCounter + childSnapshot.val().rexidol.guessRightCount);
                     rexidolIncorrectCounter = (rexidolIncorrectCounter + (childSnapshot.val().rexidol.attempt - childSnapshot.val().rexidol.guessRightCount));
                     score = score + childSnapshot.val().rexidol.firstScore;
+                    rexidolTotalScore = rexidolTotalScore + childSnapshot.val().rexidol.sumScore;
                     childSnapshot.val().rexidol.sumScore > 0 ? rexidolScoreArray.push(childSnapshot.val().rexidol.sumScore) : '';
                     childSnapshot.val().rexidol.sumHints > 0 ? rexidolHintsArray.push(childSnapshot.val().rexidol.sumHints) : '';
                     childSnapshot.val().rexidol.sumSeconds > 0 ? rexidolSecondsArray.push(childSnapshot.val().rexidol.sumSeconds) : '';
@@ -602,6 +656,7 @@ window.onload = function() {
                     ritemedCorrectCounter = (ritemedCorrectCounter + childSnapshot.val().ritemed.guessRightCount);
                     ritemedIncorrectCounter = (ritemedIncorrectCounter + (childSnapshot.val().ritemed.attempt - childSnapshot.val().ritemed.guessRightCount));
                     score = score + childSnapshot.val().ritemed.firstScore;
+                    ritemedTotalScore = ritemedTotalScore + childSnapshot.val().ritemed.sumScore;
                     childSnapshot.val().ritemed.sumScore > 0 ? ritemedScoreArray.push(childSnapshot.val().ritemed.sumScore) : '';
                     childSnapshot.val().ritemed.sumHints > 0 ? ritemedHintsArray.push(childSnapshot.val().ritemed.sumHints) : '';
                     childSnapshot.val().ritemed.sumSeconds > 0 ? ritemedSecondsArray.push(childSnapshot.val().ritemed.sumSeconds) : '';
@@ -615,6 +670,7 @@ window.onload = function() {
                     robitussinCorrectCounter = (robitussinCorrectCounter + childSnapshot.val().robitussin.guessRightCount);
                     robitussinIncorrectCounter = (robitussinIncorrectCounter + (childSnapshot.val().robitussin.attempt - childSnapshot.val().robitussin.guessRightCount));
                     score = score + childSnapshot.val().robitussin.firstScore;
+                    robitussinTotalScore = robitussinTotalScore + childSnapshot.val().robitussin.sumScore;
                     childSnapshot.val().robitussin.sumScore > 0 ? robitussinScoreArray.push(childSnapshot.val().robitussin.sumScore) : '';
                     childSnapshot.val().robitussin.sumHints > 0 ? robitussinHintsArray.push(childSnapshot.val().robitussin.sumHints) : '';
                     childSnapshot.val().robitussin.sumSeconds > 0 ? robitussinSecondsArray.push(childSnapshot.val().robitussin.sumSeconds) : '';
@@ -628,6 +684,7 @@ window.onload = function() {
                     skelanCorrectCounter = (skelanCorrectCounter + (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount));
                     skelanIncorrectCounter = (skelanIncorrectCounter + ((childSnapshot.val().skelan.attempt == null ? 0 : childSnapshot.val().skelan.attempt) - (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount)));
                     score = score + childSnapshot.val().skelan.firstScore;
+                    skelanTotalScore = skelanTotalScore + childSnapshot.val().skelan.sumScore;
                     childSnapshot.val().skelan.sumScore > 0 ? skelanScoreArray.push(childSnapshot.val().skelan.sumScore) : '';
                     childSnapshot.val().skelan.sumHints > 0 ? skelanHintsArray.push(childSnapshot.val().skelan.sumHints) : '';
                     childSnapshot.val().skelan.sumSeconds > 0 ? skelanSecondsArray.push(childSnapshot.val().skelan.sumSeconds) : '';
@@ -641,6 +698,7 @@ window.onload = function() {
                     solmuxCorrectCounter = (solmuxCorrectCounter + childSnapshot.val().solmux.guessRightCount);
                     solmuxIncorrectCounter = (solmuxIncorrectCounter + (childSnapshot.val().solmux.attempt - childSnapshot.val().solmux.guessRightCount));
                     score = score + childSnapshot.val().solmux.firstScore;
+                    solmuxTotalScore = solmuxTotalScore + childSnapshot.val().solmux.sumScore;
                     childSnapshot.val().solmux.sumScore > 0 ? solmuxScoreArray.push(childSnapshot.val().solmux.sumScore) : '';
                     childSnapshot.val().solmux.sumHints > 0 ? solmuxHintsArray.push(childSnapshot.val().solmux.sumHints) : '';
                     childSnapshot.val().solmux.sumSeconds > 0 ? solmuxSecondsArray.push(childSnapshot.val().solmux.sumSeconds) : '';
@@ -654,6 +712,7 @@ window.onload = function() {
                     tgpCorrectCounter = (tgpCorrectCounter + childSnapshot.val().tgp.guessRightCount);
                     tgpIncorrectCounter = (tgpIncorrectCounter + (childSnapshot.val().tgp.attempt - childSnapshot.val().tgp.guessRightCount));
                     score = score + childSnapshot.val().tgp.firstScore;
+                    tgpTotalScore = tgpTotalScore + childSnapshot.val().tgp.sumScore;
                     childSnapshot.val().tgp.sumScore > 0 ? tgpScoreArray.push(childSnapshot.val().tgp.sumScore) : '';
                     childSnapshot.val().tgp.sumHints > 0 ? tgpHintsArray.push(childSnapshot.val().tgp.sumHints) : '';
                     childSnapshot.val().tgp.sumSeconds > 0 ? tgpSecondsArray.push(childSnapshot.val().tgp.sumSeconds) : '';
@@ -667,6 +726,7 @@ window.onload = function() {
                     uhpCorrectCounter = (uhpCorrectCounter + childSnapshot.val().uhp.guessRightCount);
                     uhpIncorrectCounter = (uhpIncorrectCounter + (childSnapshot.val().uhp.attempt - childSnapshot.val().uhp.guessRightCount));
                     score = score + childSnapshot.val().uhp.firstScore;
+                    uhpTotalScore = uhpTotalScore + childSnapshot.val().uhp.sumScore;
                     childSnapshot.val().uhp.sumScore > 0 ? uhpScoreArray.push(childSnapshot.val().uhp.sumScore) : '';
                     childSnapshot.val().uhp.sumHints > 0 ? uhpHintsArray.push(childSnapshot.val().uhp.sumHints) : '';
                     childSnapshot.val().uhp.sumSeconds > 0 ? uhpSecondsArray.push(childSnapshot.val().uhp.sumSeconds) : '';
@@ -680,6 +740,7 @@ window.onload = function() {
                     unilabCorrectCounter = (unilabCorrectCounter + childSnapshot.val().unilab.guessRightCount);
                     unilabIncorrectCounter = (unilabIncorrectCounter + (childSnapshot.val().unilab.attempt - childSnapshot.val().unilab.guessRightCount));
                     score = score + childSnapshot.val().unilab.firstScore;
+                    unilabTotalScore = unilabTotalScore + childSnapshot.val().unilab.sumScore;
                     childSnapshot.val().unilab.sumScore > 0 ? unilabScoreArray.push(childSnapshot.val().unilab.sumScore) : '';
                     childSnapshot.val().unilab.sumHints > 0 ? unilabHintsArray.push(childSnapshot.val().unilab.sumHints) : '';
                     childSnapshot.val().unilab.sumSeconds > 0 ? unilabSecondsArray.push(childSnapshot.val().unilab.sumSeconds) : '';
@@ -732,7 +793,7 @@ window.onload = function() {
         var i = 0;
         
         document.getElementById("advilScore").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgScore.toFixed(2) : 0;
-        document.getElementById("advilTotalScore").innerHTML = advilScoreArray.reduce(getSum);
+        document.getElementById("advilTotalScore").innerHTML = advilTotalScore;
         document.getElementById("advilHighestScore").innerHTML = Math.max.apply(null, advilScoreArray);
         document.getElementById("advilLowestScore").innerHTML = Math.min.apply(null, advilScoreArray);
         document.getElementById("advilHints").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgHints.toFixed(2) : 0;
@@ -748,7 +809,7 @@ window.onload = function() {
         document.getElementById("advilTotalAttempt").innerHTML = advilTotalAttempt;
 
         document.getElementById("alaxanScore").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgScore.toFixed(2) : 0;
-        document.getElementById("alaxanTotalScore").innerHTML = alaxanScoreArray.reduce(getSum);
+        document.getElementById("alaxanTotalScore").innerHTML = alaxanTotalScore;
         document.getElementById("alaxanHighestScore").innerHTML = Math.max.apply(null, alaxanScoreArray);
         document.getElementById("alaxanLowestScore").innerHTML = Math.min.apply(null, alaxanScoreArray);
         document.getElementById("alaxanHints").innerHTML = snapshot.hasChild('alaxan') && snapshot.val().alaxan.total != null ? snapshot.val().alaxan.total.avgHints.toFixed(2) : 0;
@@ -764,7 +825,7 @@ window.onload = function() {
         document.getElementById("alaxanTotalAttempt").innerHTML = alaxanTotalAttempt;
 
         document.getElementById("allertaScore").innerHTML = snapshot.hasChild('allerta') && snapshot.val().allerta.total != null ? snapshot.val().allerta.total.avgScore.toFixed(2) : 0;
-        document.getElementById("allertaTotalScore").innerHTML = allertaScoreArray.reduce(getSum);
+        document.getElementById("allertaTotalScore").innerHTML = allertaTotalScore;
         document.getElementById("allertaHighestScore").innerHTML = Math.max.apply(null, allertaScoreArray);
         document.getElementById("allertaLowestScore").innerHTML = Math.min.apply(null, allertaScoreArray);
         document.getElementById("allertaHints").innerHTML = snapshot.hasChild('allerta') && snapshot.val().allerta.total != null ? snapshot.val().allerta.total.avgHints.toFixed(2) : 0;
@@ -780,7 +841,7 @@ window.onload = function() {
         document.getElementById("allertaTotalAttempt").innerHTML = allertaTotalAttempt;
 
         document.getElementById("ascofScore").innerHTML = snapshot.hasChild('ascof') && snapshot.val().ascof.total != null ? snapshot.val().ascof.total.avgScore.toFixed(2) : 0;
-        document.getElementById("ascofTotalScore").innerHTML = ascofScoreArray.reduce(getSum);
+        document.getElementById("ascofTotalScore").innerHTML = ascofTotalScore;
         document.getElementById("ascofHighestScore").innerHTML = Math.max.apply(null, ascofScoreArray);
         document.getElementById("ascofLowestScore").innerHTML = Math.min.apply(null, ascofScoreArray);
         document.getElementById("ascofHints").innerHTML = snapshot.hasChild('ascof') && snapshot.val().ascof.total != null ? snapshot.val().ascof.total.avgHints.toFixed(2) : 0;
@@ -796,7 +857,7 @@ window.onload = function() {
         document.getElementById("ascofTotalAttempt").innerHTML = ascofTotalAttempt;
 
         document.getElementById("biofluScore").innerHTML = snapshot.hasChild('bioflu') && snapshot.val().bioflu.total != null ? snapshot.val().bioflu.total.avgScore.toFixed(2) : 0;
-        document.getElementById("biofluTotalScore").innerHTML = biofluScoreArray.reduce(getSum);
+        document.getElementById("biofluTotalScore").innerHTML = biofluTotalScore;
         document.getElementById("biofluHighestScore").innerHTML = Math.max.apply(null, biofluScoreArray);
         document.getElementById("biofluLowestScore").innerHTML = Math.min.apply(null, biofluScoreArray);
         document.getElementById("biofluHints").innerHTML = snapshot.hasChild('bioflu') && snapshot.val().bioflu.total != null ? snapshot.val().bioflu.total.avgHints.toFixed(2) : 0;
@@ -812,7 +873,7 @@ window.onload = function() {
         document.getElementById("biofluTotalAttempt").innerHTML = biofluTotalAttempt;
 
         document.getElementById("biogesicScore").innerHTML = snapshot.hasChild('biogesic') && snapshot.val().biogesic.total != null ? snapshot.val().biogesic.total.avgScore.toFixed(2) : 0;
-        document.getElementById("biogesicTotalScore").innerHTML = biogesicScoreArray.reduce(getSum);
+        document.getElementById("biogesicTotalScore").innerHTML = biogesicTotalScore;
         document.getElementById("biogesicHighestScore").innerHTML = Math.max.apply(null, biogesicScoreArray);
         document.getElementById("biogesicLowestScore").innerHTML = Math.min.apply(null, biogesicScoreArray);
         document.getElementById("biogesicHints").innerHTML = snapshot.hasChild('biogesic') && snapshot.val().biogesic.total != null ? snapshot.val().biogesic.total.avgHints.toFixed(2) : 0;
@@ -828,7 +889,7 @@ window.onload = function() {
         document.getElementById("biogesicTotalAttempt").innerHTML = biogesicTotalAttempt;
 
         document.getElementById("celetequeScore").innerHTML = snapshot.hasChild('celeteque') && snapshot.val().celeteque.total != null ? snapshot.val().celeteque.total.avgScore.toFixed(2) : 0;
-        document.getElementById("celetequeTotalScore").innerHTML = celetequeScoreArray.reduce(getSum);
+        document.getElementById("celetequeTotalScore").innerHTML = celetequeTotalScore;
         document.getElementById("celetequeHighestScore").innerHTML = Math.max.apply(null, celetequeScoreArray);
         document.getElementById("celetequeLowestScore").innerHTML = Math.min.apply(null, celetequeScoreArray);
         document.getElementById("celetequeHints").innerHTML = snapshot.hasChild('celeteque') && snapshot.val().celeteque.total != null ? snapshot.val().celeteque.total.avgHints.toFixed(2) : 0;
@@ -844,7 +905,7 @@ window.onload = function() {
         document.getElementById("celetequeTotalAttempt").innerHTML = celetequeTotalAttempt;
 
         document.getElementById("centrumScore").innerHTML = snapshot.hasChild('centrum') && snapshot.val().centrum.total != null ? snapshot.val().centrum.total.avgScore.toFixed(2) : 0;
-        document.getElementById("centrumTotalScore").innerHTML = centrumScoreArray.reduce(getSum);
+        document.getElementById("centrumTotalScore").innerHTML = centrumTotalScore;
         document.getElementById("centrumHighestScore").innerHTML = Math.max.apply(null, centrumScoreArray);
         document.getElementById("centrumLowestScore").innerHTML = Math.min.apply(null, centrumScoreArray);
         document.getElementById("centrumHints").innerHTML = snapshot.hasChild('centrum') && snapshot.val().centrum.total != null ? snapshot.val().centrum.total.avgHints.toFixed(2) : 0;
@@ -860,7 +921,7 @@ window.onload = function() {
         document.getElementById("centrumTotalAttempt").innerHTML = centrumTotalAttempt;
 
         document.getElementById("cetaphilScore").innerHTML = snapshot.hasChild('cetaphil') && snapshot.val().cetaphil.total != null ? snapshot.val().cetaphil.total.avgScore.toFixed(2) : 0;
-        document.getElementById("cetaphilTotalScore").innerHTML = cetaphilScoreArray.reduce(getSum);
+        document.getElementById("cetaphilTotalScore").innerHTML = cetaphilTotalScore;
         document.getElementById("cetaphilHighestScore").innerHTML = Math.max.apply(null, cetaphilScoreArray);
         document.getElementById("cetaphilLowestScore").innerHTML = Math.min.apply(null, cetaphilScoreArray);
         document.getElementById("cetaphilHints").innerHTML = snapshot.hasChild('cetaphil') && snapshot.val().cetaphil.total != null ? snapshot.val().cetaphil.total.avgHints.toFixed(2) : 0;
@@ -876,7 +937,7 @@ window.onload = function() {
         document.getElementById("cetaphilTotalAttempt").innerHTML = cetaphilTotalAttempt;
 
         document.getElementById("conzaceScore").innerHTML = snapshot.hasChild('conzace') && snapshot.val().conzace.total != null ? snapshot.val().conzace.total.avgScore.toFixed(2) : 0;
-        document.getElementById("conzaceTotalScore").innerHTML = conzaceScoreArray.reduce(getSum);
+        document.getElementById("conzaceTotalScore").innerHTML = conzaceTotalScore;
         document.getElementById("conzaceHighestScore").innerHTML = Math.max.apply(null, conzaceScoreArray);
         document.getElementById("conzaceLowestScore").innerHTML = Math.min.apply(null, conzaceScoreArray);
         document.getElementById("conzaceHints").innerHTML = snapshot.hasChild('conzace') && snapshot.val().conzace.total != null ? snapshot.val().conzace.total.avgHints.toFixed(2) : 0;
@@ -892,7 +953,7 @@ window.onload = function() {
         document.getElementById("conzaceTotalAttempt").innerHTML = conzaceTotalAttempt;
 
         document.getElementById("decolgenScore").innerHTML = snapshot.hasChild('decolgen') && snapshot.val().decolgen.total != null ? snapshot.val().decolgen.total.avgScore.toFixed(2) : 0;
-        document.getElementById("decolgenTotalScore").innerHTML = decolgenScoreArray.reduce(getSum);
+        document.getElementById("decolgenTotalScore").innerHTML = decolgenTotalScore;
         document.getElementById("decolgenHighestScore").innerHTML = Math.max.apply(null, decolgenScoreArray);
         document.getElementById("decolgenLowestScore").innerHTML = Math.min.apply(null, decolgenScoreArray);
         document.getElementById("decolgenHints").innerHTML = snapshot.hasChild('decolgen') && snapshot.val().decolgen.total != null ? snapshot.val().decolgen.total.avgHints.toFixed(2) : 0;
@@ -908,7 +969,7 @@ window.onload = function() {
         document.getElementById("decolgenTotalAttempt").innerHTML = decolgenTotalAttempt;
 
         document.getElementById("diatabsScore").innerHTML = snapshot.hasChild('diatabs') && snapshot.val().diatabs.total != null ? snapshot.val().diatabs.total.avgScore.toFixed(2) : 0;
-        document.getElementById("diatabsTotalScore").innerHTML = diatabsScoreArray.reduce(getSum);
+        document.getElementById("diatabsTotalScore").innerHTML = diatabsTotalScore;
         document.getElementById("diatabsHighestScore").innerHTML = Math.max.apply(null, diatabsScoreArray);
         document.getElementById("diatabsLowestScore").innerHTML = Math.min.apply(null, diatabsScoreArray);
         document.getElementById("diatabsHints").innerHTML = snapshot.hasChild('diatabs') && snapshot.val().diatabs.total != null ? snapshot.val().diatabs.total.avgHints.toFixed(2) : 0;
@@ -924,7 +985,7 @@ window.onload = function() {
         document.getElementById("diatabsTotalAttempt").innerHTML = diatabsTotalAttempt;
 
         document.getElementById("efficascentScore").innerHTML = snapshot.hasChild('efficascent') && snapshot.val().efficascent.total != null ? snapshot.val().efficascent.total.avgScore.toFixed(2) : 0;
-        document.getElementById("efficascentTotalScore").innerHTML = efficascentScoreArray.reduce(getSum);
+        document.getElementById("efficascentTotalScore").innerHTML = efficascentTotalScore;
         document.getElementById("efficascentHighestScore").innerHTML = Math.max.apply(null, efficascentScoreArray);
         document.getElementById("efficascentLowestScore").innerHTML = Math.min.apply(null, efficascentScoreArray);
         document.getElementById("efficascentHints").innerHTML = snapshot.hasChild('efficascent') && snapshot.val().efficascent.total != null ? snapshot.val().efficascent.total.avgHints.toFixed(2) : 0;
@@ -940,7 +1001,7 @@ window.onload = function() {
         document.getElementById("efficascentTotalAttempt").innerHTML = efficascentTotalAttempt;
 
         document.getElementById("enervonScore").innerHTML = snapshot.hasChild('enervon') && snapshot.val().enervon.total != null ? snapshot.val().enervon.total.avgScore.toFixed(2) : 0;
-        document.getElementById("enervonTotalScore").innerHTML = enervonScoreArray.reduce(getSum);
+        document.getElementById("enervonTotalScore").innerHTML = enervonTotalScore;
         document.getElementById("enervonHighestScore").innerHTML = Math.max.apply(null, enervonScoreArray);
         document.getElementById("enervonLowestScore").innerHTML = Math.min.apply(null, enervonScoreArray);
         document.getElementById("enervonHints").innerHTML = snapshot.hasChild('enervon') && snapshot.val().enervon.total != null ? snapshot.val().enervon.total.avgHints.toFixed(2) : 0;
@@ -956,7 +1017,7 @@ window.onload = function() {
         document.getElementById("enervonTotalAttempt").innerHTML = enervonTotalAttempt;
 
         document.getElementById("gatoradeScore").innerHTML = snapshot.hasChild('gatorade') && snapshot.val().gatorade.total != null ? snapshot.val().gatorade.total.avgScore.toFixed(2) : 0;
-        document.getElementById("gatoradeTotalScore").innerHTML = gatoradeScoreArray.reduce(getSum);
+        document.getElementById("gatoradeTotalScore").innerHTML = gatoradeTotalScore;
         document.getElementById("gatoradeHighestScore").innerHTML = Math.max.apply(null, gatoradeScoreArray);
         document.getElementById("gatoradeLowestScore").innerHTML = Math.min.apply(null, gatoradeScoreArray);
         document.getElementById("gatoradeHints").innerHTML = snapshot.hasChild('gatorade') && snapshot.val().gatorade.total != null ? snapshot.val().gatorade.total.avgHints.toFixed(2) : 0;
@@ -972,7 +1033,7 @@ window.onload = function() {
         document.getElementById("gatoradeTotalAttempt").innerHTML = gatoradeTotalAttempt;
 
         document.getElementById("gyneproScore").innerHTML = snapshot.hasChild('gynepro') && snapshot.val().gynepro.total != null ? snapshot.val().gynepro.total.avgScore.toFixed(2) : 0;
-        document.getElementById("gyneproTotalScore").innerHTML = gyneproScoreArray.reduce(getSum);
+        document.getElementById("gyneproTotalScore").innerHTML = gyneproTotalScore;
         document.getElementById("gyneproHighestScore").innerHTML = Math.max.apply(null, gyneproScoreArray);
         document.getElementById("gyneproLowestScore").innerHTML = Math.min.apply(null, gyneproScoreArray);
         document.getElementById("gyneproHints").innerHTML = snapshot.hasChild('gynepro') && snapshot.val().gynepro.total != null ? snapshot.val().gynepro.total.avgHints.toFixed(2) : 0;
@@ -988,7 +1049,7 @@ window.onload = function() {
         document.getElementById("gyneproTotalAttempt").innerHTML = gyneproTotalAttempt;
 
         document.getElementById("kremilsScore").innerHTML = snapshot.hasChild('kremils') && snapshot.val().kremils.total != null ? snapshot.val().kremils.total.avgScore.toFixed(2) : 0;
-        document.getElementById("kremilsTotalScore").innerHTML = kremilsScoreArray.reduce(getSum);
+        document.getElementById("kremilsTotalScore").innerHTML = kremilsTotalScore;
         document.getElementById("kremilsHighestScore").innerHTML = Math.max.apply(null, kremilsScoreArray);
         document.getElementById("kremilsLowestScore").innerHTML = Math.min.apply(null, kremilsScoreArray);
         document.getElementById("kremilsHints").innerHTML = snapshot.hasChild('kremils') && snapshot.val().kremils.total != null ? snapshot.val().kremils.total.avgHints.toFixed(2) : 0;
@@ -1004,7 +1065,7 @@ window.onload = function() {
         document.getElementById("kremilsTotalAttempt").innerHTML = kremilsTotalAttempt;
 
         document.getElementById("lactacydScore").innerHTML = snapshot.hasChild('lactacyd') && snapshot.val().lactacyd.total != null ? snapshot.val().lactacyd.total.avgScore.toFixed(2) : 0;
-        document.getElementById("lactacydTotalScore").innerHTML = lactacydScoreArray.reduce(getSum);
+        document.getElementById("lactacydTotalScore").innerHTML = lactacydTotalScore;
         document.getElementById("lactacydHighestScore").innerHTML = Math.max.apply(null, lactacydScoreArray);
         document.getElementById("lactacydLowestScore").innerHTML = Math.min.apply(null, lactacydScoreArray);
         document.getElementById("lactacydHints").innerHTML = snapshot.hasChild('lactacyd') && snapshot.val().lactacyd.total != null ? snapshot.val().lactacyd.total.avgHints.toFixed(2) : 0;
@@ -1020,7 +1081,7 @@ window.onload = function() {
         document.getElementById("lactacydTotalAttempt").innerHTML = lactacydTotalAttempt;
 
         document.getElementById("mcdoScore").innerHTML = snapshot.hasChild('mcdo') && snapshot.val().mcdo.total != null ? snapshot.val().mcdo.total.avgScore.toFixed(2) : 0;
-        document.getElementById("mcdoTotalScore").innerHTML = mcdoScoreArray.reduce(getSum);
+        document.getElementById("mcdoTotalScore").innerHTML = mcdoTotalScore;
         document.getElementById("mcdoHighestScore").innerHTML = Math.max.apply(null, mcdoScoreArray);
         document.getElementById("mcdoLowestScore").innerHTML = Math.min.apply(null, mcdoScoreArray);
         document.getElementById("mcdoHints").innerHTML = snapshot.hasChild('mcdo') && snapshot.val().mcdo.total != null ? snapshot.val().mcdo.total.avgHints.toFixed(2) : 0;
@@ -1036,7 +1097,7 @@ window.onload = function() {
         document.getElementById("mcdoTotalAttempt").innerHTML = mcdoTotalAttempt;
 
         document.getElementById("myraScore").innerHTML = snapshot.hasChild('myra') && snapshot.val().myra.total != null ? snapshot.val().myra.total.avgScore.toFixed(2) : 0;
-        document.getElementById("myraTotalScore").innerHTML = myraScoreArray.reduce(getSum);
+        document.getElementById("myraTotalScore").innerHTML = myraTotalScore;
         document.getElementById("myraHighestScore").innerHTML = Math.max.apply(null, myraScoreArray);
         document.getElementById("myraLowestScore").innerHTML = Math.min.apply(null, myraScoreArray);
         document.getElementById("myraHints").innerHTML = snapshot.hasChild('myra') && snapshot.val().myra.total != null ? snapshot.val().myra.total.avgHints.toFixed(2) : 0;
@@ -1052,7 +1113,7 @@ window.onload = function() {
         document.getElementById("myraTotalAttempt").innerHTML = myraTotalAttempt;
 
         document.getElementById("neozepScore").innerHTML = snapshot.hasChild('neozep') && snapshot.val().neozep.total != null ? snapshot.val().neozep.total.avgScore.toFixed(2) : 0;
-        document.getElementById("neozepTotalScore").innerHTML = neozepScoreArray.reduce(getSum);
+        document.getElementById("neozepTotalScore").innerHTML = neozepTotalScore;
         document.getElementById("neozepHighestScore").innerHTML = Math.max.apply(null, neozepScoreArray);
         document.getElementById("neozepLowestScore").innerHTML = Math.min.apply(null, neozepScoreArray);
         document.getElementById("neozepHints").innerHTML = snapshot.hasChild('neozep') && snapshot.val().neozep.total != null ? snapshot.val().neozep.total.avgHints.toFixed(2) : 0;
@@ -1068,7 +1129,7 @@ window.onload = function() {
         document.getElementById("neozepTotalAttempt").innerHTML = neozepTotalAttempt;
 
         document.getElementById("phcareScore").innerHTML = snapshot.hasChild('phcare') && snapshot.val().phcare.total != null ? snapshot.val().phcare.total.avgScore.toFixed(2) : 0;
-        document.getElementById("phcareTotalScore").innerHTML = phcareScoreArray.reduce(getSum);
+        document.getElementById("phcareTotalScore").innerHTML = phcareTotalScore;
         document.getElementById("phcareHighestScore").innerHTML = Math.max.apply(null, phcareScoreArray);
         document.getElementById("phcareLowestScore").innerHTML = Math.min.apply(null, phcareScoreArray);
         document.getElementById("phcareHints").innerHTML = snapshot.hasChild('phcare') && snapshot.val().phcare.total != null ? snapshot.val().phcare.total.avgHints.toFixed(2) : 0;
@@ -1084,7 +1145,7 @@ window.onload = function() {
         document.getElementById("phcareTotalAttempt").innerHTML = phcareTotalAttempt;
 
         document.getElementById("rexidolScore").innerHTML = snapshot.hasChild('rexidol') && snapshot.val().rexidol.total != null ? snapshot.val().rexidol.total.avgScore.toFixed(2) : 0;
-        document.getElementById("rexidolTotalScore").innerHTML = rexidolScoreArray.reduce(getSum);
+        document.getElementById("rexidolTotalScore").innerHTML = rexidolTotalScore;
         document.getElementById("rexidolHighestScore").innerHTML = Math.max.apply(null, rexidolScoreArray);
         document.getElementById("rexidolLowestScore").innerHTML = Math.min.apply(null, rexidolScoreArray);
         document.getElementById("rexidolHints").innerHTML = snapshot.hasChild('rexidol') && snapshot.val().rexidol.total != null ? snapshot.val().rexidol.total.avgHints.toFixed(2) : 0;
@@ -1100,7 +1161,7 @@ window.onload = function() {
         document.getElementById("rexidolTotalAttempt").innerHTML = rexidolTotalAttempt;
 
         document.getElementById("ritemedScore").innerHTML = snapshot.hasChild('ritemed') && snapshot.val().ritemed.total != null ? snapshot.val().ritemed.total.avgScore.toFixed(2) : 0;
-        document.getElementById("ritemedTotalScore").innerHTML = ritemedScoreArray.reduce(getSum);
+        document.getElementById("ritemedTotalScore").innerHTML = ritemedTotalScore;
         document.getElementById("ritemedHighestScore").innerHTML = Math.max.apply(null, ritemedScoreArray);
         document.getElementById("ritemedLowestScore").innerHTML = Math.min.apply(null, ritemedScoreArray);
         document.getElementById("ritemedHints").innerHTML = snapshot.hasChild('ritemed') && snapshot.val().ritemed.total != null ? snapshot.val().ritemed.total.avgHints.toFixed(2) : 0;
@@ -1116,7 +1177,7 @@ window.onload = function() {
         document.getElementById("ritemedTotalAttempt").innerHTML = ritemedTotalAttempt;
 
         document.getElementById("robitussinScore").innerHTML = snapshot.hasChild('robitussin') && snapshot.val().robitussin.total != null ? snapshot.val().robitussin.total.avgScore.toFixed(2) : 0;
-        document.getElementById("robitussinTotalScore").innerHTML = robitussinScoreArray.reduce(getSum);
+        document.getElementById("robitussinTotalScore").innerHTML = robitussinTotalScore;
         document.getElementById("robitussinHighestScore").innerHTML = Math.max.apply(null, robitussinScoreArray);
         document.getElementById("robitussinLowestScore").innerHTML = Math.min.apply(null, robitussinScoreArray);
         document.getElementById("robitussinHints").innerHTML = snapshot.hasChild('robitussin') && snapshot.val().robitussin.total != null ? snapshot.val().robitussin.total.avgHints.toFixed(2) : 0;
@@ -1132,7 +1193,7 @@ window.onload = function() {
         document.getElementById("robitussinTotalAttempt").innerHTML = robitussinTotalAttempt;
 
         document.getElementById("skelanScore").innerHTML = snapshot.hasChild('skelan') && snapshot.val().skelan.total != null ? snapshot.val().skelan.total.avgScore.toFixed(2) : 0;
-        document.getElementById("skelanTotalScore").innerHTML = skelanScoreArray.reduce(getSum);
+        document.getElementById("skelanTotalScore").innerHTML = skelanTotalScore;
         document.getElementById("skelanHighestScore").innerHTML = Math.max.apply(null, skelanScoreArray);
         document.getElementById("skelanLowestScore").innerHTML = Math.min.apply(null, skelanScoreArray);
         document.getElementById("skelanHints").innerHTML = snapshot.hasChild('skelan') && snapshot.val().skelan.total != null ? snapshot.val().skelan.total.avgHints.toFixed(2) : 0;
@@ -1148,7 +1209,7 @@ window.onload = function() {
         document.getElementById("skelanTotalAttempt").innerHTML = skelanTotalAttempt;
 
         document.getElementById("solmuxScore").innerHTML = snapshot.hasChild('solmux') && snapshot.val().solmux.total != null ? snapshot.val().solmux.total.avgScore.toFixed(2) : 0;
-        document.getElementById("solmuxTotalScore").innerHTML = solmuxScoreArray.reduce(getSum);
+        document.getElementById("solmuxTotalScore").innerHTML = solmuxTotalScore;
         document.getElementById("solmuxHighestScore").innerHTML = Math.max.apply(null, solmuxScoreArray);
         document.getElementById("solmuxLowestScore").innerHTML = Math.min.apply(null, solmuxScoreArray);
         document.getElementById("solmuxHints").innerHTML = snapshot.hasChild('solmux') && snapshot.val().solmux.total != null ? snapshot.val().solmux.total.avgHints.toFixed(2) : 0;
@@ -1164,7 +1225,7 @@ window.onload = function() {
         document.getElementById("solmuxTotalAttempt").innerHTML = solmuxTotalAttempt;
 
         document.getElementById("tgpScore").innerHTML = snapshot.hasChild('tgp') && snapshot.val().tgp.total != null ? snapshot.val().tgp.total.avgScore.toFixed(2) : 0;
-        document.getElementById("tgpTotalScore").innerHTML = tgpScoreArray.reduce(getSum);
+        document.getElementById("tgpTotalScore").innerHTML = tgpTotalScore;
         document.getElementById("tgpHighestScore").innerHTML = Math.max.apply(null, tgpScoreArray);
         document.getElementById("tgpLowestScore").innerHTML = Math.min.apply(null, tgpScoreArray);
         document.getElementById("tgpHints").innerHTML = snapshot.hasChild('tgp') && snapshot.val().tgp.total != null ? snapshot.val().tgp.total.avgHints.toFixed(2) : 0;
@@ -1180,7 +1241,7 @@ window.onload = function() {
         document.getElementById("tgpTotalAttempt").innerHTML = tgpTotalAttempt;
 
         document.getElementById("uhpScore").innerHTML = snapshot.hasChild('uhp') && snapshot.val().uhp.total != null ? snapshot.val().uhp.total.avgScore.toFixed(2) : 0;
-        document.getElementById("uhpTotalScore").innerHTML = uhpScoreArray.reduce(getSum);
+        document.getElementById("uhpTotalScore").innerHTML = uhpTotalScore;
         document.getElementById("uhpHighestScore").innerHTML = Math.max.apply(null, uhpScoreArray);
         document.getElementById("uhpLowestScore").innerHTML = Math.min.apply(null, uhpScoreArray);
         document.getElementById("uhpHints").innerHTML = snapshot.hasChild('uhp') && snapshot.val().uhp.total != null ? snapshot.val().uhp.total.avgHints.toFixed(2) : 0;
@@ -1196,7 +1257,7 @@ window.onload = function() {
         document.getElementById("uhpTotalAttempt").innerHTML = uhpTotalAttempt;
 
         document.getElementById("unilabScore").innerHTML = snapshot.hasChild('unilab') && snapshot.val().unilab.total != null ? snapshot.val().unilab.total.avgScore.toFixed(2) : 0;
-        document.getElementById("unilabTotalScore").innerHTML = unilabScoreArray.reduce(getSum);
+        document.getElementById("unilabTotalScore").innerHTML = unilabTotalScore;
         document.getElementById("unilabHighestScore").innerHTML = Math.max.apply(null, unilabScoreArray);
         document.getElementById("unilabLowestScore").innerHTML = Math.min.apply(null, unilabScoreArray);
         document.getElementById("unilabHints").innerHTML = snapshot.hasChild('unilab') && snapshot.val().unilab.total != null ? snapshot.val().unilab.total.avgHints.toFixed(2) : 0;
@@ -1212,7 +1273,7 @@ window.onload = function() {
         document.getElementById("unilabTotalAttempt").innerHTML = unilabTotalAttempt;
 
         document.getElementById("vicksScore").innerHTML = snapshot.hasChild('vicks') && snapshot.val().vicks.total != null ? snapshot.val().vicks.total.avgScore.toFixed(2) : 0;
-        document.getElementById("vicksTotalScore").innerHTML = vicksScoreArray.reduce(getSum);
+        document.getElementById("vicksTotalScore").innerHTML = vicksTotalScore;
         document.getElementById("vicksHighestScore").innerHTML = Math.max.apply(null, vicksScoreArray);
         document.getElementById("vicksLowestScore").innerHTML = Math.min.apply(null, vicksScoreArray);
         document.getElementById("vicksHints").innerHTML = snapshot.hasChild('vicks') && snapshot.val().vicks.total != null ? snapshot.val().vicks.total.avgHints.toFixed(2) : 0;
