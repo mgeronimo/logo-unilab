@@ -164,7 +164,7 @@ window.onload = function() {
         kremilsIncorrectCounter = 0, 
         kremilsSkipCounter = 0;
         kremilsTotalAttempt=0,
-        kermilsTotalScore=0,
+        kremilsTotalScore=0,
         kremilsTotalRespondentOnFirstAttempt=0,
         kremilsScoreArray = [],
         kremilsHintsArray = [],
@@ -555,8 +555,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('kremils')) {
-                    kermilsCorrectCounter = (kermilsCorrectCounter + (childSnapshot.val().kermils.firstGuess == true ? 1 : 0));
-                    kermilsIncorrectCounter = (kermilsIncorrectCounter + (childSnapshot.val().kermils.firstGuess == false ? 1 : 0));
+                    kremilsCorrectCounter = (kremilsCorrectCounter + (childSnapshot.val().kremils.firstGuess == true ? 1 : 0));
+                    kremilsIncorrectCounter = (kremilsIncorrectCounter + (childSnapshot.val().kremils.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().kremils.firstScore;
                     kremilsTotalScore = kremilsTotalScore + childSnapshot.val().kremils.firstScore;
                     childSnapshot.val().kremils.firstScore > 0 ? kremilsScoreArray.push(childSnapshot.val().kremils.firstScore) : '';
