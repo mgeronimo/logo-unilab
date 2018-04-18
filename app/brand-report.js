@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('#txtBrand').keyup(function(){
 
         var brand = $('#txtBrand').val();
-        document.getElementById('brand').id = brand;
+        //document.getElementById('brand').id = brand;
         document.getElementById('tableHeader').value = brand;
         
         var ref = firebase.database().ref().child("users");
@@ -43,7 +43,7 @@ $(document).ready(function(){
                 }
             });
             document.getElementById('ccount').innerHTML = ccount;
-            document.getElementById(brand).innerHTML = reportsTable;
+            document.getElementById('brand').innerHTML = reportsTable;
         });
 
     
