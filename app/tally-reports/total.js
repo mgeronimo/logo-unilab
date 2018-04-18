@@ -345,8 +345,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('alaxan')) {
-                    alaxanCorrectCounter = (alaxanCorrectCounter + childSnapshot.val().alaxan.guessRightCount);
-                    alaxanIncorrectCounter = (alaxanIncorrectCounter + (childSnapshot.val().alaxan.attempt - childSnapshot.val().alaxan.guessRightCount));
+                    alaxanCorrectCounter = (alaxanCorrectCounter + (childSnapshot.val().alaxan.firstGuess == true ? 1 : 0));
+                    alaxanIncorrectCounter = (alaxanIncorrectCounter + (childSnapshot.val().alaxan.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().alaxan.firstScore;    
                     alaxanTotalScore = alaxanTotalScore + childSnapshot.val().alaxan.firstScore;
                     childSnapshot.val().alaxan.firstScore > 0 ? alaxanScoreArray.push(childSnapshot.val().alaxan.firstScore) : '';
@@ -359,8 +359,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('allerta')) {
-                    allertaCorrectCounter = (allertaCorrectCounter + childSnapshot.val().allerta.guessRightCount);
-                    allertaIncorrectCounter = (allertaIncorrectCounter + (childSnapshot.val().allerta.attempt - childSnapshot.val().allerta.guessRightCount));
+                    allertaCorrectCounter = (allertaCorrectCounter + (childSnapshot.val().allerta.firstGuess == true ? 1 : 0));
+                    allertaIncorrectCounter = (allertaIncorrectCounter + (childSnapshot.val().allerta.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().allerta.firstScore;
                     allertaTotalScore = allertaTotalScore + childSnapshot.val().allerta.firstScore;
                     childSnapshot.val().allerta.firstScore > 0 ? allertaScoreArray.push(childSnapshot.val().allerta.firstScore) : '';
@@ -373,8 +373,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('ascof')) {
-                    ascofCorrectCounter = (ascofCorrectCounter + childSnapshot.val().ascof.guessRightCount);
-                    ascofIncorrectCounter = (ascofIncorrectCounter + (childSnapshot.val().ascof.attempt - childSnapshot.val().ascof.guessRightCount));
+                    ascofCorrectCounter = (ascofCorrectCounter + (childSnapshot.val().ascof.firstGuess == true ? 1 : 0));
+                    ascofIncorrectCounter = (ascofIncorrectCounter + (childSnapshot.val().ascof.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().ascof.firstScore;
                     ascofTotalScore = ascofTotalScore + childSnapshot.val().ascof.firstScore;
                     childSnapshot.val().ascof.firstScore > 0 ? ascofScoreArray.push(childSnapshot.val().ascof.firstScore) : '';
@@ -387,8 +387,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('bioflu')) {
-                    biofluCorrectCounter = (biofluCorrectCounter + childSnapshot.val().bioflu.guessRightCount);
-                    biofluIncorrectCounter = (biofluIncorrectCounter + (childSnapshot.val().bioflu.attempt - childSnapshot.val().bioflu.guessRightCount));
+                    biofluCorrectCounter = (biofluCorrectCounter + (childSnapshot.val().bioflu.firstGuess == true ? 1 : 0));
+                    biofluIncorrectCounter = (biofluIncorrectCounter + (childSnapshot.val().bioflu.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().bioflu.firstScore;
                     biofluTotalScore = biofluTotalScore + childSnapshot.val().bioflu.firstScore;
                     childSnapshot.val().bioflu.firstScore > 0 ? biofluScoreArray.push(childSnapshot.val().bioflu.firstScore) : '';
@@ -401,8 +401,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('biogesic')) {
-                    biogesicCorrectCounter = (biogesicCorrectCounter + childSnapshot.val().biogesic.guessRightCount);
-                    biogesicIncorrectCounter = (biogesicIncorrectCounter + (childSnapshot.val().biogesic.attempt - childSnapshot.val().biogesic.guessRightCount));
+                    biogesicCorrectCounter = (biogesicCorrectCounter + (childSnapshot.val().biogesic.firstGuess == true ? 1 : 0));
+                    biogesicIncorrectCounter = (biogesicIncorrectCounter + (childSnapshot.val().biogesic.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().biogesic.firstScore;
                     biogesicTotalScore = biogesicTotalScore + childSnapshot.val().biogesic.firstScore;
                     childSnapshot.val().biogesic.firstScore > 0 ? biogesicScoreArray.push(childSnapshot.val().biogesic.firstScore) : '';
@@ -415,8 +415,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('celeteque')) {
-                    celetequeCorrectCounter = (celetequeCorrectCounter + childSnapshot.val().celeteque.guessRightCount);
-                    celetequeIncorrectCounter = (celetequeIncorrectCounter + (childSnapshot.val().celeteque.attempt - childSnapshot.val().celeteque.guessRightCount));
+                    celetequeCorrectCounter = (celetequeCorrectCounter + (childSnapshot.val().celeteque.firstGuess == true ? 1 : 0));
+                    celetequeIncorrectCounter = (celetequeIncorrectCounter + (childSnapshot.val().celeteque.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().celeteque.firstScore;
                     celetequeTotalScore = celetequeTotalScore + childSnapshot.val().celeteque.firstScore;
                     childSnapshot.val().celeteque.firstScore > 0 ? celetequeScoreArray.push(childSnapshot.val().celeteque.firstScore) : '';
@@ -429,8 +429,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('centrum')) {
-                    centrumCorrectCounter = (centrumCorrectCounter + childSnapshot.val().centrum.guessRightCount);
-                    centrumIncorrectCounter = (centrumIncorrectCounter + ((childSnapshot.val().centrum.attempt == null ? 0 : childSnapshot.val().centrum.attempt) - (childSnapshot.val().centrum.guessRightCount == null ? 0 : childSnapshot.val().centrum.guessRightCount)));
+                    centrumCorrectCounter = (centrumCorrectCounter + (childSnapshot.val().centrum.firstGuess == true ? 1 : 0));
+                    centrumIncorrectCounter = (centrumIncorrectCounter + (childSnapshot.val().centrum.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().centrum.firstScore;
                     centrumTotalScore = centrumTotalScore + childSnapshot.val().centrum.firstScore;
                     childSnapshot.val().centrum.firstScore > 0 ? centrumScoreArray.push(childSnapshot.val().centrum.firstScore) : '';
@@ -443,8 +443,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('cetaphil')) {
-                    cetaphilCorrectCounter = (cetaphilCorrectCounter + childSnapshot.val().cetaphil.guessRightCount);
-                    cetaphilIncorrectCounter = (cetaphilIncorrectCounter + (childSnapshot.val().cetaphil.attempt - childSnapshot.val().cetaphil.guessRightCount));
+                    cetaphilCorrectCounter = (cetaphilCorrectCounter + (childSnapshot.val().cetaphil.firstGuess == true ? 1 : 0));
+                    cetaphilIncorrectCounter = (cetaphilIncorrectCounter + (childSnapshot.val().cetaphil.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().cetaphil.firstScore;
                     cetaphilTotalScore = cetaphilTotalScore + childSnapshot.val().cetaphil.firstScore;
                     childSnapshot.val().cetaphil.firstScore > 0 ? cetaphilScoreArray.push(childSnapshot.val().cetaphil.firstScore) : '';
@@ -457,8 +457,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('conzace')) {
-                    conzaceCorrectCounter = (conzaceCorrectCounter + childSnapshot.val().conzace.guessRightCount);
-                    conzaceIncorrectCounter = (conzaceIncorrectCounter + (childSnapshot.val().conzace.attempt - childSnapshot.val().conzace.guessRightCount));
+                    conzaceCorrectCounter = (conzaceCorrectCounter + (childSnapshot.val().conzace.firstGuess == true ? 1 : 0));
+                    conzaceIncorrectCounter = (conzaceIncorrectCounter + (childSnapshot.val().conzace.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().conzace.firstScore;
                     conzaceTotalScore = conzaceTotalScore + childSnapshot.val().conzace.firstScore;
                     childSnapshot.val().conzace.firstScore > 0 ? conzaceScoreArray.push(childSnapshot.val().conzace.firstScore) : '';
@@ -471,8 +471,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('decolgen')) {
-                    decolgenCorrectCounter = (decolgenCorrectCounter + childSnapshot.val().decolgen.guessRightCount);
-                    decolgenIncorrectCounter = (decolgenIncorrectCounter + (childSnapshot.val().decolgen.attempt - childSnapshot.val().decolgen.guessRightCount));
+                    decolgenCorrectCounter = (decolgenCorrectCounter + (childSnapshot.val().decolgen.firstGuess == true ? 1 : 0));
+                    decolgenIncorrectCounter = (decolgenIncorrectCounter + (childSnapshot.val().decolgen.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().decolgen.firstScore;
                     decolgenTotalScore = decolgenTotalScore + childSnapshot.val().decolgen.firstScore;
                     childSnapshot.val().decolgen.firstScore > 0 ? decolgenScoreArray.push(childSnapshot.val().decolgen.firstScore) : '';
@@ -485,8 +485,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('diatabs')) {
-                    diatabsCorrectCounter = (diatabsCorrectCounter + childSnapshot.val().diatabs.guessRightCount);
-                    diatabsIncorrectCounter = (diatabsIncorrectCounter + ((childSnapshot.val().diatabs.attempt == null ? 0 : childSnapshot.val().diatabs.attempt) - (childSnapshot.val().diatabs.guessRightCount == null ? 0 : childSnapshot.val().diatabs.guessRightCount)));
+                    diatabsCorrectCounter = (diatabsCorrectCounter + (childSnapshot.val().diatabs.firstGuess == true ? 1 : 0));
+                    diatabsIncorrectCounter = (diatabsIncorrectCounter + (childSnapshot.val().diatabs.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().diatabs.firstScore;
                     diatabsTotalScore = diatabsTotalScore + childSnapshot.val().diatabs.firstScore;
                     childSnapshot.val().diatabs.firstScore > 0 ? diatabsScoreArray.push(childSnapshot.val().diatabs.firstScore) : '';
@@ -499,8 +499,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('efficascent')) {
-                    efficascentCorrectCounter = (efficascentCorrectCounter + (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount));
-                    efficascentIncorrectCounter = (efficascentIncorrectCounter + ((childSnapshot.val().efficascent.attempt == null ? 0 : childSnapshot.val().efficascent.attempt) - (childSnapshot.val().efficascent.guessRightCount == null ? 0 : childSnapshot.val().efficascent.guessRightCount)));
+                    efficascentCorrectCounter = (efficascentCorrectCounter + (childSnapshot.val().efficascent.firstGuess == true ? 1 : 0));
+                    efficascentIncorrectCounter = (efficascentIncorrectCounter + (childSnapshot.val().efficascent.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().efficascent.firstScore;
                     efficascentTotalScore = efficascentTotalScore + childSnapshot.val().efficascent.firstScore;
                     childSnapshot.val().efficascent.firstScore > 0 ? efficascentScoreArray.push(childSnapshot.val().efficascent.firstScore) : '';
@@ -513,8 +513,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('enervon')) {
-                    enervonCorrectCounter = (enervonCorrectCounter + childSnapshot.val().enervon.guessRightCount);
-                    enervonIncorrectCounter = (enervonIncorrectCounter + (childSnapshot.val().enervon.attempt - childSnapshot.val().enervon.guessRightCount));
+                    enervonCorrectCounter = (enervonCorrectCounter + (childSnapshot.val().enervon.firstGuess == true ? 1 : 0));
+                    enervonIncorrectCounter = (enervonIncorrectCounter + (childSnapshot.val().enervon.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().enervon.firstScore;
                     enervonTotalScore = enervonTotalScore + childSnapshot.val().enervon.firstScore;
                     childSnapshot.val().enervon.firstScore > 0 ? enervonScoreArray.push(childSnapshot.val().enervon.firstScore) : '';
@@ -527,8 +527,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('gatorade')) {
-                    gatoradeCorrectCounter = (gatoradeCorrectCounter + childSnapshot.val().gatorade.guessRightCount);
-                    gatoradeIncorrectCounter = (gatoradeIncorrectCounter + (childSnapshot.val().gatorade.attempt - childSnapshot.val().gatorade.guessRightCount));
+                    gatoradeCorrectCounter = (gatoradeCorrectCounter + (childSnapshot.val().gatorade.firstGuess == true ? 1 : 0));
+                    gatoradeIncorrectCounter = (gatoradeIncorrectCounter + (childSnapshot.val().gatorade.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().gatorade.firstScore;
                     gatoradeTotalScore = gatoradeTotalScore + childSnapshot.val().gatorade.firstScore;
                     childSnapshot.val().gatorade.firstScore > 0 ? gatoradeScoreArray.push(childSnapshot.val().gatorade.firstScore) : '';
@@ -541,8 +541,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('gynepro')) {
-                    gyneproCorrectCounter = (gyneproCorrectCounter + childSnapshot.val().gynepro.guessRightCount);
-                    gyneproIncorrectCounter = (gyneproIncorrectCounter + (childSnapshot.val().gynepro.attempt - childSnapshot.val().gynepro.guessRightCount));
+                    gyneproCorrectCounter = (gyneproCorrectCounter + (childSnapshot.val().gynepro.firstGuess == true ? 1 : 0));
+                    gyneproIncorrectCounter = (gyneproIncorrectCounter + (childSnapshot.val().gynepro.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().gynepro.firstScore;
                     gyneproTotalScore = gyneproTotalScore + childSnapshot.val().gynepro.firstScore;
                     childSnapshot.val().gynepro.firstScore > 0 ? gyneproScoreArray.push(childSnapshot.val().gynepro.firstScore) : '';
@@ -555,8 +555,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('kremils')) {
-                    kremilsCorrectCounter = (kremilsCorrectCounter + childSnapshot.val().kremils.guessRightCount);
-                    kremilsIncorrectCounter = (kremilsIncorrectCounter + (childSnapshot.val().kremils.attempt - childSnapshot.val().kremils.guessRightCount));
+                    kermilsCorrectCounter = (kermilsCorrectCounter + (childSnapshot.val().kermils.firstGuess == true ? 1 : 0));
+                    kermilsIncorrectCounter = (kermilsIncorrectCounter + (childSnapshot.val().kermils.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().kremils.firstScore;
                     kremilsTotalScore = kremilsTotalScore + childSnapshot.val().kremils.firstScore;
                     childSnapshot.val().kremils.firstScore > 0 ? kremilsScoreArray.push(childSnapshot.val().kremils.firstScore) : '';
@@ -569,8 +569,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('lactacyd')) {
-                    lactacydCorrectCounter = (lactacydCorrectCounter + childSnapshot.val().lactacyd.guessRightCount);
-                    lactacydIncorrectCounter = (lactacydIncorrectCounter + (childSnapshot.val().lactacyd.attempt - childSnapshot.val().lactacyd.guessRightCount));
+                    lactacydCorrectCounter = (lactacydCorrectCounter + (childSnapshot.val().lactacyd.firstGuess == true ? 1 : 0));
+                    lactacydIncorrectCounter = (lactacydIncorrectCounter + (childSnapshot.val().lactacyd.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().lactacyd.firstScore;
                     lactacydTotalScore = lactacydTotalScore + childSnapshot.val().lactacyd.firstScore;
                     childSnapshot.val().lactacyd.firstScore > 0 ? lactacydScoreArray.push(childSnapshot.val().lactacyd.firstScore) : '';
@@ -583,8 +583,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('mcdo')) {
-                    mcdoCorrectCounter = (mcdoCorrectCounter + (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount));
-                    mcdoIncorrectCounter = (mcdoIncorrectCounter + ((childSnapshot.val().mcdo.attempt == null ? 0 : childSnapshot.val().mcdo.attempt) - (childSnapshot.val().mcdo.guessRightCount == null ? 0 : childSnapshot.val().mcdo.guessRightCount)));
+                    mcdoCorrectCounter = (mcdoCorrectCounter + (childSnapshot.val().mcdo.firstGuess == true ? 1 : 0));
+                    mcdoIncorrectCounter = (mcdoIncorrectCounter + (childSnapshot.val().mcdo.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().mcdo.firstScore;
                     mcdoTotalScore = mcdoTotalScore + childSnapshot.val().mcdo.firstScore;
                     childSnapshot.val().mcdo.firstScore > 0 ? mcdoScoreArray.push(childSnapshot.val().mcdo.firstScore) : '';
@@ -597,8 +597,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('myra')) {
-                    myraCorrectCounter = (myraCorrectCounter + childSnapshot.val().myra.guessRightCount);
-                    myraIncorrectCounter = (myraIncorrectCounter + (childSnapshot.val().myra.attempt - childSnapshot.val().myra.guessRightCount));
+                    myraCorrectCounter = (myraCorrectCounter + (childSnapshot.val().myra.firstGuess == true ? 1 : 0));
+                    myraIncorrectCounter = (myraIncorrectCounter + (childSnapshot.val().myra.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().myra.firstScore;
                     myraTotalScore = myraTotalScore + childSnapshot.val().myra.firstScore;
                     childSnapshot.val().myra.firstScore > 0 ? myraScoreArray.push(childSnapshot.val().myra.firstScore) : '';
@@ -611,8 +611,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('neozep')) {
-                    neozepCorrectCounter = (neozepCorrectCounter + childSnapshot.val().neozep.guessRightCount);
-                    neozepIncorrectCounter = (neozepIncorrectCounter + (childSnapshot.val().neozep.attempt - childSnapshot.val().neozep.guessRightCount));
+                    neozepCorrectCounter = (neozepCorrectCounter + (childSnapshot.val().neozep.firstGuess == true ? 1 : 0));
+                    neozepIncorrectCounter = (neozepIncorrectCounter + (childSnapshot.val().neozep.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().neozep.firstScore;
                     neozepTotalScore = neozepTotalScore + childSnapshot.val().neozep.firstScore;
                     childSnapshot.val().neozep.firstScore > 0 ? neozepScoreArray.push(childSnapshot.val().neozep.firstScore) : '';
@@ -625,8 +625,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('phcare')) {
-                    phcareCorrectCounter = (phcareCorrectCounter + childSnapshot.val().phcare.guessRightCount);
-                    phcareIncorrectCounter = (phcareIncorrectCounter + (childSnapshot.val().phcare.attempt - childSnapshot.val().phcare.guessRightCount));
+                    phcareCorrectCounter = (phcareCorrectCounter + (childSnapshot.val().phcare.firstGuess == true ? 1 : 0));
+                    phcareIncorrectCounter = (phcareIncorrectCounter + (childSnapshot.val().phcare.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().phcare.firstScore;
                     phcareTotalScore = phcareTotalScore + childSnapshot.val().phcare.firstScore;
                     childSnapshot.val().phcare.firstScore > 0 ? phcareScoreArray.push(childSnapshot.val().phcare.firstScore) : '';
@@ -639,8 +639,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('rexidol')) {
-                    rexidolCorrectCounter = (rexidolCorrectCounter + childSnapshot.val().rexidol.guessRightCount);
-                    rexidolIncorrectCounter = (rexidolIncorrectCounter + (childSnapshot.val().rexidol.attempt - childSnapshot.val().rexidol.guessRightCount));
+                    rexidolCorrectCounter = (rexidolCorrectCounter + (childSnapshot.val().rexidol.firstGuess == true ? 1 : 0));
+                    rexidolIncorrectCounter = (rexidolIncorrectCounter + (childSnapshot.val().rexidol.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().rexidol.firstScore;
                     rexidolTotalScore = rexidolTotalScore + childSnapshot.val().rexidol.firstScore;
                     childSnapshot.val().rexidol.firstScore > 0 ? rexidolScoreArray.push(childSnapshot.val().rexidol.firstScore) : '';
@@ -653,8 +653,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('ritemed')) {
-                    ritemedCorrectCounter = (ritemedCorrectCounter + childSnapshot.val().ritemed.guessRightCount);
-                    ritemedIncorrectCounter = (ritemedIncorrectCounter + (childSnapshot.val().ritemed.attempt - childSnapshot.val().ritemed.guessRightCount));
+                    ritemedCorrectCounter = (ritemedCorrectCounter + (childSnapshot.val().ritemed.firstGuess == true ? 1 : 0));
+                    ritemedIncorrectCounter = (ritemedIncorrectCounter + (childSnapshot.val().ritemed.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().ritemed.firstScore;
                     ritemedTotalScore = ritemedTotalScore + childSnapshot.val().ritemed.firstScore;
                     childSnapshot.val().ritemed.firstScore > 0 ? ritemedScoreArray.push(childSnapshot.val().ritemed.firstScore) : '';
@@ -667,8 +667,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('robitussin')) {
-                    robitussinCorrectCounter = (robitussinCorrectCounter + childSnapshot.val().robitussin.guessRightCount);
-                    robitussinIncorrectCounter = (robitussinIncorrectCounter + (childSnapshot.val().robitussin.attempt - childSnapshot.val().robitussin.guessRightCount));
+                    robitussinCorrectCounter = (robitussinCorrectCounter + (childSnapshot.val().robitussin.firstGuess == true ? 1 : 0));
+                    robitussinIncorrectCounter = (robitussinIncorrectCounter + (childSnapshot.val().robitussin.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().robitussin.firstScore;
                     robitussinTotalScore = robitussinTotalScore + childSnapshot.val().robitussin.firstScore;
                     childSnapshot.val().robitussin.firstScore > 0 ? robitussinScoreArray.push(childSnapshot.val().robitussin.firstScore) : '';
@@ -681,8 +681,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('skelan')) {
-                    skelanCorrectCounter = (skelanCorrectCounter + (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount));
-                    skelanIncorrectCounter = (skelanIncorrectCounter + ((childSnapshot.val().skelan.attempt == null ? 0 : childSnapshot.val().skelan.attempt) - (childSnapshot.val().skelan.guessRightCount == null ? 0 : childSnapshot.val().skelan.guessRightCount)));
+                    skelanCorrectCounter = (skelanCorrectCounter + (childSnapshot.val().skelan.firstGuess == true ? 1 : 0));
+                    skelanIncorrectCounter = (skelanIncorrectCounter + (childSnapshot.val().skelan.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().skelan.firstScore;
                     skelanTotalScore = skelanTotalScore + childSnapshot.val().skelan.firstScore;
                     childSnapshot.val().skelan.firstScore > 0 ? skelanScoreArray.push(childSnapshot.val().skelan.firstScore) : '';
@@ -695,8 +695,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('solmux')) {
-                    solmuxCorrectCounter = (solmuxCorrectCounter + childSnapshot.val().solmux.guessRightCount);
-                    solmuxIncorrectCounter = (solmuxIncorrectCounter + (childSnapshot.val().solmux.attempt - childSnapshot.val().solmux.guessRightCount));
+                    solmuxCorrectCounter = (solmuxCorrectCounter + (childSnapshot.val().solmux.firstGuess == true ? 1 : 0));
+                    solmuxIncorrectCounter = (solmuxIncorrectCounter + (childSnapshot.val().solmux.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().solmux.firstScore;
                     solmuxTotalScore = solmuxTotalScore + childSnapshot.val().solmux.firstScore;
                     childSnapshot.val().solmux.firstScore > 0 ? solmuxScoreArray.push(childSnapshot.val().solmux.firstScore) : '';
@@ -709,8 +709,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('tgp')) {
-                    tgpCorrectCounter = (tgpCorrectCounter + childSnapshot.val().tgp.guessRightCount);
-                    tgpIncorrectCounter = (tgpIncorrectCounter + (childSnapshot.val().tgp.attempt - childSnapshot.val().tgp.guessRightCount));
+                    tgpCorrectCounter = (tgpCorrectCounter + (childSnapshot.val().tgp.firstGuess == true ? 1 : 0));
+                    tgpIncorrectCounter = (tgpIncorrectCounter + (childSnapshot.val().tgp.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().tgp.firstScore;
                     tgpTotalScore = tgpTotalScore + childSnapshot.val().tgp.firstScore;
                     childSnapshot.val().tgp.firstScore > 0 ? tgpScoreArray.push(childSnapshot.val().tgp.firstScore) : '';
@@ -723,8 +723,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('uhp')) {
-                    uhpCorrectCounter = (uhpCorrectCounter + childSnapshot.val().uhp.guessRightCount);
-                    uhpIncorrectCounter = (uhpIncorrectCounter + (childSnapshot.val().uhp.attempt - childSnapshot.val().uhp.guessRightCount));
+                    uhpCorrectCounter = (uhpCorrectCounter + (childSnapshot.val().uhp.firstGuess == true ? 1 : 0));
+                    uhpIncorrectCounter = (uhpIncorrectCounter + (childSnapshot.val().uhp.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().uhp.firstScore;
                     uhpTotalScore = uhpTotalScore + childSnapshot.val().uhp.firstScore;
                     childSnapshot.val().uhp.firstScore > 0 ? uhpScoreArray.push(childSnapshot.val().uhp.firstScore) : '';
@@ -737,8 +737,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('unilab')) {
-                    unilabCorrectCounter = (unilabCorrectCounter + childSnapshot.val().unilab.guessRightCount);
-                    unilabIncorrectCounter = (unilabIncorrectCounter + (childSnapshot.val().unilab.attempt - childSnapshot.val().unilab.guessRightCount));
+                    unilabCorrectCounter = (unilabCorrectCounter + (childSnapshot.val().unilab.firstGuess == true ? 1 : 0));
+                    unilabIncorrectCounter = (unilabIncorrectCounter + (childSnapshot.val().unilab.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().unilab.firstScore;
                     unilabTotalScore = unilabTotalScore + childSnapshot.val().unilab.firstScore;
                     childSnapshot.val().unilab.firstScore > 0 ? unilabScoreArray.push(childSnapshot.val().unilab.firstScore) : '';
@@ -751,8 +751,8 @@ window.onload = function() {
                 }
 
                 if(childSnapshot.hasChild('vicks')) { 
-                    vicksCorrectCounter = (vicksCorrectCounter + childSnapshot.val().vicks.guessRightCount);
-                    vicksIncorrectCounter = (vicksIncorrectCounter + (childSnapshot.val().vicks.attempt - childSnapshot.val().vicks.guessRightCount));
+                    vicksCorrectCounter = (vicksCorrectCounter + (childSnapshot.val().vicks.firstGuess == true ? 1 : 0));
+                    vicksIncorrectCounter = (vicksIncorrectCounter + (childSnapshot.val().vicks.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().vicks.firstScore;
                     childSnapshot.val().vicks.firstScore > 0 ? vicksScoreArray.push(childSnapshot.val().vicks.firstScore) : '';
                     childSnapshot.val().vicks.sumHints > 0 ? vicksHintsArray.push(childSnapshot.val().vicks.sumHints) : '';
