@@ -25,18 +25,18 @@ $(document).ready(function(){
                 ) {
                     reportsTable += "<tr>";
                     reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].attempt) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstGuess) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstHints) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstSeconds) : "0")  + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].guessRightOnAttempt) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgGuess) : "0") + "%</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgHints) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgSeconds) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].guessRightCount) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].sumScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").attempt) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").firstGuess) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").firstHints) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").firstSeconds) : "0")  + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").firstScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").guessRightOnAttempt) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").avgGuess) : "0") + "%</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").avgHints) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").avgSeconds) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").avgScore) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").guessRightCount) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].replace("'").sumScore) : "0") + "</td>";
 
 
                     reportsTable += "</tr>";
