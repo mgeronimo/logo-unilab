@@ -36,7 +36,6 @@
         var path = window.location.pathname.split("/");
         var brand = path[2].split("-");
             brand = brand[0];
-
     </script>
 
     <script src="brand-report.js"></script>
@@ -79,7 +78,7 @@
                                             <th>Total Score</th>
 
                                         </thead>
-                                        <tbody id="<script>brand</script>">
+                                        <tbody id="brand">
                                         </tbody>
                                     </table>
                                 </div>
@@ -97,6 +96,8 @@
     <script type='text/javascript' src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
     <script type="text/javascript">
         $(document).ready(function() {
+
+            document.getElementById('brand').id = brand;
             // This must be a hyperlink
             function exportTableToCSV($table, filename) {
                 var $headers = $table.find('tr:has(th)'),
