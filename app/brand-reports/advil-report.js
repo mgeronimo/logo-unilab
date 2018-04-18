@@ -44,7 +44,9 @@ window.onload = function() {
 
 }
 
-function score(hint, seconds) {
+function score(firsTry, hint, seconds) {
+
+    if(firsTry == "false") return 0;
 
     var hintScore = 0;
     var secondsScore = 0;
