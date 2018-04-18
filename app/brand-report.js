@@ -30,7 +30,7 @@ $(document).ready(function(){
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstHints) : "0")  + "</td>";
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstSeconds) : "0")  + "</td>";
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].firstScore) : "0") + "</td>";
-                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand]).guessRightOnAttempt) : "0") + "</td>";
+                    reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].guessRightOnAttempt) : "0") + "</td>";
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgGuess) : "0") + "%</td>";
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgHints) : "0") + "</td>";
                     reportsTable += "<td>" + (childSnapshot.hasChild(brand) ? checkUndefined(childSnapshot.val().this[brand].avgSeconds) : "0") + "</td>";
