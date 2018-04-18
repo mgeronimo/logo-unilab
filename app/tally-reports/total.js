@@ -331,8 +331,8 @@ window.onload = function() {
             ) {
 
                 if(childSnapshot.hasChild('advil')) {
-                    advilCorrectCounter = (advilCorrectCounter + childSnapshot.val().advil.guessRightCount);
-                    advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.attempt - childSnapshot.val().advil.guessRightCount));
+                    advilCorrectCounter = (advilCorrectCounter + (childSnapshot.val().advil.firstGuess == true ? 1 : 0));
+                    advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().advil.firstScore;
                     advilTotalScore = advilTotalScore + childSnapshot.val().advil.firstScore;
                     childSnapshot.val().advil.firstScore > 0 ? advilScoreArray.push(childSnapshot.val().advil.firstScore) : '';
@@ -792,7 +792,7 @@ window.onload = function() {
 
         var i = 0;
         
-        document.getElementById("advilScore").innerHTML = snapshot.hasChild('advil') && snapshot.val().advil.total != null ? snapshot.val().advil.total.avgScore.toFixed(2) : 0;
+        document.getElementById("advilScore").innerHTML = advilScoreArray.reduce(getSum) / advilCorrectCounter;
         document.getElementById("advilTotalScore").innerHTML = advilScoreArray.reduce(getSum);
         document.getElementById("advilHighestScore").innerHTML = Math.max.apply(null, advilScoreArray);
         document.getElementById("advilLowestScore").innerHTML = Math.min.apply(null, advilScoreArray);
