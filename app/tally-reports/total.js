@@ -811,6 +811,15 @@ window.onload = function() {
             score = 0;
 
         });
+
+        //average highest score
+        var gtHighestScore = 0;
+        $('.HighestScore').each(function(){
+            var stHighestScore = parseFloat($(this).text());
+            gtHighestScore += isNaN(stHighestScore) ? 0 : stHighestScore;
+        })
+        $('#TotalHighestScore').text(gtHighestScore.toFixed(2));
+        
     });
 
     function getSum(total, num) {
