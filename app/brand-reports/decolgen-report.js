@@ -4,6 +4,20 @@ window.onload = function() {
     ref.once("value").then(function(snapshot) {
         var ccount = 0;
         var reportsTable = "";
+        var footer = "";
+        var attempt = 0;
+        var firstGuess = 0;
+        var firstHints = 0;
+        var firstSeconds = 0;
+        var firstScore = 0;
+        var guessRightOnAttempt = 0;
+        var avgGuess = 0;
+        var avgHints = 0;
+        var avgSeconds = 0;
+        var avgScore = 0;
+        var guessRightCount = 0;
+        var sumScore = 0;
+
         snapshot.forEach(function(childSnapshot) {
 
             if(
@@ -18,30 +32,73 @@ window.onload = function() {
 
                 reportsTable += "<tr>";
                 reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.attempt) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstGuess) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstHints) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstSeconds) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightOnAttempt) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgGuess) : "0") + "%</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgHints) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgSeconds) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightCount) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.sumScore) : "0") + "</td>";
+                reportsTable += "<td class='attempt'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.attempt) : "0")  + "</td>";
+                reportsTable += "<td class='firstGuess'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstGuess) : "0")  + "</td>";
+                reportsTable += "<td class='firstHints'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstHints) : "0")  + "</td>";
+                reportsTable += "<td class='firstSeconds'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstSeconds) : "0")  + "</td>";
+                reportsTable += "<td class='firstScore'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstScore) : "0") + "</td>";
+                reportsTable += "<td class='guessRightOnAttempt'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightOnAttempt) : "0") + "</td>";
+                reportsTable += "<td class='avgGuess'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgGuess) : "0") + "%</td>";
+                reportsTable += "<td class='avgHints'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgHints) : "0") + "</td>";
+                reportsTable += "<td class='avgSeconds'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgSeconds) : "0") + "</td>";
+                reportsTable += "<td class='avgScore'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgScore) : "0") + "</td>";
+                reportsTable += "<td class='guessRightCount'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightCount) : "0") + "</td>";
+                reportsTable += "<td class='sumScore'>" + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.sumScore) : "0") + "</td>";
 
 
                 reportsTable += "</tr>";
                 ccount++;
+
+                attempt = attempt + (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.attempt) : 0);
+                firstGuess += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstGuess) : 0);
+                firstHints += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstHints) : 0);
+                firstSeconds += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstSeconds) : 0);
+                firstScore += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.firstScore) : 0);
+                guessRightOnAttempt += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightOnAttempt) : 0);
+                avgGuess += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgGuess) : 0);
+                avgHints += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgHints) : 0);
+                avgSeconds += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgSeconds) : 0);
+                avgScore += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.avgScore) : 0);
+                guessRightCount += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.guessRightCount) : 0);
+                sumScore += (childSnapshot.hasChild('decolgen') ? checkUndefined(childSnapshot.val().decolgen.sumScore) : 0);
+
             }
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('decolgen').innerHTML = reportsTable;
+        
+        attempt = attempt / ccount;
+        firstGuess = firstGuess / ccount;
+        firstHints = firstHints / ccount;
+        firstSeconds = firstSeconds / ccount;
+        firstScore = firstScore / ccount;
+        guessRightOnAttempt = guessRightOnAttempt / ccount;
+        avgGuess = avgGuess / ccount;
+        avgHints = avgHints / ccount;
+        avgSeconds = avgSeconds / ccount;
+        avgScore = avgScore / ccount;
+        guessRightCount = guessRightCount / ccount;
+        sumScore = sumScore / ccount;
+
+        footer += "<tr>";
+        footer += "<td>TOTAL AVERAGE</td>";        
+        footer += "<td>"+ attempt.toFixed(2) +"</td>";        
+        footer += "<td></td>";        
+        footer += "<td>"+ firstHints.toFixed(2) +"</td>";        
+        footer += "<td>"+ firstSeconds.toFixed(2) +"</td>";        
+        footer += "<td>"+ firstScore.toFixed(2) +"</td>";        
+        footer += "<td>"+ guessRightOnAttempt.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgGuess.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgHints.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgSeconds.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgScore.toFixed(2) +"</td>";        
+        footer += "<td>"+ guessRightCount.toFixed(2) +"</td>";        
+        footer += "<td>"+ sumScore.toFixed(2) +"</td>";           
+        footer += "</tr>";
+
+        document.getElementById('footer').innerHTML = footer;
+
     });
-
-    
-
 
 }
 

@@ -4,6 +4,20 @@ window.onload = function() {
     ref.once("value").then(function(snapshot) {
         var ccount = 0;
         var reportsTable = "";
+        var footer = "";
+        var attempt = 0;
+        var firstGuess = 0;
+        var firstHints = 0;
+        var firstSeconds = 0;
+        var firstScore = 0;
+        var guessRightOnAttempt = 0;
+        var avgGuess = 0;
+        var avgHints = 0;
+        var avgSeconds = 0;
+        var avgScore = 0;
+        var guessRightCount = 0;
+        var sumScore = 0;
+
         snapshot.forEach(function(childSnapshot) {
 
             if(
@@ -15,70 +29,76 @@ window.onload = function() {
                 && childSnapshot.val().name != "Khamylle Castillo"
                 && childSnapshot.val().name != "Grace Connexion"
             ) {
+
                 reportsTable += "<tr>";
                 reportsTable += "<td>" + checkUndefined(childSnapshot.val().name) + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.attempt) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstGuess) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstHints) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstSeconds) : "0")  + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgGuess) : "0") + "%</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgHints) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgSeconds) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgScore) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightCount) : "0") + "</td>";
-                reportsTable += "<td>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.sumScore) : "0") + "</td>";
+                reportsTable += "<td class='attempt'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.attempt) : "0")  + "</td>";
+                reportsTable += "<td class='firstGuess'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstGuess) : "0")  + "</td>";
+                reportsTable += "<td class='firstHints'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstHints) : "0")  + "</td>";
+                reportsTable += "<td class='firstSeconds'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstSeconds) : "0")  + "</td>";
+                reportsTable += "<td class='firstScore'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstScore) : "0") + "</td>";
+                reportsTable += "<td class='guessRightOnAttempt'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) : "0") + "</td>";
+                reportsTable += "<td class='avgGuess'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgGuess) : "0") + "%</td>";
+                reportsTable += "<td class='avgHints'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgHints) : "0") + "</td>";
+                reportsTable += "<td class='avgSeconds'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgSeconds) : "0") + "</td>";
+                reportsTable += "<td class='avgScore'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgScore) : "0") + "</td>";
+                reportsTable += "<td class='guessRightCount'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightCount) : "0") + "</td>";
+                reportsTable += "<td class='sumScore'>" + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.sumScore) : "0") + "</td>";
 
 
                 reportsTable += "</tr>";
                 ccount++;
+
+                attempt = attempt + (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.attempt) : 0);
+                firstGuess += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstGuess) : 0);
+                firstHints += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstHints) : 0);
+                firstSeconds += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstSeconds) : 0);
+                firstScore += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.firstScore) : 0);
+                guessRightOnAttempt += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightOnAttempt) : 0);
+                avgGuess += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgGuess) : 0);
+                avgHints += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgHints) : 0);
+                avgSeconds += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgSeconds) : 0);
+                avgScore += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.avgScore) : 0);
+                guessRightCount += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.guessRightCount) : 0);
+                sumScore += (childSnapshot.hasChild('advil') ? checkUndefined(childSnapshot.val().advil.sumScore) : 0);
+
             }
         });
         document.getElementById('ccount').innerHTML = ccount;
         document.getElementById('advil').innerHTML = reportsTable;
+        
+        attempt = attempt / ccount;
+        firstGuess = firstGuess / ccount;
+        firstHints = firstHints / ccount;
+        firstSeconds = firstSeconds / ccount;
+        firstScore = firstScore / ccount;
+        guessRightOnAttempt = guessRightOnAttempt / ccount;
+        avgGuess = avgGuess / ccount;
+        avgHints = avgHints / ccount;
+        avgSeconds = avgSeconds / ccount;
+        avgScore = avgScore / ccount;
+        guessRightCount = guessRightCount / ccount;
+        sumScore = sumScore / ccount;
+
+        footer += "<tr>";
+        footer += "<td>TOTAL AVERAGE</td>";        
+        footer += "<td>"+ attempt.toFixed(2) +"</td>";        
+        footer += "<td></td>";        
+        footer += "<td>"+ firstHints.toFixed(2) +"</td>";        
+        footer += "<td>"+ firstSeconds.toFixed(2) +"</td>";        
+        footer += "<td>"+ firstScore.toFixed(2) +"</td>";        
+        footer += "<td>"+ guessRightOnAttempt.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgGuess.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgHints.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgSeconds.toFixed(2) +"</td>";        
+        footer += "<td>"+ avgScore.toFixed(2) +"</td>";        
+        footer += "<td>"+ guessRightCount.toFixed(2) +"</td>";        
+        footer += "<td>"+ sumScore.toFixed(2) +"</td>";           
+        footer += "</tr>";
+
+        document.getElementById('footer').innerHTML = footer;
+
     });
-
-    
-
-
-}
-
-function score(firsTry, hint, seconds) {
-
-    if(firsTry == "true") {;
-
-        var hintScore = 0;
-        var secondsScore = 0;
-
-        if(hint == 1) { 
-            hintScore = 50; 
-        } else if(hint == 2) {
-            hintScore = 40; 
-        } else if(hint == 3) {
-            hintScore = 20;     
-        } else if(hint == 4) {
-            hintScore = 10;     
-        } else {
-            hintScore = 0;
-        }
-
-        if(seconds > 0 || seconds <= 5) { 
-            secondsScore = 50; 
-        } else if(seconds >= 6 && seconds <= 10) {
-            secondsScore = 40; 
-        } else if(seconds >= 11 && seconds <= 19) {
-            secondsScore = 20;     
-        } else if(seconds >= 20 && seconds <= 30) {
-            secondsScore = 10;     
-        } else {
-            secondsScore = 0;
-        }
-
-        return hintScore + secondsScore;
-    } else {
-        return 0;
-    }
 
 }
 

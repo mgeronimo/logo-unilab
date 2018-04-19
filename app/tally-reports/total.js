@@ -313,6 +313,7 @@ window.onload = function() {
     var totalRespondents = 0;
     var score = 0;
     var totalScore = 0;
+    var scoreAfterFirstAttempt = 0;
 
 
     var respondent = firebase.database().ref().child("users");
@@ -336,6 +337,7 @@ window.onload = function() {
                     advilIncorrectCounter = (advilIncorrectCounter + (childSnapshot.val().advil.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().advil.firstScore;
                     totalScore = totalScore + childSnapshot.val().advil.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().advil.sumScore;
                     advilTotalScore = advilTotalScore + childSnapshot.val().advil.firstScore;
                     childSnapshot.val().advil.firstScore > 0 ? advilScoreArray.push(childSnapshot.val().advil.firstScore) : '';
                     childSnapshot.val().advil.firstHints > 0 ? advilHintsArray.push(childSnapshot.val().advil.firstHints) : '';
@@ -351,6 +353,7 @@ window.onload = function() {
                     alaxanIncorrectCounter = (alaxanIncorrectCounter + (childSnapshot.val().alaxan.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().alaxan.firstScore;    
                     totalScore = totalScore + childSnapshot.val().alaxan.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().alaxan.sumScore;
                     alaxanTotalScore = alaxanTotalScore + childSnapshot.val().alaxan.firstScore;
                     childSnapshot.val().alaxan.firstScore > 0 ? alaxanScoreArray.push(childSnapshot.val().alaxan.firstScore) : '';
                     childSnapshot.val().alaxan.firstHints > 0 ? alaxanHintsArray.push(childSnapshot.val().alaxan.firstHints) : '';
@@ -366,6 +369,7 @@ window.onload = function() {
                     allertaIncorrectCounter = (allertaIncorrectCounter + (childSnapshot.val().allerta.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().allerta.firstScore;
                     totalScore = totalScore + childSnapshot.val().allerta.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().allerta.sumScore;
                     allertaTotalScore = allertaTotalScore + childSnapshot.val().allerta.firstScore;
                     childSnapshot.val().allerta.firstScore > 0 ? allertaScoreArray.push(childSnapshot.val().allerta.firstScore) : '';
                     childSnapshot.val().allerta.firstHints > 0 ? allertaHintsArray.push(childSnapshot.val().allerta.firstHints) : '';
@@ -381,6 +385,7 @@ window.onload = function() {
                     ascofIncorrectCounter = (ascofIncorrectCounter + (childSnapshot.val().ascof.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().ascof.firstScore;
                     totalScore = totalScore + childSnapshot.val().ascof.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().ascof.sumScore;
                     ascofTotalScore = ascofTotalScore + childSnapshot.val().ascof.firstScore;
                     childSnapshot.val().ascof.firstScore > 0 ? ascofScoreArray.push(childSnapshot.val().ascof.firstScore) : '';
                     childSnapshot.val().ascof.firstHints > 0 ? ascofHintsArray.push(childSnapshot.val().ascof.firstHints) : '';
@@ -396,6 +401,7 @@ window.onload = function() {
                     biofluIncorrectCounter = (biofluIncorrectCounter + (childSnapshot.val().bioflu.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().bioflu.firstScore;
                     totalScore = totalScore + childSnapshot.val().bioflu.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().bioflu.sumScore;
                     biofluTotalScore = biofluTotalScore + childSnapshot.val().bioflu.firstScore;
                     childSnapshot.val().bioflu.firstScore > 0 ? biofluScoreArray.push(childSnapshot.val().bioflu.firstScore) : '';
                     childSnapshot.val().bioflu.firstHints > 0 ? biofluHintsArray.push(childSnapshot.val().bioflu.firstHints) : '';
@@ -411,6 +417,7 @@ window.onload = function() {
                     biogesicIncorrectCounter = (biogesicIncorrectCounter + (childSnapshot.val().biogesic.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().biogesic.firstScore;
                     totalScore = totalScore + childSnapshot.val().biogesic.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().biogesic.sumScore;
                     biogesicTotalScore = biogesicTotalScore + childSnapshot.val().biogesic.firstScore;
                     childSnapshot.val().biogesic.firstScore > 0 ? biogesicScoreArray.push(childSnapshot.val().biogesic.firstScore) : '';
                     childSnapshot.val().biogesic.firstHints > 0 ? biogesicHintsArray.push(childSnapshot.val().biogesic.firstHints) : '';
@@ -426,6 +433,7 @@ window.onload = function() {
                     celetequeIncorrectCounter = (celetequeIncorrectCounter + (childSnapshot.val().celeteque.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().celeteque.firstScore;
                     totalScore = totalScore + childSnapshot.val().celeteque.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().celeteque.sumScore;
                     celetequeTotalScore = celetequeTotalScore + childSnapshot.val().celeteque.firstScore;
                     childSnapshot.val().celeteque.firstScore > 0 ? celetequeScoreArray.push(childSnapshot.val().celeteque.firstScore) : '';
                     childSnapshot.val().celeteque.firstHints > 0 ? celetequeHintsArray.push(childSnapshot.val().celeteque.firstHints) : '';
@@ -441,6 +449,7 @@ window.onload = function() {
                     centrumIncorrectCounter = (centrumIncorrectCounter + (childSnapshot.val().centrum.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().centrum.firstScore;
                     totalScore = totalScore + childSnapshot.val().centrum.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().centrum.sumScore;
                     centrumTotalScore = centrumTotalScore + childSnapshot.val().centrum.firstScore;
                     childSnapshot.val().centrum.firstScore > 0 ? centrumScoreArray.push(childSnapshot.val().centrum.firstScore) : '';
                     childSnapshot.val().centrum.firstHints > 0 ? centrumHintsArray.push(childSnapshot.val().centrum.firstHints) : '';
@@ -456,6 +465,7 @@ window.onload = function() {
                     cetaphilIncorrectCounter = (cetaphilIncorrectCounter + (childSnapshot.val().cetaphil.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().cetaphil.firstScore;
                     totalScore = totalScore + childSnapshot.val().cetaphil.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().cetaphil.sumScore;
                     cetaphilTotalScore = cetaphilTotalScore + childSnapshot.val().cetaphil.firstScore;
                     childSnapshot.val().cetaphil.firstScore > 0 ? cetaphilScoreArray.push(childSnapshot.val().cetaphil.firstScore) : '';
                     childSnapshot.val().cetaphil.firstHints > 0 ? cetaphilHintsArray.push(childSnapshot.val().cetaphil.firstHints) : '';
@@ -471,6 +481,7 @@ window.onload = function() {
                     conzaceIncorrectCounter = (conzaceIncorrectCounter + (childSnapshot.val().conzace.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().conzace.firstScore;
                     totalScore = totalScore + childSnapshot.val().conzace.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().conzace.sumScore;
                     conzaceTotalScore = conzaceTotalScore + childSnapshot.val().conzace.firstScore;
                     childSnapshot.val().conzace.firstScore > 0 ? conzaceScoreArray.push(childSnapshot.val().conzace.firstScore) : '';
                     childSnapshot.val().conzace.firstHints > 0 ? conzaceHintsArray.push(childSnapshot.val().conzace.firstHints) : '';
@@ -486,6 +497,7 @@ window.onload = function() {
                     decolgenIncorrectCounter = (decolgenIncorrectCounter + (childSnapshot.val().decolgen.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().decolgen.firstScore;
                     totalScore = totalScore + childSnapshot.val().decolgen.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().decolgen.sumScore;
                     decolgenTotalScore = decolgenTotalScore + childSnapshot.val().decolgen.firstScore;
                     childSnapshot.val().decolgen.firstScore > 0 ? decolgenScoreArray.push(childSnapshot.val().decolgen.firstScore) : '';
                     childSnapshot.val().decolgen.firstHints > 0 ? decolgenHintsArray.push(childSnapshot.val().decolgen.firstHints) : '';
@@ -501,6 +513,7 @@ window.onload = function() {
                     diatabsIncorrectCounter = (diatabsIncorrectCounter + (childSnapshot.val().diatabs.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().diatabs.firstScore;
                     totalScore = totalScore + childSnapshot.val().diatabs.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().diatabs.sumScore;
                     diatabsTotalScore = diatabsTotalScore + childSnapshot.val().diatabs.firstScore;
                     childSnapshot.val().diatabs.firstScore > 0 ? diatabsScoreArray.push(childSnapshot.val().diatabs.firstScore) : '';
                     childSnapshot.val().diatabs.firstHints > 0 ? diatabsHintsArray.push(childSnapshot.val().diatabs.firstHints) : '';
@@ -516,6 +529,7 @@ window.onload = function() {
                     efficascentIncorrectCounter = (efficascentIncorrectCounter + (childSnapshot.val().efficascent.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().efficascent.firstScore;
                     totalScore = totalScore + childSnapshot.val().efficascent.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().efficascent.sumScore;
                     efficascentTotalScore = efficascentTotalScore + childSnapshot.val().efficascent.firstScore;
                     childSnapshot.val().efficascent.firstScore > 0 ? efficascentScoreArray.push(childSnapshot.val().efficascent.firstScore) : '';
                     childSnapshot.val().efficascent.firstHints > 0 ? efficascentHintsArray.push(childSnapshot.val().efficascent.firstHints) : '';
@@ -531,6 +545,7 @@ window.onload = function() {
                     enervonIncorrectCounter = (enervonIncorrectCounter + (childSnapshot.val().enervon.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().enervon.firstScore;
                     totalScore = totalScore + childSnapshot.val().enervon.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().enervon.sumScore;
                     enervonTotalScore = enervonTotalScore + childSnapshot.val().enervon.firstScore;
                     childSnapshot.val().enervon.firstScore > 0 ? enervonScoreArray.push(childSnapshot.val().enervon.firstScore) : '';
                     childSnapshot.val().enervon.firstHints > 0 ? enervonHintsArray.push(childSnapshot.val().enervon.firstHints) : '';
@@ -546,6 +561,7 @@ window.onload = function() {
                     gatoradeIncorrectCounter = (gatoradeIncorrectCounter + (childSnapshot.val().gatorade.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().gatorade.firstScore;
                     totalScore = totalScore + childSnapshot.val().gatorade.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().gatorade.sumScore;
                     gatoradeTotalScore = gatoradeTotalScore + childSnapshot.val().gatorade.firstScore;
                     childSnapshot.val().gatorade.firstScore > 0 ? gatoradeScoreArray.push(childSnapshot.val().gatorade.firstScore) : '';
                     childSnapshot.val().gatorade.firstHints > 0 ? gatoradeHintsArray.push(childSnapshot.val().gatorade.firstHints) : '';
@@ -561,6 +577,7 @@ window.onload = function() {
                     gyneproIncorrectCounter = (gyneproIncorrectCounter + (childSnapshot.val().gynepro.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().gynepro.firstScore;
                     totalScore = totalScore + childSnapshot.val().gynepro.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().gynepro.sumScore;
                     gyneproTotalScore = gyneproTotalScore + childSnapshot.val().gynepro.firstScore;
                     childSnapshot.val().gynepro.firstScore > 0 ? gyneproScoreArray.push(childSnapshot.val().gynepro.firstScore) : '';
                     childSnapshot.val().gynepro.firstHints > 0 ? gyneproHintsArray.push(childSnapshot.val().gynepro.firstHints) : '';
@@ -576,6 +593,7 @@ window.onload = function() {
                     kremilsIncorrectCounter = (kremilsIncorrectCounter + (childSnapshot.val().kremils.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().kremils.firstScore;
                     totalScore = totalScore + childSnapshot.val().kremils.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().kremils.sumScore;
                     kremilsTotalScore = kremilsTotalScore + childSnapshot.val().kremils.firstScore;
                     childSnapshot.val().kremils.firstScore > 0 ? kremilsScoreArray.push(childSnapshot.val().kremils.firstScore) : '';
                     childSnapshot.val().kremils.firstHints > 0 ? kremilsHintsArray.push(childSnapshot.val().kremils.firstHints) : '';
@@ -591,6 +609,7 @@ window.onload = function() {
                     lactacydIncorrectCounter = (lactacydIncorrectCounter + (childSnapshot.val().lactacyd.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().lactacyd.firstScore;
                     totalScore = totalScore + childSnapshot.val().lactacyd.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().lactacyd.sumScore;
                     lactacydTotalScore = lactacydTotalScore + childSnapshot.val().lactacyd.firstScore;
                     childSnapshot.val().lactacyd.firstScore > 0 ? lactacydScoreArray.push(childSnapshot.val().lactacyd.firstScore) : '';
                     childSnapshot.val().lactacyd.firstHints > 0 ? lactacydHintsArray.push(childSnapshot.val().lactacyd.firstHints) : '';
@@ -606,6 +625,7 @@ window.onload = function() {
                     mcdoIncorrectCounter = (mcdoIncorrectCounter + (childSnapshot.val().mcdo.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().mcdo.firstScore;
                     totalScore = totalScore + childSnapshot.val().mcdo.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().mcdo.sumScore;
                     mcdoTotalScore = mcdoTotalScore + childSnapshot.val().mcdo.firstScore;
                     childSnapshot.val().mcdo.firstScore > 0 ? mcdoScoreArray.push(childSnapshot.val().mcdo.firstScore) : '';
                     childSnapshot.val().mcdo.firstHints > 0 ? mcdoHintsArray.push(childSnapshot.val().mcdo.firstHints) : '';
@@ -621,6 +641,7 @@ window.onload = function() {
                     myraIncorrectCounter = (myraIncorrectCounter + (childSnapshot.val().myra.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().myra.firstScore;
                     totalScore = totalScore + childSnapshot.val().myra.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().myra.sumScore;
                     myraTotalScore = myraTotalScore + childSnapshot.val().myra.firstScore;
                     childSnapshot.val().myra.firstScore > 0 ? myraScoreArray.push(childSnapshot.val().myra.firstScore) : '';
                     childSnapshot.val().myra.firstHints > 0 ? myraHintsArray.push(childSnapshot.val().myra.firstHints) : '';
@@ -636,6 +657,7 @@ window.onload = function() {
                     neozepIncorrectCounter = (neozepIncorrectCounter + (childSnapshot.val().neozep.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().neozep.firstScore;
                     totalScore = totalScore + childSnapshot.val().neozep.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().neozep.sumScore;
                     neozepTotalScore = neozepTotalScore + childSnapshot.val().neozep.firstScore;
                     childSnapshot.val().neozep.firstScore > 0 ? neozepScoreArray.push(childSnapshot.val().neozep.firstScore) : '';
                     childSnapshot.val().neozep.firstHints > 0 ? neozepHintsArray.push(childSnapshot.val().neozep.firstHints) : '';
@@ -651,6 +673,7 @@ window.onload = function() {
                     phcareIncorrectCounter = (phcareIncorrectCounter + (childSnapshot.val().phcare.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().phcare.firstScore;
                     totalScore = totalScore + childSnapshot.val().phcare.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().phcare.sumScore;
                     phcareTotalScore = phcareTotalScore + childSnapshot.val().phcare.firstScore;
                     childSnapshot.val().phcare.firstScore > 0 ? phcareScoreArray.push(childSnapshot.val().phcare.firstScore) : '';
                     childSnapshot.val().phcare.firstHints > 0 ? phcareHintsArray.push(childSnapshot.val().phcare.firstHints) : '';
@@ -666,6 +689,7 @@ window.onload = function() {
                     rexidolIncorrectCounter = (rexidolIncorrectCounter + (childSnapshot.val().rexidol.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().rexidol.firstScore;
                     totalScore = totalScore + childSnapshot.val().rexidol.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().rexidol.sumScore;
                     rexidolTotalScore = rexidolTotalScore + childSnapshot.val().rexidol.firstScore;
                     childSnapshot.val().rexidol.firstScore > 0 ? rexidolScoreArray.push(childSnapshot.val().rexidol.firstScore) : '';
                     childSnapshot.val().rexidol.firstHints > 0 ? rexidolHintsArray.push(childSnapshot.val().rexidol.firstHints) : '';
@@ -681,6 +705,7 @@ window.onload = function() {
                     ritemedIncorrectCounter = (ritemedIncorrectCounter + (childSnapshot.val().ritemed.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().ritemed.firstScore;
                     totalScore = totalScore + childSnapshot.val().ritemed.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().ritemed.sumScore;
                     ritemedTotalScore = ritemedTotalScore + childSnapshot.val().ritemed.firstScore;
                     childSnapshot.val().ritemed.firstScore > 0 ? ritemedScoreArray.push(childSnapshot.val().ritemed.firstScore) : '';
                     childSnapshot.val().ritemed.firstHints > 0 ? ritemedHintsArray.push(childSnapshot.val().ritemed.firstHints) : '';
@@ -696,6 +721,7 @@ window.onload = function() {
                     robitussinIncorrectCounter = (robitussinIncorrectCounter + (childSnapshot.val().robitussin.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().robitussin.firstScore;
                     totalScore = totalScore + childSnapshot.val().robitussin.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().robitussin.sumScore;
                     robitussinTotalScore = robitussinTotalScore + childSnapshot.val().robitussin.firstScore;
                     childSnapshot.val().robitussin.firstScore > 0 ? robitussinScoreArray.push(childSnapshot.val().robitussin.firstScore) : '';
                     childSnapshot.val().robitussin.firstHints > 0 ? robitussinHintsArray.push(childSnapshot.val().robitussin.firstHints) : '';
@@ -711,6 +737,7 @@ window.onload = function() {
                     skelanIncorrectCounter = (skelanIncorrectCounter + (childSnapshot.val().skelan.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().skelan.firstScore;
                     totalScore = totalScore + childSnapshot.val().skelan.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().skelan.sumScore;
                     skelanTotalScore = skelanTotalScore + childSnapshot.val().skelan.firstScore;
                     childSnapshot.val().skelan.firstScore > 0 ? skelanScoreArray.push(childSnapshot.val().skelan.firstScore) : '';
                     childSnapshot.val().skelan.firstHints > 0 ? skelanHintsArray.push(childSnapshot.val().skelan.firstHints) : '';
@@ -726,6 +753,7 @@ window.onload = function() {
                     solmuxIncorrectCounter = (solmuxIncorrectCounter + (childSnapshot.val().solmux.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().solmux.firstScore;
                     totalScore = totalScore + childSnapshot.val().solmux.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().solmux.sumScore;
                     solmuxTotalScore = solmuxTotalScore + childSnapshot.val().solmux.firstScore;
                     childSnapshot.val().solmux.firstScore > 0 ? solmuxScoreArray.push(childSnapshot.val().solmux.firstScore) : '';
                     childSnapshot.val().solmux.firstHints > 0 ? solmuxHintsArray.push(childSnapshot.val().solmux.firstHints) : '';
@@ -741,6 +769,7 @@ window.onload = function() {
                     tgpIncorrectCounter = (tgpIncorrectCounter + (childSnapshot.val().tgp.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().tgp.firstScore;
                     totalScore = totalScore + childSnapshot.val().tgp.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().tgp.sumScore;
                     tgpTotalScore = tgpTotalScore + childSnapshot.val().tgp.firstScore;
                     childSnapshot.val().tgp.firstScore > 0 ? tgpScoreArray.push(childSnapshot.val().tgp.firstScore) : '';
                     childSnapshot.val().tgp.firstHints > 0 ? tgpHintsArray.push(childSnapshot.val().tgp.firstHints) : '';
@@ -756,6 +785,7 @@ window.onload = function() {
                     uhpIncorrectCounter = (uhpIncorrectCounter + (childSnapshot.val().uhp.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().uhp.firstScore;
                     totalScore = totalScore + childSnapshot.val().uhp.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().uhp.sumScore;
                     uhpTotalScore = uhpTotalScore + childSnapshot.val().uhp.firstScore;
                     childSnapshot.val().uhp.firstScore > 0 ? uhpScoreArray.push(childSnapshot.val().uhp.firstScore) : '';
                     childSnapshot.val().uhp.firstHints > 0 ? uhpHintsArray.push(childSnapshot.val().uhp.firstHints) : '';
@@ -771,6 +801,7 @@ window.onload = function() {
                     unilabIncorrectCounter = (unilabIncorrectCounter + (childSnapshot.val().unilab.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().unilab.firstScore;
                     totalScore = totalScore + childSnapshot.val().unilab.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().unilab.sumScore;
                     unilabTotalScore = unilabTotalScore + childSnapshot.val().unilab.firstScore;
                     childSnapshot.val().unilab.firstScore > 0 ? unilabScoreArray.push(childSnapshot.val().unilab.firstScore) : '';
                     childSnapshot.val().unilab.firstHints > 0 ? unilabHintsArray.push(childSnapshot.val().unilab.firstHints) : '';
@@ -786,6 +817,7 @@ window.onload = function() {
                     vicksIncorrectCounter = (vicksIncorrectCounter + (childSnapshot.val().vicks.firstGuess == false ? 1 : 0));
                     score = score + childSnapshot.val().vicks.firstScore;
                     totalScore = totalScore + childSnapshot.val().vicks.firstScore;
+                    scoreAfterFirstAttempt = scoreAfterFirstAttempt + childSnapshot.val().vicks.sumScore;
                     childSnapshot.val().vicks.firstScore > 0 ? vicksScoreArray.push(childSnapshot.val().vicks.firstScore) : '';
                     childSnapshot.val().vicks.firstHints > 0 ? vicksHintsArray.push(childSnapshot.val().vicks.firstHints) : '';
                     childSnapshot.val().vicks.firstSeconds > 0 ? vicksSecondsArray.push(childSnapshot.val().vicks.firstSeconds) : '';
@@ -805,10 +837,12 @@ window.onload = function() {
                     <td>'+childSnapshot.val().age +'</td>\
                     <td>'+childSnapshot.val().sex +'</td>\
                     <td>'+score+'</td>\
+                    <td>'+(scoreAfterFirstAttempt - score)+'</td>\
                     <td>'+childSnapshot.val().attempt +'</td></tr>');
             }
 
             score = 0;
+            scoreAfterFirstAttempt = 0;
 
         });
 
@@ -844,7 +878,7 @@ window.onload = function() {
         document.getElementById("advilHighestSeconds").innerHTML = Math.max.apply(null, advilSecondsArray);
         document.getElementById("advilLowestSeconds").innerHTML = Math.min.apply(null, advilSecondsArray);
         document.getElementById("advilCorrect").innerHTML = advilCorrectCounter;
-        document.getElementById("advilIncorrect").innerHTML = advilIncorrectCounter;
+        document.getElementById("advilInCorrect").innerHTML = advilIncorrectCounter;
         document.getElementById("advilSkip").innerHTML = advilSkipCounter;
         document.getElementById("advilTotalRespondentOnFirstAttempt").innerHTML = advilTotalRespondentOnFirstAttempt;
         document.getElementById("advilTotalAttempt").innerHTML = advilTotalAttempt;
@@ -860,7 +894,7 @@ window.onload = function() {
         document.getElementById("alaxanHighestSeconds").innerHTML = Math.max.apply(null, alaxanSecondsArray);
         document.getElementById("alaxanLowestSeconds").innerHTML = Math.min.apply(null, alaxanSecondsArray);
         document.getElementById("alaxanCorrect").innerHTML = alaxanCorrectCounter;
-        document.getElementById("alaxanIncorrect").innerHTML = alaxanIncorrectCounter;
+        document.getElementById("alaxanInCorrect").innerHTML = alaxanIncorrectCounter;
         document.getElementById("alaxanSkip").innerHTML = alaxanSkipCounter;
         document.getElementById("alaxanTotalRespondentOnFirstAttempt").innerHTML = alaxanTotalRespondentOnFirstAttempt;
         document.getElementById("alaxanTotalAttempt").innerHTML = alaxanTotalAttempt;
@@ -876,7 +910,7 @@ window.onload = function() {
         document.getElementById("allertaHighestSeconds").innerHTML = Math.max.apply(null, allertaSecondsArray);
         document.getElementById("allertaLowestSeconds").innerHTML = Math.min.apply(null, allertaSecondsArray);
         document.getElementById("allertaCorrect").innerHTML = allertaCorrectCounter;
-        document.getElementById("allertaIncorrect").innerHTML = allertaIncorrectCounter;
+        document.getElementById("allertaInCorrect").innerHTML = allertaIncorrectCounter;
         document.getElementById("allertaSkip").innerHTML = allertaSkipCounter;
         document.getElementById("allertaTotalRespondentOnFirstAttempt").innerHTML = allertaTotalRespondentOnFirstAttempt;
         document.getElementById("allertaTotalAttempt").innerHTML = allertaTotalAttempt;
@@ -892,7 +926,7 @@ window.onload = function() {
         document.getElementById("ascofHighestSeconds").innerHTML = Math.max.apply(null, ascofSecondsArray);
         document.getElementById("ascofLowestSeconds").innerHTML = Math.min.apply(null, ascofSecondsArray);
         document.getElementById("ascofCorrect").innerHTML = ascofCorrectCounter;
-        document.getElementById("ascofIncorrect").innerHTML = ascofIncorrectCounter;
+        document.getElementById("ascofInCorrect").innerHTML = ascofIncorrectCounter;
         document.getElementById("ascofSkip").innerHTML = ascofSkipCounter;
         document.getElementById("ascofTotalRespondentOnFirstAttempt").innerHTML = ascofTotalRespondentOnFirstAttempt;
         document.getElementById("ascofTotalAttempt").innerHTML = ascofTotalAttempt;
@@ -908,7 +942,7 @@ window.onload = function() {
         document.getElementById("biofluHighestSeconds").innerHTML = Math.max.apply(null, biofluSecondsArray);
         document.getElementById("biofluLowestSeconds").innerHTML = Math.min.apply(null, biofluSecondsArray);
         document.getElementById("biofluCorrect").innerHTML = biofluCorrectCounter;
-        document.getElementById("biofluIncorrect").innerHTML = biofluIncorrectCounter;
+        document.getElementById("biofluInCorrect").innerHTML = biofluIncorrectCounter;
         document.getElementById("biofluSkip").innerHTML = biofluSkipCounter;
         document.getElementById("biofluTotalRespondentOnFirstAttempt").innerHTML = biofluTotalRespondentOnFirstAttempt;
         document.getElementById("biofluTotalAttempt").innerHTML = biofluTotalAttempt;
@@ -924,7 +958,7 @@ window.onload = function() {
         document.getElementById("biogesicHighestSeconds").innerHTML = Math.max.apply(null, biogesicSecondsArray);
         document.getElementById("biogesicLowestSeconds").innerHTML = Math.min.apply(null, biogesicSecondsArray);
         document.getElementById("biogesicCorrect").innerHTML = biogesicCorrectCounter;
-        document.getElementById("biogesicIncorrect").innerHTML = biogesicIncorrectCounter;
+        document.getElementById("biogesicInCorrect").innerHTML = biogesicIncorrectCounter;
         document.getElementById("biogesicSkip").innerHTML = biogesicSkipCounter;
         document.getElementById("biogesicTotalRespondentOnFirstAttempt").innerHTML = biogesicTotalRespondentOnFirstAttempt;
         document.getElementById("biogesicTotalAttempt").innerHTML = biogesicTotalAttempt;
@@ -940,7 +974,7 @@ window.onload = function() {
         document.getElementById("celetequeHighestSeconds").innerHTML = Math.max.apply(null, celetequeSecondsArray);
         document.getElementById("celetequeLowestSeconds").innerHTML = Math.min.apply(null, celetequeSecondsArray);
         document.getElementById("celetequeCorrect").innerHTML = celetequeCorrectCounter;
-        document.getElementById("celetequeIncorrect").innerHTML = celetequeIncorrectCounter;
+        document.getElementById("celetequeInCorrect").innerHTML = celetequeIncorrectCounter;
         document.getElementById("celetequeSkip").innerHTML = celetequeSkipCounter;
         document.getElementById("celetequeTotalRespondentOnFirstAttempt").innerHTML = celetequeTotalRespondentOnFirstAttempt;
         document.getElementById("celetequeTotalAttempt").innerHTML = celetequeTotalAttempt;
@@ -956,7 +990,7 @@ window.onload = function() {
         document.getElementById("centrumHighestSeconds").innerHTML = Math.max.apply(null, centrumSecondsArray);
         document.getElementById("centrumLowestSeconds").innerHTML = Math.min.apply(null, centrumSecondsArray);
         document.getElementById("centrumCorrect").innerHTML = centrumCorrectCounter;
-        document.getElementById("centrumIncorrect").innerHTML = centrumIncorrectCounter;
+        document.getElementById("centrumInCorrect").innerHTML = centrumIncorrectCounter;
         document.getElementById("centrumSkip").innerHTML = centrumSkipCounter;
         document.getElementById("centrumTotalRespondentOnFirstAttempt").innerHTML = centrumTotalRespondentOnFirstAttempt;
         document.getElementById("centrumTotalAttempt").innerHTML = centrumTotalAttempt;
@@ -972,7 +1006,7 @@ window.onload = function() {
         document.getElementById("cetaphilHighestSeconds").innerHTML = Math.max.apply(null, cetaphilSecondsArray);
         document.getElementById("cetaphilLowestSeconds").innerHTML = Math.min.apply(null, cetaphilSecondsArray);
         document.getElementById("cetaphilCorrect").innerHTML = cetaphilCorrectCounter;
-        document.getElementById("cetaphilIncorrect").innerHTML = cetaphilIncorrectCounter;
+        document.getElementById("cetaphilInCorrect").innerHTML = cetaphilIncorrectCounter;
         document.getElementById("cetaphilSkip").innerHTML = cetaphilSkipCounter;
         document.getElementById("cetaphilTotalRespondentOnFirstAttempt").innerHTML = cetaphilTotalRespondentOnFirstAttempt;
         document.getElementById("cetaphilTotalAttempt").innerHTML = cetaphilTotalAttempt;
@@ -988,7 +1022,7 @@ window.onload = function() {
         document.getElementById("conzaceHighestSeconds").innerHTML = Math.max.apply(null, conzaceSecondsArray);
         document.getElementById("conzaceLowestSeconds").innerHTML = Math.min.apply(null, conzaceSecondsArray);
         document.getElementById("conzaceCorrect").innerHTML = conzaceCorrectCounter;
-        document.getElementById("conzaceIncorrect").innerHTML = conzaceIncorrectCounter;
+        document.getElementById("conzaceInCorrect").innerHTML = conzaceIncorrectCounter;
         document.getElementById("conzaceSkip").innerHTML = conzaceSkipCounter;
         document.getElementById("conzaceTotalRespondentOnFirstAttempt").innerHTML = conzaceTotalRespondentOnFirstAttempt;
         document.getElementById("conzaceTotalAttempt").innerHTML = conzaceTotalAttempt;
@@ -1004,7 +1038,7 @@ window.onload = function() {
         document.getElementById("decolgenHighestSeconds").innerHTML = Math.max.apply(null, decolgenSecondsArray);
         document.getElementById("decolgenLowestSeconds").innerHTML = Math.min.apply(null, decolgenSecondsArray);
         document.getElementById("decolgenCorrect").innerHTML = decolgenCorrectCounter;
-        document.getElementById("decolgenIncorrect").innerHTML = decolgenIncorrectCounter;
+        document.getElementById("decolgenInCorrect").innerHTML = decolgenIncorrectCounter;
         document.getElementById("decolgenSkip").innerHTML = decolgenSkipCounter;
         document.getElementById("decolgenTotalRespondentOnFirstAttempt").innerHTML = decolgenTotalRespondentOnFirstAttempt;
         document.getElementById("decolgenTotalAttempt").innerHTML = decolgenTotalAttempt;
@@ -1020,7 +1054,7 @@ window.onload = function() {
         document.getElementById("diatabsHighestSeconds").innerHTML = Math.max.apply(null, diatabsSecondsArray);
         document.getElementById("diatabsLowestSeconds").innerHTML = Math.min.apply(null, diatabsSecondsArray);
         document.getElementById("diatabsCorrect").innerHTML = diatabsCorrectCounter;
-        document.getElementById("diatabsIncorrect").innerHTML = diatabsIncorrectCounter;
+        document.getElementById("diatabsInCorrect").innerHTML = diatabsIncorrectCounter;
         document.getElementById("diatabsSkip").innerHTML = diatabsSkipCounter;
         document.getElementById("diatabsTotalRespondentOnFirstAttempt").innerHTML = diatabsTotalRespondentOnFirstAttempt;
         document.getElementById("diatabsTotalAttempt").innerHTML = diatabsTotalAttempt;
@@ -1036,7 +1070,7 @@ window.onload = function() {
         document.getElementById("efficascentHighestSeconds").innerHTML = Math.max.apply(null, efficascentSecondsArray);
         document.getElementById("efficascentLowestSeconds").innerHTML = Math.min.apply(null, efficascentSecondsArray);
         document.getElementById("efficascentCorrect").innerHTML = efficascentCorrectCounter;
-        document.getElementById("efficascentIncorrect").innerHTML = efficascentIncorrectCounter;
+        document.getElementById("efficascentInCorrect").innerHTML = efficascentIncorrectCounter;
         document.getElementById("efficascentSkip").innerHTML = efficascentSkipCounter;
         document.getElementById("efficascentTotalRespondentOnFirstAttempt").innerHTML = efficascentTotalRespondentOnFirstAttempt;
         document.getElementById("efficascentTotalAttempt").innerHTML = efficascentTotalAttempt;
@@ -1052,7 +1086,7 @@ window.onload = function() {
         document.getElementById("enervonHighestSeconds").innerHTML = Math.max.apply(null, enervonSecondsArray);
         document.getElementById("enervonLowestSeconds").innerHTML = Math.min.apply(null, enervonSecondsArray);
         document.getElementById("enervonCorrect").innerHTML = enervonCorrectCounter;
-        document.getElementById("enervonIncorrect").innerHTML = enervonIncorrectCounter;
+        document.getElementById("enervonInCorrect").innerHTML = enervonIncorrectCounter;
         document.getElementById("enervonSkip").innerHTML = enervonSkipCounter;
         document.getElementById("enervonTotalRespondentOnFirstAttempt").innerHTML = enervonTotalRespondentOnFirstAttempt;
         document.getElementById("enervonTotalAttempt").innerHTML = enervonTotalAttempt;
@@ -1068,7 +1102,7 @@ window.onload = function() {
         document.getElementById("gatoradeHighestSeconds").innerHTML = Math.max.apply(null, gatoradeSecondsArray);
         document.getElementById("gatoradeLowestSeconds").innerHTML = Math.min.apply(null, gatoradeSecondsArray);
         document.getElementById("gatoradeCorrect").innerHTML = gatoradeCorrectCounter;
-        document.getElementById("gatoradeIncorrect").innerHTML = gatoradeIncorrectCounter;
+        document.getElementById("gatoradeInCorrect").innerHTML = gatoradeIncorrectCounter;
         document.getElementById("gatoradeSkip").innerHTML = gatoradeSkipCounter;
         document.getElementById("gatoradeTotalRespondentOnFirstAttempt").innerHTML = gatoradeTotalRespondentOnFirstAttempt;
         document.getElementById("gatoradeTotalAttempt").innerHTML = gatoradeTotalAttempt;
@@ -1084,7 +1118,7 @@ window.onload = function() {
         document.getElementById("gyneproHighestSeconds").innerHTML = Math.max.apply(null, gyneproSecondsArray);
         document.getElementById("gyneproLowestSeconds").innerHTML = Math.min.apply(null, gyneproSecondsArray);
         document.getElementById("gyneproCorrect").innerHTML = gyneproCorrectCounter;
-        document.getElementById("gyneproIncorrect").innerHTML = gyneproIncorrectCounter;
+        document.getElementById("gyneproInCorrect").innerHTML = gyneproIncorrectCounter;
         document.getElementById("gyneproSkip").innerHTML = gyneproSkipCounter;
         document.getElementById("gyneproTotalRespondentOnFirstAttempt").innerHTML = gyneproTotalRespondentOnFirstAttempt;
         document.getElementById("gyneproTotalAttempt").innerHTML = gyneproTotalAttempt;
@@ -1100,7 +1134,7 @@ window.onload = function() {
         document.getElementById("kremilsHighestSeconds").innerHTML = Math.max.apply(null, kremilsSecondsArray);
         document.getElementById("kremilsLowestSeconds").innerHTML = Math.min.apply(null, kremilsSecondsArray);
         document.getElementById("kremilsCorrect").innerHTML = kremilsCorrectCounter;
-        document.getElementById("kremilsIncorrect").innerHTML = kremilsIncorrectCounter;
+        document.getElementById("kremilsInCorrect").innerHTML = kremilsIncorrectCounter;
         document.getElementById("kremilsSkip").innerHTML = kremilsSkipCounter;
         document.getElementById("kremilsTotalRespondentOnFirstAttempt").innerHTML = kremilsTotalRespondentOnFirstAttempt;
         document.getElementById("kremilsTotalAttempt").innerHTML = kremilsTotalAttempt;
@@ -1116,7 +1150,7 @@ window.onload = function() {
         document.getElementById("lactacydHighestSeconds").innerHTML = Math.max.apply(null, lactacydSecondsArray);
         document.getElementById("lactacydLowestSeconds").innerHTML = Math.min.apply(null, lactacydSecondsArray);
         document.getElementById("lactacydCorrect").innerHTML = lactacydCorrectCounter;
-        document.getElementById("lactacydIncorrect").innerHTML = lactacydIncorrectCounter;
+        document.getElementById("lactacydInCorrect").innerHTML = lactacydIncorrectCounter;
         document.getElementById("lactacydSkip").innerHTML = lactacydSkipCounter;
         document.getElementById("lactacydTotalRespondentOnFirstAttempt").innerHTML = lactacydTotalRespondentOnFirstAttempt;
         document.getElementById("lactacydTotalAttempt").innerHTML = lactacydTotalAttempt;
@@ -1132,7 +1166,7 @@ window.onload = function() {
         document.getElementById("mcdoHighestSeconds").innerHTML = Math.max.apply(null, mcdoSecondsArray);
         document.getElementById("mcdoLowestSeconds").innerHTML = Math.min.apply(null, mcdoSecondsArray);
         document.getElementById("mcdoCorrect").innerHTML = mcdoCorrectCounter;
-        document.getElementById("mcdoIncorrect").innerHTML = mcdoIncorrectCounter;
+        document.getElementById("mcdoInCorrect").innerHTML = mcdoIncorrectCounter;
         document.getElementById("mcdoSkip").innerHTML = mcdoSkipCounter;
         document.getElementById("mcdoTotalRespondentOnFirstAttempt").innerHTML = mcdoTotalRespondentOnFirstAttempt;
         document.getElementById("mcdoTotalAttempt").innerHTML = mcdoTotalAttempt;
@@ -1148,7 +1182,7 @@ window.onload = function() {
         document.getElementById("myraHighestSeconds").innerHTML = Math.max.apply(null, myraSecondsArray);
         document.getElementById("myraLowestSeconds").innerHTML = Math.min.apply(null, myraSecondsArray);
         document.getElementById("myraCorrect").innerHTML = myraCorrectCounter;
-        document.getElementById("myraIncorrect").innerHTML = myraIncorrectCounter;
+        document.getElementById("myraInCorrect").innerHTML = myraIncorrectCounter;
         document.getElementById("myraSkip").innerHTML = myraSkipCounter;
         document.getElementById("myraTotalRespondentOnFirstAttempt").innerHTML = myraTotalRespondentOnFirstAttempt;
         document.getElementById("myraTotalAttempt").innerHTML = myraTotalAttempt;
@@ -1164,7 +1198,7 @@ window.onload = function() {
         document.getElementById("neozepHighestSeconds").innerHTML = Math.max.apply(null, neozepSecondsArray);
         document.getElementById("neozepLowestSeconds").innerHTML = Math.min.apply(null, neozepSecondsArray);
         document.getElementById("neozepCorrect").innerHTML = neozepCorrectCounter;
-        document.getElementById("neozepIncorrect").innerHTML = neozepIncorrectCounter;
+        document.getElementById("neozepInCorrect").innerHTML = neozepIncorrectCounter;
         document.getElementById("neozepSkip").innerHTML = neozepSkipCounter;
         document.getElementById("neozepTotalRespondentOnFirstAttempt").innerHTML = neozepTotalRespondentOnFirstAttempt;
         document.getElementById("neozepTotalAttempt").innerHTML = neozepTotalAttempt;
@@ -1180,7 +1214,7 @@ window.onload = function() {
         document.getElementById("phcareHighestSeconds").innerHTML = Math.max.apply(null, phcareSecondsArray);
         document.getElementById("phcareLowestSeconds").innerHTML = Math.min.apply(null, phcareSecondsArray);
         document.getElementById("phcareCorrect").innerHTML = phcareCorrectCounter;
-        document.getElementById("phcareIncorrect").innerHTML = phcareIncorrectCounter;
+        document.getElementById("phcareInCorrect").innerHTML = phcareIncorrectCounter;
         document.getElementById("phcareSkip").innerHTML = phcareSkipCounter;
         document.getElementById("phcareTotalRespondentOnFirstAttempt").innerHTML = phcareTotalRespondentOnFirstAttempt;
         document.getElementById("phcareTotalAttempt").innerHTML = phcareTotalAttempt;
@@ -1196,7 +1230,7 @@ window.onload = function() {
         document.getElementById("rexidolHighestSeconds").innerHTML = Math.max.apply(null, rexidolSecondsArray);
         document.getElementById("rexidolLowestSeconds").innerHTML = Math.min.apply(null, rexidolSecondsArray);
         document.getElementById("rexidolCorrect").innerHTML = rexidolCorrectCounter;
-        document.getElementById("rexidolIncorrect").innerHTML = rexidolIncorrectCounter;
+        document.getElementById("rexidolInCorrect").innerHTML = rexidolIncorrectCounter;
         document.getElementById("rexidolSkip").innerHTML = rexidolSkipCounter;
         document.getElementById("rexidolTotalRespondentOnFirstAttempt").innerHTML = rexidolTotalRespondentOnFirstAttempt;
         document.getElementById("rexidolTotalAttempt").innerHTML = rexidolTotalAttempt;
@@ -1212,7 +1246,7 @@ window.onload = function() {
         document.getElementById("ritemedHighestSeconds").innerHTML = Math.max.apply(null, ritemedSecondsArray);
         document.getElementById("ritemedLowestSeconds").innerHTML = Math.min.apply(null, ritemedSecondsArray);
         document.getElementById("ritemedCorrect").innerHTML = ritemedCorrectCounter;
-        document.getElementById("ritemedIncorrect").innerHTML = ritemedIncorrectCounter;
+        document.getElementById("ritemedInCorrect").innerHTML = ritemedIncorrectCounter;
         document.getElementById("ritemedSkip").innerHTML = ritemedSkipCounter;
         document.getElementById("ritemedTotalRespondentOnFirstAttempt").innerHTML = ritemedTotalRespondentOnFirstAttempt;
         document.getElementById("ritemedTotalAttempt").innerHTML = ritemedTotalAttempt;
@@ -1228,7 +1262,7 @@ window.onload = function() {
         document.getElementById("robitussinHighestSeconds").innerHTML = Math.max.apply(null, robitussinSecondsArray);
         document.getElementById("robitussinLowestSeconds").innerHTML = Math.min.apply(null, robitussinSecondsArray);
         document.getElementById("robitussinCorrect").innerHTML = robitussinCorrectCounter;
-        document.getElementById("robitussinIncorrect").innerHTML = robitussinIncorrectCounter;
+        document.getElementById("robitussinInCorrect").innerHTML = robitussinIncorrectCounter;
         document.getElementById("robitussinSkip").innerHTML = robitussinSkipCounter;
         document.getElementById("robitussinTotalRespondentOnFirstAttempt").innerHTML = robitussinTotalRespondentOnFirstAttempt;
         document.getElementById("robitussinTotalAttempt").innerHTML = robitussinTotalAttempt;
@@ -1244,7 +1278,7 @@ window.onload = function() {
         document.getElementById("skelanHighestSeconds").innerHTML = Math.max.apply(null, skelanSecondsArray);
         document.getElementById("skelanLowestSeconds").innerHTML = Math.min.apply(null, skelanSecondsArray);
         document.getElementById("skelanCorrect").innerHTML = skelanCorrectCounter;
-        document.getElementById("skelanIncorrect").innerHTML = skelanIncorrectCounter;
+        document.getElementById("skelanInCorrect").innerHTML = skelanIncorrectCounter;
         document.getElementById("skelanSkip").innerHTML = skelanSkipCounter;
         document.getElementById("skelanTotalRespondentOnFirstAttempt").innerHTML = skelanTotalRespondentOnFirstAttempt;
         document.getElementById("skelanTotalAttempt").innerHTML = skelanTotalAttempt;
@@ -1260,7 +1294,7 @@ window.onload = function() {
         document.getElementById("solmuxHighestSeconds").innerHTML = Math.max.apply(null, solmuxSecondsArray);
         document.getElementById("solmuxLowestSeconds").innerHTML = Math.min.apply(null, solmuxSecondsArray);
         document.getElementById("solmuxCorrect").innerHTML = solmuxCorrectCounter;
-        document.getElementById("solmuxIncorrect").innerHTML = solmuxIncorrectCounter;
+        document.getElementById("solmuxInCorrect").innerHTML = solmuxIncorrectCounter;
         document.getElementById("solmuxSkip").innerHTML = solmuxSkipCounter;
         document.getElementById("solmuxTotalRespondentOnFirstAttempt").innerHTML = solmuxTotalRespondentOnFirstAttempt;
         document.getElementById("solmuxTotalAttempt").innerHTML = solmuxTotalAttempt;
@@ -1276,7 +1310,7 @@ window.onload = function() {
         document.getElementById("tgpHighestSeconds").innerHTML = Math.max.apply(null, tgpSecondsArray);
         document.getElementById("tgpLowestSeconds").innerHTML = Math.min.apply(null, tgpSecondsArray);
         document.getElementById("tgpCorrect").innerHTML = tgpCorrectCounter;
-        document.getElementById("tgpIncorrect").innerHTML = tgpIncorrectCounter;
+        document.getElementById("tgpInCorrect").innerHTML = tgpIncorrectCounter;
         document.getElementById("tgpSkip").innerHTML = tgpSkipCounter;
         document.getElementById("tgpTotalRespondentOnFirstAttempt").innerHTML = tgpTotalRespondentOnFirstAttempt;
         document.getElementById("tgpTotalAttempt").innerHTML = tgpTotalAttempt;
@@ -1292,7 +1326,7 @@ window.onload = function() {
         document.getElementById("uhpHighestSeconds").innerHTML = Math.max.apply(null, uhpSecondsArray);
         document.getElementById("uhpLowestSeconds").innerHTML = Math.min.apply(null, uhpSecondsArray);
         document.getElementById("uhpCorrect").innerHTML = uhpCorrectCounter;
-        document.getElementById("uhpIncorrect").innerHTML = uhpIncorrectCounter;
+        document.getElementById("uhpInCorrect").innerHTML = uhpIncorrectCounter;
         document.getElementById("uhpSkip").innerHTML = uhpSkipCounter;
         document.getElementById("uhpTotalRespondentOnFirstAttempt").innerHTML = uhpTotalRespondentOnFirstAttempt;
         document.getElementById("uhpTotalAttempt").innerHTML = uhpTotalAttempt;
@@ -1308,7 +1342,7 @@ window.onload = function() {
         document.getElementById("unilabHighestSeconds").innerHTML = Math.max.apply(null, unilabSecondsArray);
         document.getElementById("unilabLowestSeconds").innerHTML = Math.min.apply(null, unilabSecondsArray);
         document.getElementById("unilabCorrect").innerHTML = unilabCorrectCounter;
-        document.getElementById("unilabIncorrect").innerHTML = unilabIncorrectCounter;
+        document.getElementById("unilabInCorrect").innerHTML = unilabIncorrectCounter;
         document.getElementById("unilabSkip").innerHTML = unilabSkipCounter;
         document.getElementById("unilabTotalRespondentOnFirstAttempt").innerHTML = unilabTotalRespondentOnFirstAttempt;
         document.getElementById("unilabTotalAttempt").innerHTML = unilabTotalAttempt;
@@ -1324,7 +1358,7 @@ window.onload = function() {
         document.getElementById("vicksHighestSeconds").innerHTML = Math.max.apply(null, vicksSecondsArray);
         document.getElementById("vicksLowestSeconds").innerHTML = Math.min.apply(null, vicksSecondsArray);
         document.getElementById("vicksCorrect").innerHTML = vicksCorrectCounter;
-        document.getElementById("vicksIncorrect").innerHTML = vicksIncorrectCounter;
+        document.getElementById("vicksInCorrect").innerHTML = vicksIncorrectCounter;
         document.getElementById("vicksSkip").innerHTML = vicksSkipCounter;
         document.getElementById("vicksTotalRespondentOnFirstAttempt").innerHTML = vicksTotalRespondentOnFirstAttempt;
         document.getElementById("vicksTotalAttempt").innerHTML = vicksTotalAttempt;
